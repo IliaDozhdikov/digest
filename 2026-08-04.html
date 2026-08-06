@@ -55,23 +55,31 @@
   header.issue-head{margin-bottom:26px}
   .issue-head .date{font-size:13px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
   .issue-head h1{font-size:clamp(26px,4.5vw,34px);line-height:1.2;letter-spacing:-.02em}
-  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 30px}
-  .toc a{font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:99px;text-decoration:none;
-    border:1px solid var(--line-2);color:var(--ink-2);background:var(--surface);}
-  .toc a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .toc{position:sticky;top:57px;z-index:9;display:flex;flex-wrap:wrap;gap:8px;
+    margin:18px -24px 30px;padding:10px 24px;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .toc a{font-size:13px;font-weight:700;padding:6px 14px;border-radius:99px;text-decoration:none;
+    border:1.5px solid var(--line-2);color:var(--ink);background:var(--surface);}
+  .toc a:hover{text-decoration:none;transform:translateY(-1px)}
+  .toc a.t1{color:var(--comp);border-color:var(--comp);background:var(--comp-bg)}
+  .toc a.t2{color:var(--mkt);border-color:var(--mkt);background:var(--mkt-bg)}
+  .toc a.t3{color:var(--tech);border-color:var(--tech);background:var(--tech-bg)}
+  .toc a.t4{color:var(--ai);border-color:var(--ai);background:var(--ai-bg)}
   .exec{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
     border-radius:var(--radius);padding:20px 24px;margin-bottom:38px;box-shadow:var(--shadow)}
   .exec h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
   .exec ul{list-style:none;padding:0}
   .exec li{padding:6px 0 6px 18px;position:relative;font-size:15px}
   .exec li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
-  .sec{margin:44px 0 16px;scroll-margin-top:84px}
+  .sec{margin:44px 0 16px;scroll-margin-top:120px}
   .sec h2{font-size:21px;letter-spacing:-.01em;padding-bottom:8px;border-bottom:2px solid var(--sc)}
   .sec .note{font-size:14px;color:var(--ink-3);margin-top:8px}
   .sub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 12px;display:flex;align-items:center;gap:10px}
   .sub::after{content:"";height:1px;background:var(--line);flex:1}
   .story{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:84px}
+    padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:120px}
   .story .meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
   .story .cat{display:inline-flex;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
     padding:3px 10px;border-radius:99px;color:var(--sc);background:var(--scbg)}
@@ -116,11 +124,10 @@
   </header>
 
   <nav class="toc" aria-label="Sections">
-    <a href="#competitors"><span class="l-en">1 · Competitors</span><span class="l-ru">1 · Конкуренты</span></a>
-    <a href="#market"><span class="l-en">2 · Market &amp; Industry</span><span class="l-ru">2 · Рынок и индустрия</span></a>
-    <a href="#tech"><span class="l-en">3 · Tech &amp; Tracking</span><span class="l-ru">3 · Технологии и трекинг</span></a>
-    <a href="#ai"><span class="l-en">4 · AI × Affiliate</span><span class="l-ru">4 · AI × Affiliate</span></a>
-    <a href="#coming"><span class="l-en">Coming up</span><span class="l-ru">Впереди</span></a>
+    <a class="t1" href="#competitors"><span class="l-en">1 · Competitors</span><span class="l-ru">1 · Конкуренты</span></a>
+    <a class="t2" href="#market"><span class="l-en">2 · Market &amp; Industry</span><span class="l-ru">2 · Рынок и индустрия</span></a>
+    <a class="t3" href="#tech"><span class="l-en">3 · Tech &amp; Tracking</span><span class="l-ru">3 · Технологии и трекинг</span></a>
+    <a class="t4" href="#ai"><span class="l-en">4 · AI × Affiliate</span><span class="l-ru">4 · AI × Affiliate</span></a>
   </nav>
 
   <div class="exec">
@@ -488,9 +495,6 @@
     <p class="src">→ <a href="https://digiday.com/media/media-briefing-threatening-to-quit-google-crawlers-is-just-publishers-new-hope/">Digiday</a></p>
   </article>
 
-  <div class="sub" id="coming"><span class="l-en">Coming up</span><span class="l-ru">Впереди</span></div>
-  <div class="quiet"><span class="l-en"><b>~Aug 12</b> — Interspace (AccessTrade) Q3 earnings &nbsp;·&nbsp; <b>Sep 3</b> — Awin ThinkTank UK &nbsp;·&nbsp; impact.com Q2 momentum release expected</span><span class="l-ru"><b>~12 авг</b> — отчётность Interspace (AccessTrade) &nbsp;·&nbsp; <b>3 сен</b> — Awin ThinkTank UK &nbsp;·&nbsp; ждём релиз impact.com по итогам Q2</span></div>
-
   <nav class="pager">
     <a href="index.html"><span class="l-en">← All issues</span><span class="l-ru">← Все выпуски</span></a>
     <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><span class="l-en">Back to top ↑</span><span class="l-ru">Наверх ↑</span></a>
@@ -499,8 +503,8 @@
 
 <footer>
   <div class="in">
-    <span class="l-en">Weekly digest · compiled from public sources · publication dates verified, stale news excluded · not indexed by search engines</span>
-    <span class="l-ru">Еженедельный дайджест · собрано из открытых источников · даты публикаций проверены, старые новости исключены · закрыт от индексации</span>
+    <span class="l-en">Weekly digest · compiled from public sources · publication dates verified, stale news excluded</span>
+    <span class="l-ru">Еженедельный дайджест · собрано из открытых источников · даты публикаций проверены, старые новости исключены</span>
   </div>
 </footer>
 
