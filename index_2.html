@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Market Intelligence — Weekly Affiliate Industry Digest</title>
+<style>
+  :root{
+    --bg:#f7f7f8; --surface:#ffffff; --ink:#16181d; --ink-2:#5b6069; --ink-3:#8a8f98;
+    --accent:#4f46e5; --accent-ink:#ffffff; --line:#e7e8ea; --line-2:#d9dadd;
+    --pill:#eef0ff; --pill-ink:#4338ca;
+    --shadow:0 1px 2px rgba(16,18,25,.04), 0 8px 24px -12px rgba(16,18,25,.12);
+    --shadow-hover:0 2px 4px rgba(16,18,25,.05), 0 16px 40px -16px rgba(79,70,229,.25);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1116; --surface:#171a21; --ink:#eceef1; --ink-2:#9ba1ab; --ink-3:#6c7280;
+      --accent:#8b93ff; --accent-ink:#0f1116; --line:#252932; --line-2:#30353f;
+      --pill:#232849; --pill-ink:#aeb4ff;
+      --shadow:0 1px 2px rgba(0,0,0,.2), 0 8px 24px -12px rgba(0,0,0,.5);
+      --shadow-hover:0 2px 4px rgba(0,0,0,.25), 0 16px 40px -16px rgba(139,147,255,.25);
+    }
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none}
+  [lang-ru] .l-en{display:none !important}
+  body:not([lang-ru]) .l-ru{display:none !important}
+  .top{position:sticky;top:0;z-index:10;
+    background:color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .top-in{max-width:840px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:15px;letter-spacing:-.01em}
+  .brand .dot{width:10px;height:10px;border-radius:3px;background:var(--accent);flex:none;transform:rotate(45deg)}
+  .top nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+  .lang{display:flex;border:1px solid var(--line-2);border-radius:99px;padding:2px;background:var(--surface)}
+  .lang button{all:unset;cursor:pointer;font-size:12.5px;font-weight:600;padding:4px 12px;border-radius:99px;color:var(--ink-2)}
+  .lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+  .wrap{max-width:840px;margin:0 auto;padding:52px 24px 80px}
+  .hero{margin-bottom:44px}
+  .hero .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--pill-ink);background:var(--pill);padding:4px 12px;border-radius:99px;margin-bottom:14px;}
+  .hero h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;margin-bottom:12px}
+  .hero p{color:var(--ink-2);font-size:17px;max-width:60ch}
+  .label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);
+    margin:0 0 14px;display:flex;align-items:center;gap:10px;}
+  .label::after{content:"";height:1px;background:var(--line);flex:1}
+  .issue{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;margin-bottom:14px;color:var(--ink);box-shadow:var(--shadow);
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;}
+  .issue:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:color-mix(in srgb, var(--accent) 40%, var(--line));text-decoration:none}
+  .issue .meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:13px;color:var(--ink-3)}
+  .issue .meta .new{font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--pill-ink);background:var(--pill);
+    padding:2px 8px;border-radius:99px;text-transform:uppercase;}
+  .issue h2{font-size:20px;letter-spacing:-.01em;margin-bottom:8px}
+  .issue .teaser{color:var(--ink-2);font-size:14.5px}
+  .issue .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .tag{font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid var(--line-2);color:var(--ink-2)}
+  .issue .go{margin-top:16px;font-size:14px;font-weight:600;color:var(--accent)}
+  .upcoming{margin-top:48px}
+  .up-item{display:flex;gap:16px;align-items:baseline;background:var(--surface);border:1px solid var(--line);
+    border-radius:12px;padding:14px 18px;margin-bottom:10px;}
+  .up-item .date{font-size:13px;font-weight:700;color:var(--accent);white-space:nowrap;min-width:72px}
+  .up-item .what{font-size:14.5px;color:var(--ink-2)}
+  footer{max-width:840px;margin:0 auto;padding:0 24px 48px;color:var(--ink-3);font-size:13px}
+  footer .in{border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Market&nbsp;Intelligence</a>
+    <nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+        <button id="btn-ru" aria-pressed="false" onclick="setLang('ru')">RU</button>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="kicker l-en">Weekly digest</span>
+    <span class="kicker l-ru">Еженедельный дайджест</span>
+    <h1 class="l-en">The affiliate industry,<br>one briefing a week.</h1>
+    <h1 class="l-ru">Индустрия партнёрского маркетинга —<br>один обзор в неделю.</h1>
+    <p class="l-en">Competitor moves, market and regulation news, tracking technology, and the AI shift across the affiliate ecosystem — curated from public sources, publication dates verified, a new issue every Monday.</p>
+    <p class="l-ru">Ходы конкурентов, новости рынка и регуляторики, технологии трекинга и AI-сдвиг в аффилиатной экосистеме — собрано из открытых источников, даты публикаций проверены, новый выпуск каждый понедельник.</p>
+  </section>
+
+  <h2 class="label l-en">Issues</h2>
+  <h2 class="label l-ru">Выпуски</h2>
+
+  <a class="issue" href="2026-08-04.html">
+    <div class="meta">
+      <span class="new l-en">Latest</span><span class="new l-ru">Свежий</span>
+      <time datetime="2026-08-04"><span class="l-en">August 4, 2026 · Jul 28 – Aug 4</span><span class="l-ru">4 августа 2026 · 28 июля – 4 августа</span></time>
+    </div>
+    <h2 class="l-en">Phia fraud fallout, YouTube's UK affiliate move, and ads that open AI agents</h2>
+    <h2 class="l-ru">Последствия фрода Phia, партнёрка YouTube в UK и реклама, открывающая AI-агентов</h2>
+    <p class="teaser l-en">impact.com claws back Phia's commissions · YouTube Shopping lands in the UK · APMA's playbook for a clickless world · EU AI Act transparency rules live · ChatGPT ads get conversion tracking — and a format that opens AI agents · AI answers on 43% of Google searches · Alipay's 120M agent payments in a week.</p>
+    <p class="teaser l-ru">impact.com отзывает комиссии Phia · YouTube Shopping пришёл в UK · план APMA для мира без кликов · правила прозрачности EU AI Act в силе · реклама в ChatGPT получила трекинг конверсий — и формат, открывающий AI-агентов · AI-ответы в 43% поисков Google · 120 млн агентских платежей Alipay за неделю.</p>
+    <div class="tags">
+      <span class="tag l-en">Competitors</span><span class="tag l-ru">Конкуренты</span>
+      <span class="tag l-en">Market &amp; Industry</span><span class="tag l-ru">Рынок</span>
+      <span class="tag l-en">Tech &amp; Tracking</span><span class="tag l-ru">Технологии</span>
+      <span class="tag">AI × Affiliate</span>
+    </div>
+    <div class="go l-en">Read the issue →</div>
+    <div class="go l-ru">Читать выпуск →</div>
+  </a>
+
+  <section class="upcoming">
+    <h2 class="label l-en">Coming up</h2>
+    <h2 class="label l-ru">Впереди</h2>
+    <div class="up-item">
+      <span class="date"><span class="l-en">~Aug 12</span><span class="l-ru">~12 авг</span></span>
+      <span class="what l-en">Interspace (AccessTrade) Q3 earnings</span>
+      <span class="what l-ru">Отчётность Interspace (AccessTrade) за Q3</span>
+    </div>
+    <div class="up-item">
+      <span class="date"><span class="l-en">Sep 3</span><span class="l-ru">3 сен</span></span>
+      <span class="what">Awin ThinkTank UK</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="in">
+    <span class="l-en">Weekly digest · compiled from public sources · not indexed by search engines</span>
+    <span class="l-ru">Еженедельный дайджест · собрано из открытых источников · закрыт от индексации поисковиками</span>
+  </div>
+</footer>
+
+<script>
+  function applyLang(l){
+    if(l==='ru'){document.body.setAttribute('lang-ru','');document.documentElement.lang='ru';}
+    else{document.body.removeAttribute('lang-ru');document.documentElement.lang='en';}
+    document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+    document.getElementById('btn-ru').setAttribute('aria-pressed', l==='ru');
+  }
+  function setLang(l){
+    try{localStorage.setItem('mi-lang', l);}catch(e){}
+    applyLang(l);
+  }
+  (function(){
+    var l='en';
+    try{l=localStorage.getItem('mi-lang')||'en';}catch(e){}
+    applyLang(l);
+  })();
+</script>
+</body>
+</html>
