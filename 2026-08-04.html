@@ -78,16 +78,24 @@
   .sec .note{font-size:14px;color:var(--ink-3);margin-top:8px}
   .sub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 12px;display:flex;align-items:center;gap:10px}
   .sub::after{content:"";height:1px;background:var(--line);flex:1}
-  .story{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-    padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:120px}
+  details.story{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:120px;overflow:hidden}
+  details.story summary{cursor:pointer;list-style:none;padding:22px 24px}
+  details.story summary::-webkit-details-marker{display:none}
+  details.story[open] summary{padding-bottom:6px}
   .story .meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
   .story .cat{display:inline-flex;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
     padding:3px 10px;border-radius:99px;color:var(--sc);background:var(--scbg)}
   .story .when{font-size:12.5px;color:var(--ink-3)}
-  .story h3{font-size:18.5px;line-height:1.4;letter-spacing:-.01em;margin-bottom:10px}
-  .story p{margin-bottom:10px;font-size:15px}
-  .story p.why{color:var(--ink-2);font-size:14.5px;border-left:3px solid var(--sc);padding-left:12px}
-  .story p:last-child{margin-bottom:0}
+  .story h3{font-size:18.5px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
+  .story .teaser{color:var(--ink-2);font-size:14.5px}
+  .story .more{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent)}
+  details.story[open] .mo-c{display:none}
+  details.story:not([open]) .mo-o{display:none}
+  .story .body{padding:0 24px 20px}
+  .story .body p{margin-bottom:10px;font-size:15px}
+  .story .body p.why{color:var(--ink-2);font-size:14.5px;border-left:3px solid var(--sc);padding-left:12px}
+  .story .body p:last-child{margin-bottom:0}
   .story .src{font-size:14px;margin-top:12px}
   .story .src a{font-weight:600;margin-right:14px}
   .quiet{background:transparent;border:1px dashed var(--line-2);border-radius:12px;padding:12px 18px;font-size:13.5px;color:var(--ink-3);margin-bottom:10px}
@@ -149,161 +157,258 @@
   <section class="sec s-comp" id="competitors">
     <h2 class="l-en">1 · Competitors</h2>
     <h2 class="l-ru">1 · Конкуренты</h2>
-    <p class="note l-en">A quiet week for the Tier-1 networks — Affiliate Summit East (Jul 27–28, NY) produced no major announcements. The big story is the Phia fraud fallout hitting three networks at once.</p>
-    <p class="note l-ru">Тихая неделя для сетей первого эшелона — Affiliate Summit East (27–28 июля, Нью-Йорк) прошёл без крупных анонсов. Главная история — скандал с Phia, задевший сразу три сети.</p>
+    <p class="note l-en">A quiet week for the big networks themselves — the industry's main US conference (Affiliate Summit East, Jul 27–28) came and went without major announcements. The big story is the Phia fraud case hitting three networks at once.</p>
+    <p class="note l-ru">Тихая неделя для самих крупных сетей — главная американская конференция индустрии (Affiliate Summit East, 27–28 июля) прошла без больших анонсов. Главная история — фрод-кейс Phia, задевший сразу три сети.</p>
   </section>
 
-  <article class="story s-comp" id="phia">
-    <div class="meta"><span class="cat"><span class="l-en">Fraud</span><span class="l-ru">Фрод</span></span><span class="when">Jul 30–31 · Affiverse / Business Insider</span></div>
-    <h3 class="l-en">Phia caught taking credit for sales it didn't drive — networks are clawing the money back</h3>
-    <h3 class="l-ru">Phia поймали на присвоении чужих продаж — сети возвращают деньги</h3>
-    <p class="l-en">A Bloomberg investigation showed that the browser extension of Phia — the AI shopping app founded by Phoebe Gates and Sophia Kianni, one of the year's most hyped consumer AI startups — claimed affiliate commissions for sales it didn't actually influence (classic cookie-stuffing). impact.com responded publicly: it is reversing <i>all</i> Phia commissions pending since June 20, refunding advertisers, re-crediting the rightful publishers, and suspending Phia from its marketplace until it proves compliance. Rakuten Advertising and CJ are running their own investigations. Phia blames a code bug in a recent release.</p>
-    <p class="l-ru">Расследование Bloomberg показало: браузерное расширение Phia — AI-шопинг-приложения Фиби Гейтс и Софии Кианни, одного из самых хайповых потребительских AI-стартапов года — присваивало аффилиатные комиссии за продажи, на которые не влияло (классический cookie-stuffing). impact.com отреагировал публично: отзывает <i>все</i> комиссии Phia с 20 июня, возвращает деньги рекламодателям, перераспределяет их настоящим паблишерам и отстраняет Phia от маркетплейса до подтверждения соответствия правилам. Rakuten Advertising и CJ ведут собственные проверки. Phia винит баг в коде.</p>
-    <p class="why l-en"><b>Why it matters:</b> fraud controls for extensions and AI agents just became a public selling point for networks.</p>
-    <p class="why l-ru"><b>Почему важно:</b> антифрод для расширений и AI-агентов внезапно стал публичным аргументом продаж для сетей.</p>
-    <p class="src">→ <a href="https://www.affiversemedia.com/phia-affiliate-cookie-stuffing-allegations/">Affiverse</a><a href="https://www.aol.com/articles/phoebe-gates-shopping-app-phia-160010000.html">Business Insider</a></p>
-  </article>
+  <details class="story s-comp" id="phia">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Fraud</span><span class="l-ru">Фрод</span></span><span class="when">Jul 30–31 · Affiverse / Business Insider</span></div>
+      <h3 class="l-en">Phia caught taking credit for sales it didn't drive — networks are clawing the money back</h3>
+      <h3 class="l-ru">Phia поймали на присвоении чужих продаж — сети возвращают деньги</h3>
+      <p class="teaser l-en">Phia is a hyped AI shopping app founded by Phoebe Gates (Bill Gates' daughter). A Bloomberg investigation showed its browser extension was claiming affiliate commissions for sales it had nothing to do with.</p>
+      <p class="teaser l-ru">Phia — хайповое AI-шопинг-приложение Фиби Гейтс (дочери Билла Гейтса). Расследование Bloomberg показало: его браузерное расширение присваивало аффилиатные комиссии за продажи, к которым не имело отношения.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">How the scheme worked: when a person shopped online with Phia's browser extension installed, the extension quietly inserted its own affiliate tag into the purchase — even if it played no role in the sale. The commission that should have gone to the blogger or coupon site that actually brought the customer went to Phia instead. This trick is old and well known in the industry as "cookie stuffing"; the news is that one of the most publicized consumer AI startups of the year got caught doing it.</p>
+      <p class="l-ru">Как работала схема: когда человек с установленным расширением Phia покупал что-то онлайн, расширение незаметно подставляло свою аффилиатную метку в покупку — даже если никак не участвовало в продаже. Комиссия, которая должна была уйти блогеру или купонному сайту, реально приведшему покупателя, доставалась Phia. Трюк старый и в индустрии хорошо известен под названием «cookie stuffing»; новость в том, что на нём поймали один из самых распиаренных потребительских AI-стартапов года.</p>
+      <p class="l-en">The reaction was unusually harsh and public. impact.com — one of the largest affiliate platforms — is reversing <i>all</i> Phia commissions since June 20, refunding advertisers, re-crediting the publishers who actually earned the sales, and suspending Phia from its marketplace until it proves compliance. CJ and Rakuten Advertising, two other major networks, opened their own investigations. Phia blames a bug in a recent code release.</p>
+      <p class="l-ru">Реакция была необычно жёсткой и публичной. impact.com — одна из крупнейших аффилиатных платформ — отзывает <i>все</i> комиссии Phia с 20 июня, возвращает деньги рекламодателям, перечисляет их паблишерам, которые реально заработали эти продажи, и отстраняет Phia от своего маркетплейса до подтверждения соответствия правилам. CJ и Rakuten Advertising, две другие крупные сети, начали собственные проверки. Phia объясняет всё багом в недавнем релизе.</p>
+      <p class="why l-en"><b>Why it matters:</b> AI shopping extensions are the new fraud risk zone, and visible fraud controls just became a selling point for networks.</p>
+      <p class="why l-ru"><b>Почему важно:</b> AI-шопинг-расширения — новая зона фрод-риска, а видимый антифрод стал аргументом продаж для сетей.</p>
+      <p class="src">→ <a href="https://www.affiversemedia.com/phia-affiliate-cookie-stuffing-allegations/">Affiverse</a><a href="https://www.aol.com/articles/phoebe-gates-shopping-app-phia-160010000.html">Business Insider</a></p>
+    </div>
+  </details>
 
-  <article class="story s-comp" id="youtube">
-    <div class="meta"><span class="cat"><span class="l-en">New entrant</span><span class="l-ru">Новый игрок</span></span><span class="when">Jul 30 · Hello Partner</span></div>
-    <h3 class="l-en">YouTube launched its Shopping affiliate program in the UK — a platform becoming a network</h3>
-    <h3 class="l-ru">YouTube запустил Shopping-партнёрку в Британии — платформа становится сетью</h3>
-    <p class="l-en">Announced at CreatorFest 2026: UK creators can now tag products in long-form videos and Shorts and earn commissions directly through YouTube, with launch retailers reportedly including M&amp;S, Boots and Currys. Commissions apply retroactively to back-catalog content. YouTube already runs this program in the US, Korea and several Asian markets — the UK is its first big European move.</p>
-    <p class="l-ru">Анонс с CreatorFest 2026: британские креаторы могут отмечать товары в видео и Shorts и получать комиссии напрямую через YouTube; стартовые ритейлеры — M&amp;S, Boots и Currys. Комиссии действуют ретроактивно на старый контент. В США, Корее и ряде азиатских рынков программа уже работает — Британия стала первым крупным шагом в Европу.</p>
-    <p class="why l-en"><b>Why it matters:</b> platforms are building affiliate rails that bypass networks — starting with creators, the industry's growth segment; expect more markets and copycats from TikTok/Instagram.</p>
-    <p class="why l-ru"><b>Почему важно:</b> платформы строят аффилиатные рельсы в обход сетей — начиная с креаторов, сегмента роста всей индустрии; ждём новых рынков и подражателей от TikTok/Instagram.</p>
-    <p class="src">→ <a href="https://hellopartner.com/youtube-shopping-affiliate-programme-announces-uk-rollout-at-creatorfest-2026/">Hello Partner</a></p>
-  </article>
+  <details class="story s-comp" id="youtube">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">New entrant</span><span class="l-ru">Новый игрок</span></span><span class="when">Jul 30 · Hello Partner</span></div>
+      <h3 class="l-en">YouTube launched its Shopping affiliate program in the UK — a platform becoming a network</h3>
+      <h3 class="l-ru">YouTube запустил Shopping-партнёрку в Британии — платформа становится сетью</h3>
+      <p class="teaser l-en">UK creators can now tag products in videos and earn commissions directly through YouTube — no affiliate network involved. Launch retailers include M&amp;S, Boots and Currys.</p>
+      <p class="teaser l-ru">Британские креаторы теперь отмечают товары в видео и получают комиссии напрямую через YouTube — без аффилиатной сети. На старте: M&amp;S, Boots и Currys.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Announced at YouTube's CreatorFest 2026 event: a creator tags products in long-form videos and Shorts, a viewer buys, and YouTube pays the creator a commission — doing exactly the job affiliate networks have historically done, but inside its own platform. Commissions even apply retroactively to old videos, which instantly monetizes creators' entire back catalogs. YouTube already runs this program in the US, Korea and several Asian markets; the UK is its first big European market.</p>
+      <p class="l-ru">Анонс с ивента YouTube CreatorFest 2026: креатор отмечает товары в видео и Shorts, зритель покупает, YouTube платит креатору комиссию — то есть делает ровно ту работу, которую исторически делали аффилиатные сети, но внутри собственной платформы. Комиссии действуют даже ретроактивно на старые видео — весь бэк-каталог креатора монетизируется мгновенно. В США, Корее и ряде азиатских рынков программа уже работает; Британия — первый крупный европейский рынок.</p>
+      <p class="why l-en"><b>Why it matters:</b> platforms are cutting networks out of creator monetization — expect more markets next, and similar moves from TikTok and Instagram.</p>
+      <p class="why l-ru"><b>Почему важно:</b> платформы выключают сети из монетизации креаторов — дальше будут новые рынки и аналогичные ходы TikTok и Instagram.</p>
+      <p class="src">→ <a href="https://hellopartner.com/youtube-shopping-affiliate-programme-announces-uk-rollout-at-creatorfest-2026/">Hello Partner</a></p>
+    </div>
+  </details>
 
-  <article class="story s-comp" id="belboon">
-    <div class="meta"><span class="cat">DACH</span><span class="when">Jul 27 · Affilitizer</span></div>
-    <h3 class="l-en">belboon keeps shrinking: 6.6% of its advertiser programs gone in one week</h3>
-    <h3 class="l-ru">belboon продолжает сжиматься: минус 6,6% рекламодательских программ за неделю</h3>
-    <p class="l-en">Affilitizer's weekly network tracking flagged belboon (bought by Dutch group Linehub after its 2025 insolvency) as the week's biggest loser: active affiliate programs down 6.6%. FlexOffers grew 4% the same week. This is third-party tracker data, not a company announcement — but the churn signal is consistent week over week.</p>
-    <p class="l-ru">Еженедельный мониторинг Affilitizer зафиксировал belboon (куплен голландской группой Linehub после банкротства 2025 года) как главного неудачника недели: активных программ стало меньше на 6,6%. FlexOffers за ту же неделю вырос на 4%. Это данные стороннего трекера, не анонс компании, но сигнал оттока устойчив от недели к неделе.</p>
-    <p class="why l-en"><b>Why it matters:</b> the client-poaching window in DACH is still open.</p>
-    <p class="why l-ru"><b>Почему важно:</b> окно для переманивания клиентов в DACH всё ещё открыто.</p>
-    <p class="src">→ <a href="https://www.affilitizer.com/news">Affilitizer</a></p>
-  </article>
+  <details class="story s-comp" id="belboon">
+    <summary>
+      <div class="meta"><span class="cat">DACH</span><span class="when">Jul 27 · Affilitizer</span></div>
+      <h3 class="l-en">belboon keeps shrinking: 6.6% of its advertiser programs gone in one week</h3>
+      <h3 class="l-ru">belboon продолжает сжиматься: минус 6,6% рекламодательских программ за неделю</h3>
+      <p class="teaser l-en">belboon is a 20-year-old German affiliate network that went insolvent in 2025 and was bought by Dutch group Linehub. Clients keep leaving.</p>
+      <p class="teaser l-ru">belboon — немецкая аффилиатная сеть с 20-летней историей, обанкротившаяся в 2025-м и купленная голландской группой Linehub. Клиенты продолжают уходить.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Affilitizer, an independent service that tracks how many advertiser programs each network runs, flagged belboon as the week's biggest loser: 6.6% of its active programs disappeared in seven days. For comparison, US network FlexOffers grew 4% the same week. This is third-party data rather than a company announcement, but the outflow has been consistent week after week since the insolvency and takeover.</p>
+      <p class="l-ru">Affilitizer — независимый сервис, отслеживающий количество рекламодательских программ у каждой сети, — зафиксировал belboon как главного неудачника недели: минус 6,6% активных программ за семь дней. Для сравнения: американская сеть FlexOffers за ту же неделю выросла на 4%. Это данные стороннего трекера, а не анонс компании, но отток стабилен неделя за неделей с момента банкротства и поглощения.</p>
+      <p class="why l-en"><b>Why it matters:</b> advertisers and publishers leaving belboon have to land somewhere — the window in the German market is still open.</p>
+      <p class="why l-ru"><b>Почему важно:</b> уходящие из belboon рекламодатели и паблишеры должны куда-то приземлиться — окно на немецком рынке всё ещё открыто.</p>
+      <p class="src">→ <a href="https://www.affilitizer.com/news">Affilitizer</a></p>
+    </div>
+  </details>
 
-  <article class="story s-comp" id="nyorda">
-    <div class="meta"><span class="cat">Tradedoubler</span><span class="when">Jul 28 · Tradedoubler blog</span></div>
-    <h3 class="l-en">Tradedoubler pushes AI-discovery research to back its Emna.ai product</h3>
-    <h3 class="l-ru">Tradedoubler продвигает рисёрч про AI-дискавери — в поддержку своего продукта Emna.ai</h3>
-    <p class="l-en">A new research piece ("How AI Recommends Brands and What Marketers Can Do") claims Google AI Overviews reach 2B monthly users and that 67% of Millennials are replacing classic search with generative AI. It's thought-leadership rather than a launch, but it supports the positioning of Emna.ai — the AI-visibility product Tradedoubler launched in May under its new group brand NYORDA.</p>
-    <p class="l-ru">Новый материал («How AI Recommends Brands») с тезисами: Google AI Overviews достигают 2 млрд пользователей в месяц, 67% миллениалов заменяют классический поиск генеративным AI. Это контент-маркетинг, а не запуск, но он работает на позиционирование Emna.ai — продукта «AI-видимости», запущенного в мае под новым групповым брендом NYORDA.</p>
-    <p class="why l-en"><b>Why it matters:</b> competitors are already productizing "AI visibility" for advertisers.</p>
-    <p class="why l-ru"><b>Почему важно:</b> конкуренты уже продуктизируют «видимость в AI» для рекламодателей.</p>
-    <p class="src">→ <a href="https://www.tradedoubler.com/post/how-ai-recommends-brands-and-what-marketers-can-do">Tradedoubler</a></p>
-  </article>
+  <details class="story s-comp" id="nyorda">
+    <summary>
+      <div class="meta"><span class="cat">Tradedoubler</span><span class="when">Jul 28 · Tradedoubler blog</span></div>
+      <h3 class="l-en">Tradedoubler pushes AI-discovery research to sell Emna.ai, its new "AI visibility" product</h3>
+      <h3 class="l-ru">Tradedoubler продвигает рисёрч про AI-дискавери, чтобы продавать Emna.ai — свой новый продукт «видимости в AI»</h3>
+      <p class="teaser l-en">Tradedoubler (one of Europe's oldest affiliate networks, recently rebranded as NYORDA) published research on how AI assistants recommend brands — content marketing for a product it launched in May.</p>
+      <p class="teaser l-ru">Tradedoubler (одна из старейших аффилиатных сетей Европы, недавно переименованная в NYORDA) выпустил рисёрч о том, как AI-ассистенты рекомендуют бренды, — контент-маркетинг под продукт, запущенный в мае.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The piece ("How AI Recommends Brands and What Marketers Can Do") argues that brands now need to manage how they show up in AI answers, citing figures like: Google's AI Overviews reach 2 billion users a month, and 67% of Millennials are replacing classic search with generative AI. It's not a product launch — it's marketing for Emna.ai, the tool Tradedoubler shipped in May that tracks whether and how a brand appears in AI assistants' answers. "AI visibility" is becoming a product category: Awin shipped a similar tool on June 30.</p>
+      <p class="l-ru">Материал («How AI Recommends Brands and What Marketers Can Do») доказывает, что брендам теперь нужно управлять тем, как они выглядят в ответах AI, с цифрами вроде: AI Overviews Google достигают 2 млрд пользователей в месяц, 67% миллениалов заменяют классический поиск генеративным AI. Это не запуск продукта, а маркетинг под Emna.ai — инструмент, который Tradedoubler выпустил в мае и который отслеживает, появляется ли бренд в ответах AI-ассистентов и как именно. «Видимость в AI» становится продуктовой категорией: Awin выпустил аналогичный инструмент 30 июня.</p>
+      <p class="why l-en"><b>Why it matters:</b> competitors are already productizing "AI visibility" — worth tracking whether it actually sells.</p>
+      <p class="why l-ru"><b>Почему важно:</b> конкуренты уже продуктизируют «видимость в AI» — стоит следить, продаётся ли это на самом деле.</p>
+      <p class="src">→ <a href="https://www.tradedoubler.com/post/how-ai-recommends-brands-and-what-marketers-can-do">Tradedoubler</a></p>
+    </div>
+  </details>
 
-  <div class="quiet"><span class="l-en"><b>Watch list:</b> Interspace (AccessTrade) reports Q3 earnings ~Aug 12 · impact.com Q2 momentum release expected · Awin ThinkTank UK on Sep 3 (Awin's "AI Visibility" tool shipped Jun 30, just before this window). Regional lists (PL, DACH, RO, MENA, LatAm, India) were swept — no significant dated events this week.</span><span class="l-ru"><b>На радаре:</b> Interspace (AccessTrade) отчитывается ~12 августа · ждём релиз impact.com по итогам Q2 · Awin ThinkTank UK 3 сентября (инструмент Awin «AI Visibility» вышел 30 июня, перед этим окном). Региональные списки (PL, DACH, RO, MENA, LatAm, Индия) просканированы — значимых датированных событий нет.</span></div>
+  <div class="quiet"><span class="l-en"><b>Watch list:</b> Interspace (AccessTrade) reports Q3 earnings ~Aug 12 · impact.com Q2 momentum release expected · Awin ThinkTank UK on Sep 3. Regional lists (PL, DACH, RO, MENA, LatAm, India) were swept — no significant dated events this week.</span><span class="l-ru"><b>На радаре:</b> Interspace (AccessTrade) отчитывается ~12 августа · ждём релиз impact.com по итогам Q2 · Awin ThinkTank UK 3 сентября. Региональные списки (PL, DACH, RO, MENA, LatAm, Индия) просканированы — значимых датированных событий нет.</span></div>
 
   <section class="sec s-mkt" id="market">
     <h2 class="l-en">2 · Market &amp; Industry</h2>
     <h2 class="l-ru">2 · Рынок и индустрия</h2>
   </section>
 
-  <article class="story s-mkt" id="apma">
-    <div class="meta"><span class="cat"><span class="l-en">Industry · UK</span><span class="l-ru">Индустрия · UK</span></span><span class="when">Jul 28 · Hello Partner</span></div>
-    <h3 class="l-en">The UK trade body published a playbook for affiliate marketing in a world without clicks</h3>
-    <h3 class="l-ru">Британская отраслевая ассоциация выпустила план выживания аффилиата в мире без кликов</h3>
-    <p class="l-en">The Affiliate &amp; Partner Marketing Association released a three-part report, "The New Rules of Discovery." Key finding: 51% of UK adults now use AI search tools for product discovery. The report proposes a three-layer attribution framework — retrieval (was your content pulled into the AI's answer?), citation (were you named?), outcome (did a sale follow?) — and new commission structures (fixed-fee, hybrid) to replace pure click-based payment.</p>
-    <p class="l-ru">Ассоциация APMA выпустила трёхчастный доклад «The New Rules of Discovery». Ключевая цифра: 51% взрослых британцев уже используют AI-инструменты для поиска товаров. Доклад предлагает трёхуровневую модель атрибуции — retrieval (попал ли ваш контент в ответ AI), citation (назвали ли вас), outcome (случилась ли продажа) — и новые модели комиссий (фиксированные, гибридные) вместо чисто кликовых.</p>
-    <p class="why l-en"><b>Why it matters:</b> whoever ships citation-based attribution first gets to define how publishers are paid in the AI era.</p>
-    <p class="why l-ru"><b>Почему важно:</b> кто первым выпустит атрибуцию по цитированию — тот и определит, как будут платить паблишерам в AI-эпоху.</p>
-    <p class="src">→ <a href="https://hellopartner.com/apma-ai-report-examines-the-commercial-models-for-a-clickless-world/">Hello Partner</a></p>
-  </article>
+  <details class="story s-mkt" id="apma">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research · APMA</span><span class="l-ru">Исследование · APMA</span></span><span class="when">Jul 28 · Hello Partner</span></div>
+      <h3 class="l-en">Research — APMA: pay publishers when AI cites them, not when users click</h3>
+      <h3 class="l-ru">Исследование APMA: платить паблишерам за цитирование в AI, а не за клики</h3>
+      <p class="teaser l-en">The UK's affiliate industry association found that 51% of UK adults already use AI tools to find products — and proposed how the industry should get paid when nobody clicks links anymore.</p>
+      <p class="teaser l-ru">Британская ассоциация аффилиат-индустрии выяснила: 51% взрослых британцев уже ищут товары через AI — и предложила, как индустрии зарабатывать, когда по ссылкам больше не кликают.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Context: the whole affiliate industry runs on one mechanic — a user clicks a partner's link, the click is tracked, the partner gets a commission from the sale. AI assistants break this: they answer product questions directly, often without anyone clicking anything. The APMA (the UK trade body for affiliate marketing) published a three-part report, "The New Rules of Discovery," about what to do with this.</p>
+      <p class="l-ru">Контекст: вся аффилиат-индустрия держится на одной механике — пользователь кликает по ссылке партнёра, клик отслеживается, партнёр получает комиссию с продажи. AI-ассистенты её ломают: они отвечают на вопросы о товарах напрямую, и часто никто ни по чему не кликает. APMA (британская отраслевая ассоциация аффилиат-маркетинга) выпустила трёхчастный доклад «The New Rules of Discovery» о том, что с этим делать.</p>
+      <p class="l-en">Key insight: publishers should be paid for <i>influencing</i> the AI's answer, not just for clicks. The report proposes measuring three layers — retrieval (did the AI pull your content into its answer?), citation (did it name you?), outcome (did a sale follow?) — and paying via fixed fees and hybrid models instead of pure click-based commissions.</p>
+      <p class="l-ru">Ключевой инсайт: паблишерам нужно платить за <i>влияние</i> на ответ AI, а не только за клики. Доклад предлагает измерять три уровня — retrieval (втянул ли AI ваш контент в свой ответ), citation (назвал ли вас), outcome (случилась ли продажа) — и платить фиксированными и гибридными моделями вместо чисто кликовых комиссий.</p>
+      <p class="why l-en"><b>Why it matters:</b> whoever ships citation-based attribution first gets to define how publishers are paid in the AI era.</p>
+      <p class="why l-ru"><b>Почему важно:</b> кто первым выпустит атрибуцию по цитированию — тот и определит, как будут платить паблишерам в AI-эпоху.</p>
+      <p class="src">→ <a href="https://hellopartner.com/apma-ai-report-examines-the-commercial-models-for-a-clickless-world/">Hello Partner</a></p>
+    </div>
+  </details>
 
-  <article class="story s-mkt" id="aiact">
-    <div class="meta"><span class="cat"><span class="l-en">Regulation · EU</span><span class="l-ru">Регуляторика · EU</span></span><span class="when">Aug 2–3 · Affiverse</span></div>
-    <h3 class="l-en">EU AI Act transparency rules are now live — and they touch affiliate contracts</h3>
-    <h3 class="l-ru">Правила прозрачности EU AI Act вступили в силу — и они касаются аффилиатных договоров</h3>
-    <p class="l-en">From August 2, the EU AI Act's transparency provisions apply: chatbots must disclose they are AI, synthetic and AI-generated content must be labeled, and AI-generated public-interest content needs human editorial review. The practical consequence for affiliate programs: contracts need to spell out which party — advertiser, network or publisher — is responsible for AI disclosures and approvals.</p>
-    <p class="l-ru">Со 2 августа действуют нормы прозрачности EU AI Act: чат-боты обязаны сообщать, что они AI; синтетический и AI-контент нужно маркировать; AI-материалы общественной значимости требуют редакторской проверки человеком. Практическое следствие для аффилиата: в договорах нужно прописывать, какая сторона — рекламодатель, сеть или паблишер — отвечает за маркировку и согласования.</p>
-    <p class="why l-en"><b>Why it matters:</b> compliance work for every EU-facing program — and a retention feature for networks that ship ready-made disclosure tooling.</p>
-    <p class="why l-ru"><b>Почему важно:</b> комплаенс-работа для всех EU-программ — и фактор удержания для сетей с готовыми инструментами маркировки.</p>
-    <p class="src">→ <a href="https://www.affiversemedia.com/eu-ai-act-transparency-rules-affiliates/">Affiverse</a></p>
-  </article>
+  <details class="story s-mkt" id="aiact">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Regulation · EU</span><span class="l-ru">Регуляторика · EU</span></span><span class="when">Aug 2–3 · Affiverse</span></div>
+      <h3 class="l-en">EU AI Act transparency rules are now live — and they touch affiliate contracts</h3>
+      <h3 class="l-ru">Правила прозрачности EU AI Act вступили в силу — и они касаются аффилиатных договоров</h3>
+      <p class="teaser l-en">Since August 2, AI-generated content in the EU must be labeled as such. For affiliate programs the practical question is: who in the brand–network–publisher chain is responsible for doing it?</p>
+      <p class="teaser l-ru">Со 2 августа AI-контент в ЕС должен быть промаркирован. Для аффилиатных программ практический вопрос один: кто в цепочке «бренд — сеть — паблишер» за это отвечает?</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The EU AI Act is Europe's big AI law, rolling out in stages. The stage that took effect August 2 covers transparency: chatbots must disclose they are AI, synthetic and AI-generated content (texts, images, videos) must be labeled, and AI-generated content on matters of public interest needs human editorial review. A huge share of affiliate content — reviews, comparisons, coupon descriptions — is now written with AI, so this lands directly on the industry: every EU-facing program needs its contracts to spell out which party handles AI disclosures and approvals. Fines for violations are substantial.</p>
+      <p class="l-ru">EU AI Act — большой европейский закон об AI, вступающий в силу поэтапно. Этап со 2 августа — про прозрачность: чат-боты обязаны сообщать, что они AI; синтетический и AI-контент (тексты, картинки, видео) нужно маркировать; AI-материалы общественной значимости требуют редакторской проверки человеком. Огромная доля аффилиатного контента — обзоры, сравнения, описания купонов — сегодня пишется с помощью AI, так что закон бьёт прямо по индустрии: каждой программе с охватом ЕС нужно прописать в договорах, какая сторона отвечает за маркировку и согласования. Штрафы за нарушения существенные.</p>
+      <p class="why l-en"><b>Why it matters:</b> compliance work for every EU program — and a retention feature for networks that give partners ready-made disclosure tooling.</p>
+      <p class="why l-ru"><b>Почему важно:</b> комплаенс-работа для всех EU-программ — и фактор удержания для сетей, которые дадут партнёрам готовые инструменты маркировки.</p>
+      <p class="src">→ <a href="https://www.affiversemedia.com/eu-ai-act-transparency-rules-affiliates/">Affiverse</a></p>
+    </div>
+  </details>
 
-  <article class="story s-mkt" id="phantom">
-    <div class="meta"><span class="cat"><span class="l-en">Legal · US</span><span class="l-ru">Суды · США</span></span><span class="when">Jul 30 · Modern Retail</span></div>
-    <h3 class="l-en">Nike and Lululemon sued over "phantom discounts" — a risk signal for coupon publishers</h3>
-    <h3 class="l-ru">Nike и Lululemon судят за «фантомные скидки» — сигнал риска для купонных паблишеров</h3>
-    <p class="l-en">New US lawsuits allege both brands advertised markdowns from inflated list prices their products never actually sold at. Litigation over deceptive discounting is picking up, and the coupon/deal publisher ecosystem — a core affiliate segment — depends on promotions being real.</p>
-    <p class="l-ru">Новые иски в США: оба бренда рекламировали скидки от завышенных «исходных» цен, по которым товары в реальности не продавались. Волна судов за обманные скидки нарастает, а купонно-скидочная экосистема — ядровой сегмент аффилиата — держится на том, что промо настоящие.</p>
-    <p class="why l-en"><b>Why it matters:</b> if the wave grows, brands will tighten what coupon and deal sites may display.</p>
-    <p class="why l-ru"><b>Почему важно:</b> если волна вырастет, бренды ужесточат требования к контенту купонных и скидочных сайтов.</p>
-    <p class="src">→ <a href="https://www.modernretail.co/marketing/nike-lululemon-hit-with-lawsuits-alleging-deceptive-phantom-discounts/">Modern Retail</a></p>
-  </article>
+  <details class="story s-mkt" id="phantom">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Legal · US</span><span class="l-ru">Суды · США</span></span><span class="when">Jul 30 · Modern Retail</span></div>
+      <h3 class="l-en">Nike and Lululemon sued over "phantom discounts" — a risk signal for coupon publishers</h3>
+      <h3 class="l-ru">Nike и Lululemon судят за «фантомные скидки» — сигнал риска для купонных паблишеров</h3>
+      <p class="teaser l-en">US lawsuits claim both brands advertised discounts calculated from inflated "original" prices their products never actually sold at.</p>
+      <p class="teaser l-ru">Иски в США: оба бренда рекламировали скидки от завышенных «исходных» цен, по которым товары в реальности никогда не продавались.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The scheme alleged in the lawsuits: a product is listed at an inflated "was" price that nobody ever paid, then shown with a big markdown to make the deal look better than it is. Litigation over this kind of deceptive discounting is picking up in the US. It matters to the affiliate world because coupon and deal sites — one of the biggest publisher categories — are built entirely on promotions being real: if courts and regulators tighten the rules, brands will start policing what deal sites are allowed to display, and "verified pricing" may become a quality requirement for publishers.</p>
+      <p class="l-ru">Схема из исков: товару ставят завышенную «старую» цену, по которой его никто никогда не покупал, а потом показывают крупную скидку от неё, чтобы предложение выглядело выгоднее, чем есть. Волна судов за такие обманные скидки в США нарастает. Для аффилиат-мира это важно, потому что купонные и скидочные сайты — одна из крупнейших категорий паблишеров — целиком построены на том, что промо настоящие: если суды и регуляторы закрутят гайки, бренды начнут контролировать, что скидочным сайтам можно показывать, а «проверенные цены» могут стать требованием к качеству паблишера.</p>
+      <p class="why l-en"><b>Why it matters:</b> if the litigation wave grows, brands will tighten what coupon and deal sites may display.</p>
+      <p class="why l-ru"><b>Почему важно:</b> если волна исков вырастет, бренды ужесточат требования к контенту купонных и скидочных сайтов.</p>
+      <p class="src">→ <a href="https://www.modernretail.co/marketing/nike-lululemon-hit-with-lawsuits-alleging-deceptive-phantom-discounts/">Modern Retail</a></p>
+    </div>
+  </details>
 
-  <article class="story s-mkt" id="omnicom">
-    <div class="meta"><span class="cat"><span class="l-en">Agencies</span><span class="l-ru">Агентства</span></span><span class="when">Jul 29 · AdExchanger</span></div>
-    <h3 class="l-en">Omnicom starts selling off pieces of IPG right after buying it</h3>
-    <h3 class="l-ru">Omnicom начал распродавать части только что купленного IPG</h3>
-    <p class="l-en">Omnicom will divest portions of newly acquired Interpublic and absorb the rest. Q2 revenue was flat at $6.6B with advertising down low single digits — yet the stock hit a one-year high on the restructuring news.</p>
-    <p class="l-ru">Omnicom продаст части Interpublic и поглотит остальное. Выручка Q2 — $6,6 млрд без роста, реклама слегка в минусе, но акции на годовом максимуме на новости о реструктуризации.</p>
-    <p class="why l-en"><b>Why it matters:</b> agency-market turbulence reshuffles who controls performance budgets.</p>
-    <p class="why l-ru"><b>Почему важно:</b> турбулентность агентского рынка перераспределяет контроль над performance-бюджетами.</p>
-    <p class="src">→ <a href="https://www.adexchanger.com/agencies/omnicom-investors-cheer-ipg-sell-off-despite-weak-ad-spend-in-q2/">AdExchanger</a></p>
-  </article>
+  <details class="story s-mkt" id="omnicom">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Agencies</span><span class="l-ru">Агентства</span></span><span class="when">Jul 29 · AdExchanger</span></div>
+      <h3 class="l-en">Omnicom starts selling off pieces of IPG right after buying it</h3>
+      <h3 class="l-ru">Omnicom начал распродавать части только что купленного IPG</h3>
+      <p class="teaser l-en">The world's biggest ad-agency merger enters its next phase: Omnicom will divest parts of Interpublic and absorb the rest. Investors cheered despite flat revenue.</p>
+      <p class="teaser l-ru">Крупнейшее слияние рекламных агентств мира входит в следующую фазу: Omnicom продаст части Interpublic и поглотит остальное. Инвесторы аплодируют при плоской выручке.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Omnicom and Interpublic (IPG) are two of the world's largest advertising holding companies; their merger created the industry's biggest player. Now Omnicom says it will sell off portions of IPG and integrate the rest. Q2 revenue was flat at $6.6B and advertising was slightly down — yet the stock hit a one-year high, because investors like the cost-cutting and restructuring story. For the performance-marketing world this means turbulence at the top of the agency market: budgets, teams and client relationships are all in motion.</p>
+      <p class="l-ru">Omnicom и Interpublic (IPG) — два крупнейших рекламных холдинга мира; их слияние создало самого большого игрока индустрии. Теперь Omnicom объявил, что продаст части IPG, а остальное интегрирует. Выручка Q2 — $6,6 млрд без роста, реклама слегка в минусе, но акции на годовом максимуме: инвесторам нравится история про сокращение издержек и реструктуризацию. Для performance-маркетинга это турбулентность на вершине агентского рынка: бюджеты, команды и клиентские отношения пришли в движение.</p>
+      <p class="why l-en"><b>Why it matters:</b> agency turbulence reshuffles who controls performance budgets — and shakes loose experienced partnership talent.</p>
+      <p class="why l-ru"><b>Почему важно:</b> агентская турбулентность перераспределяет контроль над performance-бюджетами — и высвобождает опытные кадры по партнёрствам.</p>
+      <p class="src">→ <a href="https://www.adexchanger.com/agencies/omnicom-investors-cheer-ipg-sell-off-despite-weak-ad-spend-in-q2/">AdExchanger</a></p>
+    </div>
+  </details>
 
-  <article class="story s-mkt" id="movers">
-    <div class="meta"><span class="cat"><span class="l-en">People &amp; deals</span><span class="l-ru">Люди и сделки</span></span><span class="when">Jul 30 · Hello Partner</span></div>
-    <h3 class="l-en">Market Movers: Gary Vaynerchuk buys into partner marketing; £5M fund for UK creators</h3>
-    <h3 class="l-ru">Market Movers: Гари Вайнерчук вложился в партнёрский маркетинг; фонд £5 млн для британских креаторов</h3>
-    <p class="l-en">July's industry-moves column: Gary Vaynerchuk took an undisclosed stake in Paul Street to build "premium partner marketing at scale"; Nuggit launched a £5M Creator Support Fund for UK YouTube creators; an ex-VaynerMedia lead founded influencer agency Painted Caves; senior hires at Taboola and the Advertising Association.</p>
-    <p class="l-ru">Июльская колонка кадров и сделок: Гари Вайнерчук купил долю в Paul Street («премиальный партнёрский маркетинг в масштабе»); Nuggit запустил фонд поддержки креаторов на £5 млн; экс-лид VaynerMedia основал инфлюенсер-агентство Painted Caves; senior-наймы в Taboola и Advertising Association.</p>
-    <p class="why l-en"><b>Why it matters:</b> money keeps flowing into the partner-marketing label from outside the industry's own bubble.</p>
-    <p class="why l-ru"><b>Почему важно:</b> деньги продолжают течь под лейбл «партнёрский маркетинг» извне индустрии.</p>
-    <p class="src">→ <a href="https://hellopartner.com/market-movers-july-2026/">Hello Partner</a></p>
-  </article>
+  <details class="story s-mkt" id="movers">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">People &amp; deals</span><span class="l-ru">Люди и сделки</span></span><span class="when">Jul 30 · Hello Partner</span></div>
+      <h3 class="l-en">Market Movers: Gary Vaynerchuk buys into partner marketing; £5M fund for UK creators</h3>
+      <h3 class="l-ru">Market Movers: Гари Вайнерчук вложился в партнёрский маркетинг; фонд £5 млн для британских креаторов</h3>
+      <p class="teaser l-en">The month's people-and-money roundup: celebrity marketer Gary Vaynerchuk invested in agency Paul Street, and startup Nuggit launched a £5M fund for UK YouTube creators.</p>
+      <p class="teaser l-ru">Месячная сводка кадров и денег: звёздный маркетолог Гари Вайнерчук инвестировал в агентство Paul Street, а стартап Nuggit запустил фонд £5 млн для британских ютуберов.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">From Hello Partner's monthly industry-moves column: Gary Vaynerchuk (VaynerMedia founder, one of the most-followed voices in marketing) took an undisclosed stake in Paul Street to build "premium partner marketing at scale" — notable because celebrity money is flowing specifically into the partner-marketing label. Also: Nuggit launched a £5M Creator Support Fund for UK YouTube creators; an ex-VaynerMedia lead founded influencer agency Painted Caves; senior hires at Taboola and the UK's Advertising Association.</p>
+      <p class="l-ru">Из ежемесячной колонки Hello Partner о кадрах и сделках: Гари Вайнерчук (основатель VaynerMedia, один из самых цитируемых людей в маркетинге) купил долю в Paul Street, чтобы строить «премиальный партнёрский маркетинг в масштабе» — примечательно, что деньги селебрити текут именно под лейбл партнёрского маркетинга. Также: Nuggit запустил фонд поддержки креаторов на £5 млн для британских ютуберов; экс-лид VaynerMedia основал инфлюенсер-агентство Painted Caves; senior-наймы в Taboola и британской Advertising Association.</p>
+      <p class="why l-en"><b>Why it matters:</b> the category's mindshare is growing outside its own bubble.</p>
+      <p class="why l-ru"><b>Почему важно:</b> узнаваемость категории растёт за пределами её собственного пузыря.</p>
+      <p class="src">→ <a href="https://hellopartner.com/market-movers-july-2026/">Hello Partner</a></p>
+    </div>
+  </details>
 
-  <article class="story s-mkt" id="creators">
-    <div class="meta"><span class="cat"><span class="l-en">Analysis</span><span class="l-ru">Аналитика</span></span><span class="when">Jul 31 – Aug 3 · Affiverse</span></div>
-    <h3 class="l-en">Two ends of the creator-affiliate shift: programs open to 500-follower nanos, while "creator fatigue" pushes brands to longer-term deals</h3>
-    <h3 class="l-ru">Два конца креаторского сдвига: программы для нано-авторов с 500 подписчиками и «усталость от креаторов», толкающая бренды к длинным контрактам</h3>
-    <p class="l-en">Two analysis pieces describe the same trend from both ends: major brands are opening affiliate/creator programs to people with as few as 500 followers (mass "everyday creator" recruitment), while audience resistance to constant selling is pushing brands to restructure top-creator deals toward longer-term, less transactional partnerships.</p>
-    <p class="l-ru">Два материала недели описывают один тренд с разных концов: крупные бренды открывают креаторские/аффилиатные программы для авторов от 500 подписчиков (массовый рекрутинг «обычных людей»), а усталость аудитории от постоянных продаж заставляет перестраивать отношения с топ-креаторами в долгосрочные, менее «продажные» партнёрства.</p>
-    <p class="why l-en"><b>Why it matters:</b> the middle is hollowing out — tooling has to serve mass nano onboarding and managed long-term top deals at once.</p>
-    <p class="why l-ru"><b>Почему важно:</b> середина вымывается — инструменты должны обслуживать массовый онбординг нано-авторов и управляемые длинные сделки наверху одновременно.</p>
-    <p class="src">→ <a href="https://www.affiversemedia.com/brands-open-creator-programs-500-followers/">Nano-creators</a><a href="https://www.affiversemedia.com/creator-fatigue-affiliate-partnerships/">Creator fatigue</a></p>
-  </article>
+  <details class="story s-mkt" id="creators">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research · Affiverse</span><span class="l-ru">Исследование · Affiverse</span></span><span class="when">Jul 31 – Aug 3 · Affiverse</span></div>
+      <h3 class="l-en">Research — Affiverse: creator marketing is splitting in two — mass recruiting of 500-follower "nanos" at the bottom, long-term contracts at the top</h3>
+      <h3 class="l-ru">Исследование Affiverse: креаторский маркетинг раскалывается надвое — массовый рекрутинг «нано» с 500 подписчиками внизу и длинные контракты наверху</h3>
+      <p class="teaser l-en">Two Affiverse analyses this week describe the same shift from opposite ends: brands now accept creators with just 500 followers into affiliate programs, while audience "creator fatigue" pushes top-creator deals toward long-term partnerships.</p>
+      <p class="teaser l-ru">Два разбора Affiverse за неделю описывают один сдвиг с противоположных концов: бренды берут в партнёрки авторов всего с 500 подписчиками, а «усталость от креаторов» у аудитории толкает сделки с топами в долгосрочные партнёрства.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">At the bottom end: major brands are opening affiliate and creator programs to "everyday creators" with as few as 500 followers. The logic — a recommendation from a small, trusted account often converts better than a celebrity ad, and at scale thousands of nano-creators add up to serious sales volume. At the top end: audiences are tired of being sold to in every post ("creator fatigue"), engagement on pure promo content is falling, so brands are restructuring deals with big creators away from one-off sponsored posts toward long-term, less transactional partnerships where the creator genuinely uses the product.</p>
+      <p class="l-ru">Внизу: крупные бренды открывают аффилиатные и креаторские программы для «обычных людей» с аудиторией от 500 подписчиков. Логика — рекомендация маленького аккаунта, которому доверяют, часто конвертирует лучше рекламы у звезды, а в масштабе тысячи нано-авторов дают серьёзный объём продаж. Наверху: аудитория устала от продаж в каждом посте («усталость от креаторов»), вовлечённость чисто рекламного контента падает, и бренды перестраивают сделки с крупными авторами — от разовых проплаченных постов к долгосрочным, менее «продажным» партнёрствам, где креатор реально пользуется продуктом.</p>
+      <p class="l-en">Key insight: the middle is hollowing out. The money is moving to the two extremes — massive self-serve onboarding of nano-creators, and managed long-term relationships with a few top names.</p>
+      <p class="l-ru">Ключевой инсайт: середина вымывается. Деньги уходят на два полюса — массовый self-serve онбординг нано-авторов и управляемые долгосрочные отношения с немногими топами.</p>
+      <p class="why l-en"><b>Why it matters:</b> network tooling has to serve both extremes at once.</p>
+      <p class="why l-ru"><b>Почему важно:</b> инструменты сетей должны обслуживать оба полюса одновременно.</p>
+      <p class="src">→ <a href="https://www.affiversemedia.com/brands-open-creator-programs-500-followers/">Nano-creators</a><a href="https://www.affiversemedia.com/creator-fatigue-affiliate-partnerships/">Creator fatigue</a></p>
+    </div>
+  </details>
 
-  <article class="story s-mkt" id="nordic">
-    <div class="meta"><span class="cat"><span class="l-en">Niche M&amp;A</span><span class="l-ru">Нишевые M&amp;A</span></span><span class="when">Jul 30 · Affiverse</span></div>
-    <h3 class="l-en">Nordic Network buys an esports team and launches an iGaming affiliate venture in Malta</h3>
-    <h3 class="l-ru">Nordic Network купил киберспортивную команду и запустил iGaming-партнёрку на Мальте</h3>
-    <p class="l-en">Nordic Network Ltd acquired Counter-Strike 2 team AM Gaming and launched Nordic Partners Gaming — a Malta-based company connecting esports organizations and gaming creators with licensed iGaming operators and affiliates.</p>
-    <p class="l-ru">Nordic Network Ltd приобрёл команду по Counter-Strike 2 AM Gaming и запустил Nordic Partners Gaming — мальтийскую компанию, соединяющую киберспортивные организации и гейминг-креаторов с лицензированными iGaming-операторами и аффилиатами.</p>
-    <p class="why l-en"><b>Why it matters:</b> vertical affiliate consolidation continues even in a quiet week.</p>
-    <p class="why l-ru"><b>Почему важно:</b> вертикальная аффилиатная консолидация идёт даже в тихую неделю.</p>
-    <p class="src">→ <a href="https://www.affiversemedia.com/nordic-network-launches-npg-acquires-am-gaming/">Affiverse</a></p>
-  </article>
+  <details class="story s-mkt" id="nordic">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Niche M&amp;A</span><span class="l-ru">Нишевые M&amp;A</span></span><span class="when">Jul 30 · Affiverse</span></div>
+      <h3 class="l-en">Nordic Network buys an esports team and launches an iGaming affiliate venture in Malta</h3>
+      <h3 class="l-ru">Nordic Network купил киберспортивную команду и запустил iGaming-партнёрку на Мальте</h3>
+      <p class="teaser l-en">A small deal connecting esports, gaming creators and licensed betting operators — a marker that affiliate consolidation continues in the gambling vertical.</p>
+      <p class="teaser l-ru">Небольшая сделка, соединяющая киберспорт, гейминг-креаторов и лицензированных беттинг-операторов — маркер продолжающейся аффилиатной консолидации в гемблинг-вертикали.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Nordic Network Ltd acquired Counter-Strike 2 team AM Gaming and launched Nordic Partners Gaming, a Malta-based company that connects esports organizations and gaming creators with licensed iGaming (online gambling) operators and their affiliate programs. Low direct relevance to mainstream retail affiliate — but a useful data point that vertical-specific consolidation keeps going even in a quiet week.</p>
+      <p class="l-ru">Nordic Network Ltd приобрёл команду по Counter-Strike 2 AM Gaming и запустил Nordic Partners Gaming — мальтийскую компанию, соединяющую киберспортивные организации и гейминг-креаторов с лицензированными iGaming-операторами (онлайн-гемблинг) и их партнёрскими программами. Прямая релевантность для ритейл-аффилиата низкая, но это полезный маркер: вертикальная консолидация идёт даже в тихую неделю.</p>
+      <p class="why l-en"><b>Why it matters:</b> vertical affiliate consolidation continues even in a quiet week.</p>
+      <p class="why l-ru"><b>Почему важно:</b> вертикальная аффилиатная консолидация продолжается даже в тихую неделю.</p>
+      <p class="src">→ <a href="https://www.affiversemedia.com/nordic-network-launches-npg-acquires-am-gaming/">Affiverse</a></p>
+    </div>
+  </details>
 
   <div class="sub"><span class="l-en">Research radar — publisher economy</span><span class="l-ru">Research radar — экономика паблишеров</span></div>
 
-  <article class="story s-mkt" id="mr-research">
-    <div class="meta"><span class="cat"><span class="l-en">Study · Creators</span><span class="l-ru">Исследование · Креаторы</span></span><span class="when">Jul 28 · Modern Retail+ Research</span></div>
-    <h3 class="l-en">Survey: brands are turning creator programs into sales channels, not just awareness plays</h3>
-    <h3 class="l-ru">Опрос: бренды превращают креаторские программы в каналы продаж, а не только охвата</h3>
-    <p class="l-en">A survey of 125 marketing professionals: 88% of brands use influencers for seasonal campaigns, 78% for product launches, 29% run both in-house and external creator programs. Brands increasingly classify creators into strategic buckets — from brand-perception plays to affiliate-driven sellers (case study: Ruggable).</p>
-    <p class="l-ru">Опрос 125 маркетологов: 88% брендов используют инфлюенсеров в сезонных кампаниях, 78% — в запусках, 29% ведут программы одновременно инхаус и снаружи. Креаторов всё чаще делят на стратегические корзины — от имиджевых до аффилиатных продавцов (кейс: Ruggable).</p>
-    <p class="why l-en"><b>Why it matters:</b> creator budgets are being re-labeled as performance budgets.</p>
-    <p class="why l-ru"><b>Почему важно:</b> креаторские бюджеты переоформляются в performance-бюджеты.</p>
-    <p class="src">→ <a href="https://www.modernretail.co/marketing/modern-retail-research-brands-are-expanding-their-creator-marketing-strategies/">Modern Retail</a></p>
-  </article>
+  <details class="story s-mkt" id="mr-research">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research · Modern Retail</span><span class="l-ru">Исследование · Modern Retail</span></span><span class="when">Jul 28 · Modern Retail+ Research</span></div>
+      <h3 class="l-en">Research — Modern Retail: brands are turning creator programs into sales channels, not just awareness plays</h3>
+      <h3 class="l-ru">Исследование Modern Retail: бренды превращают креаторские программы в каналы продаж, а не только охвата</h3>
+      <p class="teaser l-en">A survey of 125 marketing professionals: 88% of brands use influencers for seasonal campaigns, and creators are increasingly sorted into "brand image" vs "affiliate seller" buckets.</p>
+      <p class="teaser l-ru">Опрос 125 маркетологов: 88% брендов используют инфлюенсеров в сезонных кампаниях, а креаторов всё чаще делят на «имиджевых» и «аффилиатных продавцов».</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The numbers: 88% of surveyed brands use influencers for seasonal campaigns, 78% for product launches, 29% run creator programs both in-house and through external partners. The more interesting finding is the classification shift: brands increasingly assign each creator a strategic role — some exist to shape brand perception, others are measured purely as sales channels with commissions and conversion targets (rug brand Ruggable is the case study). Key insight: creator budgets are quietly being re-labeled as performance budgets — money that affiliate infrastructure can measure and serve.</p>
+      <p class="l-ru">Цифры: 88% опрошенных брендов используют инфлюенсеров в сезонных кампаниях, 78% — в запусках продуктов, 29% ведут креаторские программы одновременно инхаус и через внешних партнёров. Интереснее сдвиг в классификации: бренды всё чаще закрепляют за каждым креатором стратегическую роль — одни работают на восприятие бренда, других меряют как чистый канал продаж с комиссиями и целями по конверсии (кейс — бренд ковров Ruggable). Ключевой инсайт: креаторские бюджеты тихо переоформляются в performance-бюджеты — деньги, которые аффилиатная инфраструктура умеет измерять и обслуживать.</p>
+      <p class="why l-en"><b>Why it matters:</b> that re-labeled money is addressable by affiliate infrastructure.</p>
+      <p class="why l-ru"><b>Почему важно:</b> эти переоформленные деньги адресуемы аффилиатной инфраструктурой.</p>
+      <p class="src">→ <a href="https://www.modernretail.co/marketing/modern-retail-research-brands-are-expanding-their-creator-marketing-strategies/">Modern Retail</a></p>
+    </div>
+  </details>
 
-  <article class="story s-mkt" id="pg-data">
-    <div class="meta"><span class="cat"><span class="l-en">Data · Media</span><span class="l-ru">Данные · Медиа</span></span><span class="when">Jul 30–31 · Press Gazette</span></div>
-    <h3 class="l-en">Google folds "Top Stories" into AI answers up to 20% of the time; Time grew YouTube views 7x with creator-style content</h3>
-    <h3 class="l-ru">Google встраивает «Top Stories» внутрь AI-ответов до 20% случаев; Time вырастил просмотры на YouTube в 7 раз на креаторском формате</h3>
-    <p class="l-en">Newzdash analysis of 17M+ Top Stories appearances across 40+ countries: the news carousel now appears <i>inside</i> AI Overviews ~15.5% of the time in the US and 17.5% in the UK (up to ~35% for entertainment queries). Separately, Time's editor-in-chief reports a 7x rise in YouTube views after shifting to creator-style, social-first video — treating creators "like columnists."</p>
-    <p class="l-ru">Анализ Newzdash по 17+ млн показов Top Stories в 40+ странах: новостная карусель теперь появляется <i>внутри</i> AI Overviews в ~15,5% случаев в США и 17,5% в Британии (до ~35% на развлекательных запросах). Параллельно главред Time сообщает о росте просмотров на YouTube в 7 раз после перехода на креаторский, social-first видеоформат — «креаторы как колумнисты».</p>
-    <p class="why l-en"><b>Why it matters:</b> publisher traffic strategies are being rebuilt around AI surfaces and creator formats.</p>
-    <p class="why l-ru"><b>Почему важно:</b> трафиковые стратегии паблишеров перестраиваются вокруг AI-поверхностей и креаторских форматов.</p>
-    <p class="src">→ <a href="https://pressgazette.co.uk/platforms/google-adds-top-stories-links-to-many-news-related-ai-summaries/">Top Stories data</a><a href="https://pressgazette.co.uk/north-america/how-time-is-embracing-creators-sam-jacobs-editor/">Time case</a></p>
-  </article>
+  <details class="story s-mkt" id="pg-data">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research · Press Gazette</span><span class="l-ru">Исследование · Press Gazette</span></span><span class="when">Jul 30–31 · Press Gazette</span></div>
+      <h3 class="l-en">Research — Newzdash: Google now pulls news links inside its AI answers up to 20% of the time; Time grew YouTube views 7x by going creator-style</h3>
+      <h3 class="l-ru">Исследование Newzdash: Google встраивает новостные ссылки внутрь AI-ответов до 20% случаев; Time вырастил просмотры на YouTube в 7 раз на креаторском формате</h3>
+      <p class="teaser l-en">Publisher traffic keeps migrating inside AI surfaces — and one legacy publisher shows a working escape route through creator-style video.</p>
+      <p class="teaser l-ru">Трафик паблишеров продолжает мигрировать внутрь AI-поверхностей — а один legacy-паблишер показывает рабочий выход через креаторский видеоформат.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Newzdash (a tool that tracks news visibility in Google) analyzed 17M+ appearances of the "Top Stories" news carousel: it now shows up <i>inside</i> Google's AI Overviews about 15.5% of the time in the US and 17.5% in the UK — up to ~35% on entertainment topics. Meaning: even news visibility now happens inside the AI answer, where clicks to the publisher's site are much rarer. In parallel, Time's editor-in-chief told Press Gazette the magazine grew YouTube views 7x after switching to creator-style, social-first video and treating creators "like columnists" — evidence that the creator format works as a traffic strategy for legacy media.</p>
+      <p class="l-ru">Newzdash (инструмент, отслеживающий видимость новостей в Google) проанализировал 17+ млн показов новостной карусели «Top Stories»: теперь она появляется <i>внутри</i> AI Overviews Google примерно в 15,5% случаев в США и 17,5% в Британии — до ~35% на развлекательных темах. То есть даже новостная видимость теперь живёт внутри AI-ответа, откуда клики на сайт паблишера случаются заметно реже. Параллельно главред Time рассказал Press Gazette, что журнал вырастил просмотры на YouTube в 7 раз, перейдя на креаторский social-first видеоформат и работая с креаторами «как с колумнистами», — свидетельство, что креаторский формат работает как трафиковая стратегия для legacy-медиа.</p>
+      <p class="why l-en"><b>Why it matters:</b> publisher traffic strategies are being rebuilt around AI surfaces and creator formats.</p>
+      <p class="why l-ru"><b>Почему важно:</b> трафиковые стратегии паблишеров перестраиваются вокруг AI-поверхностей и креаторских форматов.</p>
+      <p class="src">→ <a href="https://pressgazette.co.uk/platforms/google-adds-top-stories-links-to-many-news-related-ai-summaries/">Top Stories data</a><a href="https://pressgazette.co.uk/north-america/how-time-is-embracing-creators-sam-jacobs-editor/">Time case</a></p>
+    </div>
+  </details>
 
   <section class="sec s-tech" id="tech">
     <h2 class="l-en">3 · Tech &amp; Tracking</h2>
@@ -312,82 +417,131 @@
     <p class="note l-ru">Крупных новостей по браузерам/Privacy Sandbox не было. Тема недели: измеримость приходит в AI-каналы, плюс гигантские отчёты платформ.</p>
   </section>
 
-  <article class="story s-tech" id="chatgpt-ads">
-    <div class="meta"><span class="cat">OpenAI</span><span class="when">Jul 27 · Search Engine Roundtable</span></div>
-    <h3 class="l-en">ChatGPT ads grew up: conversion goals and AppsFlyer/Adjust integrations turn it into a real performance channel</h3>
-    <h3 class="l-ru">Реклама в ChatGPT повзрослела: цели по конверсиям и интеграции с AppsFlyer/Adjust делают её performance-каналом</h3>
-    <p class="l-en">OpenAI shipped a batch of ChatGPT Ads Manager upgrades: campaigns that optimize toward advertiser conversion events, integrations with mobile measurement firms AppsFlyer and Adjust, geo exclusions, advanced matching, a bulk-management API, and richer product cards with prices and ratings.</p>
-    <p class="l-ru">OpenAI выкатил пакет обновлений ChatGPT Ads Manager: оптимизация кампаний под конверсионные события рекламодателя, интеграции с мобильными измерителями AppsFlyer и Adjust, гео-исключения, advanced matching, API для массового управления и товарные карточки с ценами и рейтингами.</p>
-    <p class="why l-en"><b>Why it matters:</b> measurability is the prerequisite for performance budgets moving into chat.</p>
-    <p class="why l-ru"><b>Почему важно:</b> измеримость — условие, при котором performance-бюджеты пойдут в чат.</p>
-    <p class="src">→ <a href="https://www.seroundtable.com/chatgpt-ads-budget-api-ad-formats-more-41756.html">Search Engine Roundtable</a></p>
-  </article>
+  <details class="story s-tech" id="chatgpt-ads">
+    <summary>
+      <div class="meta"><span class="cat">OpenAI</span><span class="when">Jul 27 · Search Engine Roundtable</span></div>
+      <h3 class="l-en">ChatGPT ads grew up: conversion goals and AppsFlyer/Adjust integrations turn it into a real performance channel</h3>
+      <h3 class="l-ru">Реклама в ChatGPT повзрослела: цели по конверсиям и интеграции с AppsFlyer/Adjust делают её performance-каналом</h3>
+      <p class="teaser l-en">Until now, advertising in ChatGPT was an experiment you couldn't properly measure. This update changes that: campaigns can now optimize toward actual sales.</p>
+      <p class="teaser l-ru">До сих пор реклама в ChatGPT была экспериментом, который нельзя было толком измерить. Это обновление меняет дело: кампании теперь оптимизируются под реальные продажи.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">OpenAI shipped a batch of upgrades to ChatGPT Ads Manager, its self-serve ad platform: campaigns can now optimize toward advertiser conversion events (real purchases and sign-ups, not just clicks); integrations with AppsFlyer and Adjust — the two firms most mobile apps use to measure where their installs and purchases come from; geo exclusions, advanced matching, a bulk-management API, and richer product cards with prices and ratings. Together these are the standard toolkit of a mature performance channel — the same plumbing Google and Meta ads have.</p>
+      <p class="l-ru">OpenAI выкатил пакет обновлений ChatGPT Ads Manager — своей self-serve рекламной платформы: кампании теперь оптимизируются под конверсионные события рекламодателя (реальные покупки и регистрации, а не просто клики); появились интеграции с AppsFlyer и Adjust — двумя сервисами, через которые большинство мобильных приложений измеряют, откуда пришли установки и покупки; гео-исключения, advanced matching, API для массового управления и товарные карточки с ценами и рейтингами. Вместе это стандартный набор зрелого performance-канала — та же обвязка, что у рекламы Google и Meta.</p>
+      <p class="why l-en"><b>Why it matters:</b> measurability is the prerequisite for performance budgets moving into chat.</p>
+      <p class="why l-ru"><b>Почему важно:</b> измеримость — условие, при котором performance-бюджеты пойдут в чат.</p>
+      <p class="src">→ <a href="https://www.seroundtable.com/chatgpt-ads-budget-api-ad-formats-more-41756.html">Search Engine Roundtable</a></p>
+    </div>
+  </details>
 
-  <article class="story s-tech" id="earnings">
-    <div class="meta"><span class="cat"><span class="l-en">Platform earnings</span><span class="l-ru">Отчёты платформ</span></span><span class="when">Jul 29–31 · Meta PR / AdExchanger</span></div>
-    <h3 class="l-en">Meta made $59.4B and Amazon $19.8B in quarterly ad revenue — both growing ~26–27%</h3>
-    <h3 class="l-ru">Meta заработала $59,4 млрд, Amazon — $19,8 млрд рекламной выручки за квартал; оба растут на ~26–27%</h3>
-    <p class="l-en">Q2 earnings: Meta ad revenue $59.4B (+27%; ad prices +12%, impressions +14%), with Zuckerberg crediting AI for "accelerating the core business." Amazon ads hit $19.8B (+26%) — and executives barely mentioned it on the call, a sign of how routine the retail-media machine has become.</p>
-    <p class="l-ru">Итоги Q2: рекламная выручка Meta — $59,4 млрд (+27%; цены +12%, показы +14%), Цукерберг объясняет ускорение ядра бизнесом AI. Реклама Amazon — $19,8 млрд (+26%), причём на звонке её почти не обсуждали — настолько рутинной стала retail-media-машина.</p>
-    <p class="why l-en"><b>Why it matters:</b> performance money keeps concentrating in walled gardens while the open web loses traffic.</p>
-    <p class="why l-ru"><b>Почему важно:</b> performance-бюджеты продолжают концентрироваться в walled gardens, пока открытый веб теряет трафик.</p>
-    <p class="src">→ <a href="https://www.prnewswire.com/news-releases/meta-reports-second-quarter-2026-results-302838214.html">Meta</a><a href="https://www.adexchanger.com/platforms/amazon-crushes-earnings-and-reaches-almost-20-billion-in-q2-ad-revenue/">Amazon</a></p>
-  </article>
+  <details class="story s-tech" id="earnings">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Platform earnings</span><span class="l-ru">Отчёты платформ</span></span><span class="when">Jul 29–31 · Meta PR / AdExchanger</span></div>
+      <h3 class="l-en">Meta made $59.4B and Amazon $19.8B in quarterly ad revenue — both growing ~26–27%</h3>
+      <h3 class="l-ru">Meta заработала $59,4 млрд, Amazon — $19,8 млрд рекламной выручки за квартал; оба растут на ~26–27%</h3>
+      <p class="teaser l-en">The big platforms keep growing far faster than the ad market overall — and keep pulling performance budgets into their closed ecosystems.</p>
+      <p class="teaser l-ru">Крупные платформы продолжают расти сильно быстрее рекламного рынка в целом — и продолжают затягивать performance-бюджеты в свои закрытые экосистемы.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Q2 results: Meta's ad revenue hit $59.4B, up 27% year over year (ad prices +12%, ad views +14%), with Zuckerberg crediting AI for "accelerating the core business." Amazon's ad business reached $19.8B, up 26% — and executives barely mentioned it on the earnings call, which says a lot: a business bigger than most media companies combined is now routine for them. Context: the overall ad market grows single digits per year; these two grow ~26–27% — meaning the "walled gardens" keep taking share from everything else, including the open web where affiliate publishers live.</p>
+      <p class="l-ru">Итоги Q2: рекламная выручка Meta — $59,4 млрд, +27% год к году (цены +12%, показы +14%); Цукерберг объясняет ускорение ядра бизнесом AI. Реклама Amazon достигла $19,8 млрд, +26% — и на звонке для инвесторов её почти не обсуждали, что само по себе показательно: бизнес крупнее большинства медиакомпаний вместе взятых стал для них рутиной. Контекст: рекламный рынок в целом растёт на единицы процентов в год, эти двое — на ~26–27%: «огороженные сады» продолжают забирать долю у всего остального, включая открытый веб, где живут аффилиатные паблишеры.</p>
+      <p class="why l-en"><b>Why it matters:</b> performance money keeps concentrating in walled gardens while the open web loses traffic.</p>
+      <p class="why l-ru"><b>Почему важно:</b> performance-бюджеты продолжают концентрироваться в walled gardens, пока открытый веб теряет трафик.</p>
+      <p class="src">→ <a href="https://www.prnewswire.com/news-releases/meta-reports-second-quarter-2026-results-302838214.html">Meta</a><a href="https://www.adexchanger.com/platforms/amazon-crushes-earnings-and-reaches-almost-20-billion-in-q2-ad-revenue/">Amazon</a></p>
+    </div>
+  </details>
 
-  <article class="story s-tech" id="google-week">
-    <div class="meta"><span class="cat">Google</span><span class="when">Jul 28–31 · Search Engine Land / Google</span></div>
-    <h3 class="l-en">Google's tracking week: broken-attribution alerts in Analytics, AI-content labels on ads, expanded first-party data API</h3>
-    <h3 class="l-ru">Неделя Google по трекингу: алерты о сломанной атрибуции в Analytics, маркировка AI-контента в рекламе, расширение API для first-party данных</h3>
-    <p class="l-en">Google Analytics added campaign diagnostics that flag traffic arriving without campaign identifiers — i.e. silently broken attribution from stripped parameters or consent signal loss. Google Ads, DV360, CM360 and Merchant Center got labels for AI-generated ad assets (anticipating EU/India/NY transparency rules). The Data Manager API — the server-to-server pipe for advertisers' own customer data — gained bulk deletion, data-quality warnings and expanded fields.</p>
-    <p class="l-ru">Google Analytics получил диагностику кампаний, которая сигналит о трафике без идентификаторов кампании — то есть о незаметно сломанной атрибуции (срезанные параметры, потеря consent-сигналов). В Google Ads, DV360, CM360 и Merchant Center появились метки AI-креативов (на опережение правил EU/Индии/Нью-Йорка). Data Manager API — server-to-server канал для собственных данных рекламодателя — получил массовое удаление, предупреждения о качестве данных и новые поля.</p>
-    <p class="why l-en"><b>Why it matters:</b> tracking that relies on URL parameters and client-side signals gets more visible breakage.</p>
-    <p class="why l-ru"><b>Почему важно:</b> трекинг на URL-параметрах и клиентских сигналах получает всё больше видимых поломок.</p>
-    <p class="src">→ <a href="https://searchengineland.com/google-analytics-adds-campaign-diagnostics-for-missing-aggregate-identifiers-484132">GA diagnostics</a><a href="https://searchengineland.com/google-rolls-out-ai-content-labels-across-its-advertising-platforms-483816">AI labels</a><a href="https://ads-developers.googleblog.com/2026/07/data-manager-api-updates.html">Data Manager API</a></p>
-  </article>
+  <details class="story s-tech" id="google-week">
+    <summary>
+      <div class="meta"><span class="cat">Google</span><span class="when">Jul 28–31 · Search Engine Land / Google</span></div>
+      <h3 class="l-en">Google's tracking week: broken-attribution alerts in Analytics, AI-content labels on ads, expanded first-party data API</h3>
+      <h3 class="l-ru">Неделя Google по трекингу: алерты о сломанной атрибуции в Analytics, маркировка AI-контента в рекламе, расширение API для first-party данных</h3>
+      <p class="teaser l-en">Three separate Google updates in one week, all pushing the same direction: measurement moves server-side, runs on first-party data, and gets labeled.</p>
+      <p class="teaser l-ru">Три отдельных обновления Google за неделю, и все толкают в одну сторону: измерения уходят на server-side, работают на first-party данных и получают маркировку.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">First: Google Analytics added campaign diagnostics that alert marketers when traffic arrives without campaign identifiers — i.e. when attribution silently breaks because tracking parameters got stripped or consent signals were lost. Until now such breakage was invisible; now advertisers will see it. Second: Google Ads, DV360, CM360 and Merchant Center got labels letting advertisers disclose AI-generated ad creatives, ahead of transparency rules in the EU, India and New York. Third: the Data Manager API — the server-to-server pipe advertisers use to send their own customer data into Google — gained bulk deletion, data-quality warnings and expanded fields.</p>
+      <p class="l-ru">Первое: в Google Analytics появилась диагностика кампаний, которая предупреждает маркетологов о трафике без идентификаторов кампании — то есть о том, что атрибуция незаметно сломалась из-за срезанных параметров или потери consent-сигналов. Раньше такие поломки были невидимы; теперь рекламодатели будут их видеть. Второе: в Google Ads, DV360, CM360 и Merchant Center появились метки AI-сгенерированных креативов — на опережение правил прозрачности в ЕС, Индии и Нью-Йорке. Третье: Data Manager API — server-to-server канал, по которому рекламодатели отправляют собственные данные о клиентах в Google, — получил массовое удаление, предупреждения о качестве данных и новые поля.</p>
+      <p class="why l-en"><b>Why it matters:</b> affiliate tracking that still relies on URL parameters and client-side signals gets more visible breakage.</p>
+      <p class="why l-ru"><b>Почему важно:</b> аффилиатный трекинг, всё ещё живущий на URL-параметрах и клиентских сигналах, получает всё больше видимых поломок.</p>
+      <p class="src">→ <a href="https://searchengineland.com/google-analytics-adds-campaign-diagnostics-for-missing-aggregate-identifiers-484132">GA diagnostics</a><a href="https://searchengineland.com/google-rolls-out-ai-content-labels-across-its-advertising-platforms-483816">AI labels</a><a href="https://ads-developers.googleblog.com/2026/07/data-manager-api-updates.html">Data Manager API</a></p>
+    </div>
+  </details>
 
-  <article class="story s-tech" id="aamp">
-    <div class="meta"><span class="cat"><span class="l-en">Standards</span><span class="l-ru">Стандарты</span></span><span class="when">Jul 30 · IAB Tech Lab</span></div>
-    <h3 class="l-en">IAB Tech Lab shipped AAMP 2.3 — infrastructure for AI agents that buy ads, now with privacy guardrails</h3>
-    <h3 class="l-ru">IAB Tech Lab выпустил AAMP 2.3 — инфраструктуру для AI-агентов, закупающих рекламу, теперь с privacy-предохранителями</h3>
-    <p class="l-en">The updated Agentic Advertising Management Protocols add enterprise deployment options, built-in privacy diligence, deterministic pricing guardrails, and support for Amazon Bedrock, Databricks, Meta buying and Google Ad Manager reporting — a push to move AI ad agents from experiments into production.</p>
-    <p class="l-ru">Обновлённые протоколы Agentic Advertising Management Protocols добавляют enterprise-развёртывание, встроенную privacy-проверку, детерминированные ценовые ограничители и поддержку Amazon Bedrock, Databricks, закупки Meta и отчётности Google Ad Manager — шаг от экспериментов к продакшену.</p>
-    <p class="why l-en"><b>Why it matters:</b> these protocols are the likely rails for automated partnership deals too.</p>
-    <p class="why l-ru"><b>Почему важно:</b> по этим же протоколам, вероятно, пойдут и автоматизированные партнёрские сделки.</p>
-    <p class="src">→ <a href="https://www.prnewswire.com/news-releases/iab-tech-lab-releases-aamp-2-3--bringing-enterprise-grade-infrastructure-and-privacy-diligence-to-agentic-advertising-302838652.html">IAB Tech Lab</a></p>
-  </article>
+  <details class="story s-tech" id="aamp">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Standards</span><span class="l-ru">Стандарты</span></span><span class="when">Jul 30 · IAB Tech Lab</span></div>
+      <h3 class="l-en">IAB Tech Lab shipped AAMP 2.3 — infrastructure for AI agents that buy ads, now with privacy guardrails</h3>
+      <h3 class="l-ru">IAB Tech Lab выпустил AAMP 2.3 — инфраструктуру для AI-агентов, закупающих рекламу, теперь с privacy-предохранителями</h3>
+      <p class="teaser l-en">The ad industry's standards body is building the plumbing for a near future where AI agents — not people — plan and buy advertising campaigns.</p>
+      <p class="teaser l-ru">Орган стандартизации рекламной индустрии строит инфраструктуру для близкого будущего, где рекламные кампании планируют и закупают AI-агенты, а не люди.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The IAB Tech Lab (the body that writes the ad industry's technical standards) updated its Agentic Advertising Management Protocols — rules that let AI agents plug into existing ad infrastructure and buy media autonomously. Version 2.3 adds enterprise deployment options, built-in privacy checks, deterministic pricing guardrails (so an agent can't overpay or get manipulated), and support for Amazon Bedrock, Databricks, Meta buying and Google Ad Manager reporting. The point: agent-driven media buying is moving from experiments into production plumbing.</p>
+      <p class="l-ru">IAB Tech Lab (организация, пишущая технические стандарты рекламной индустрии) обновила свои Agentic Advertising Management Protocols — правила, по которым AI-агенты встраиваются в существующую рекламную инфраструктуру и автономно закупают медиа. Версия 2.3 добавляет enterprise-развёртывание, встроенные privacy-проверки, детерминированные ценовые ограничители (чтобы агент не переплатил и не поддался манипуляции) и поддержку Amazon Bedrock, Databricks, закупки Meta и отчётности Google Ad Manager. Суть: агентская закупка рекламы переходит из экспериментов в производственную инфраструктуру.</p>
+      <p class="why l-en"><b>Why it matters:</b> when buying agents become standard, they will negotiate performance and partnership deals over these same rails.</p>
+      <p class="why l-ru"><b>Почему важно:</b> когда закупочные агенты станут стандартом, performance- и партнёрские сделки пойдут по этим же рельсам.</p>
+      <p class="src">→ <a href="https://www.prnewswire.com/news-releases/iab-tech-lab-releases-aamp-2-3--bringing-enterprise-grade-infrastructure-and-privacy-diligence-to-agentic-advertising-302838652.html">IAB Tech Lab</a></p>
+    </div>
+  </details>
 
-  <article class="story s-tech" id="pubmatic">
-    <div class="meta"><span class="cat"><span class="l-en">Publisher tech</span><span class="l-ru">Технологии паблишеров</span></span><span class="when">Aug 3 · AdExchanger</span></div>
-    <h3 class="l-en">PubMatic + Optable: publishers' AI agents now sell their audience data automatically</h3>
-    <h3 class="l-ru">PubMatic + Optable: AI-агенты паблишеров теперь сами продают их аудиторные данные</h3>
-    <p class="l-en">The two firms connected their AI agents so a publisher's sell-side agent can package first-party audience data and answer buyer agents' queries in real time during programmatic deals — no manual ad-ops. Mediavine, a major lifestyle/affiliate publisher network, is quoted as an early beneficiary.</p>
-    <p class="l-ru">Компании соединили своих AI-агентов: sell-side агент паблишера автоматически упаковывает first-party данные и в реальном времени отвечает на запросы агентов покупателей в programmatic-сделках — без ручного ad-ops. Среди первых бенефициаров — Mediavine, крупная сеть lifestyle/аффилиатных паблишеров.</p>
-    <p class="why l-en"><b>Why it matters:</b> publishers losing search traffic are getting new automated monetization rails.</p>
-    <p class="why l-ru"><b>Почему важно:</b> у паблишеров, теряющих поисковый трафик, появляются новые автоматические рельсы монетизации.</p>
-    <p class="src">→ <a href="https://www.adexchanger.com/ai/ai-agents-are-giving-publishers-a-new-way-to-monetize-their-data/">AdExchanger</a></p>
-  </article>
+  <details class="story s-tech" id="pubmatic">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Publisher tech</span><span class="l-ru">Технологии паблишеров</span></span><span class="when">Aug 3 · AdExchanger</span></div>
+      <h3 class="l-en">PubMatic + Optable: publishers' AI agents now sell their audience data automatically</h3>
+      <h3 class="l-ru">PubMatic + Optable: AI-агенты паблишеров теперь сами продают их аудиторные данные</h3>
+      <p class="teaser l-en">An early example of a new revenue model: a publisher's AI agent packages its audience data and sells it to advertisers' agents in real time, no humans involved.</p>
+      <p class="teaser l-ru">Ранний пример новой модели дохода: AI-агент паблишера упаковывает его аудиторные данные и продаёт их агентам рекламодателей в реальном времени, без участия людей.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">PubMatic (a major ad-tech platform on the publisher side) and Optable (a data collaboration firm) connected their AI agents: a publisher's "sell-side" agent can now automatically package first-party audience data and answer advertiser agents' queries about audiences in real time during programmatic ad deals — work that previously required manual ad-ops teams. Mediavine, a big network of lifestyle and affiliate publishers, is quoted as an early beneficiary. For publishers losing search traffic to AI answers, this is a new automated way to earn from what they still have: audience data.</p>
+      <p class="l-ru">PubMatic (крупная adtech-платформа на стороне паблишеров) и Optable (компания data-коллаборации) соединили своих AI-агентов: sell-side агент паблишера теперь автоматически упаковывает first-party аудиторные данные и в реальном времени отвечает на запросы агентов рекламодателей в programmatic-сделках — работа, которая раньше требовала ручных ad-ops команд. Среди первых бенефициаров называют Mediavine — большую сеть lifestyle- и аффилиатных паблишеров. Для паблишеров, теряющих поисковый трафик из-за AI-ответов, это новый автоматический способ зарабатывать на том, что у них осталось, — аудиторных данных.</p>
+      <p class="why l-en"><b>Why it matters:</b> publishers losing search traffic are getting new automated monetization rails.</p>
+      <p class="why l-ru"><b>Почему важно:</b> у паблишеров, теряющих поисковый трафик, появляются новые автоматические рельсы монетизации.</p>
+      <p class="src">→ <a href="https://www.adexchanger.com/ai/ai-agents-are-giving-publishers-a-new-way-to-monetize-their-data/">AdExchanger</a></p>
+    </div>
+  </details>
 
-  <article class="story s-tech" id="nj-law">
-    <div class="meta"><span class="cat"><span class="l-en">Regulation · US</span><span class="l-ru">Регуляторика · США</span></span><span class="when">Aug 3 · AdExchanger</span></div>
-    <h3 class="l-en">New Jersey's data-broker law is already in force — $50k per record for selling sensitive data</h3>
-    <h3 class="l-ru">Закон Нью-Джерси о дата-брокерах уже действует — до $50 тыс. за запись при продаже чувствительных данных</h3>
-    <p class="l-en">The law (signed June 30) immediately bans selling sensitive data — health, biometrics, precise location — with penalties up to $50,000 per record, and uniquely covers "data collectors" monetizing their own customer data, not just brokers. Registration deadlines slip to 2027, but the sensitive-data ban applies now.</p>
-    <p class="l-ru">Закон (подписан 30 июня) сразу запрещает продажу чувствительных данных — здоровье, биометрия, точная геолокация — со штрафами до $50 000 за запись, и, что необычно, распространяется на «сборщиков данных», монетизирующих данные собственных клиентов, а не только на брокеров. Дедлайны регистрации сдвинуты на 2027-й, но запрет действует уже сейчас.</p>
-    <p class="why l-en"><b>Why it matters:</b> US state privacy law keeps fragmenting — data products need state-by-state checks.</p>
-    <p class="why l-ru"><b>Почему важно:</b> лоскутное одеяло privacy-законов США растёт — дата-продукты требуют проверки по штатам.</p>
-    <p class="src">→ <a href="https://www.adexchanger.com/data-privacy-roundup/do-not-fuhgeddabout-new-jerseys-data-broker-law-because-its-already-live/">AdExchanger</a></p>
-  </article>
+  <details class="story s-tech" id="nj-law">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Regulation · US</span><span class="l-ru">Регуляторика · США</span></span><span class="when">Aug 3 · AdExchanger</span></div>
+      <h3 class="l-en">New Jersey's data-broker law is already in force — $50k per record for selling sensitive data</h3>
+      <h3 class="l-ru">Закон Нью-Джерси о дата-брокерах уже действует — до $50 тыс. за запись при продаже чувствительных данных</h3>
+      <p class="teaser l-en">The law surprised the ad industry twice: it applies immediately, and it covers ordinary companies selling their own customer data — not just data brokers.</p>
+      <p class="teaser l-ru">Закон удивил рекламную индустрию дважды: он действует сразу, и он распространяется на обычные компании, продающие данные собственных клиентов, — а не только на дата-брокеров.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Signed June 30 and effective immediately for its core ban: selling sensitive data — health information, biometrics, precise location — is now prohibited in New Jersey, with penalties up to $50,000 per record. The unusual part: most US state privacy laws target "data brokers" (companies whose business is reselling other people's data); this one also covers "data collectors" — any company monetizing its own customer data. Registration deadlines slip to 2027, but the sensitive-data ban applies now, and many ad-data businesses were caught off guard. The US privacy landscape keeps fragmenting into state-by-state rules.</p>
+      <p class="l-ru">Подписан 30 июня, и его главный запрет действует сразу: продажа чувствительных данных — здоровье, биометрия, точная геолокация — в Нью-Джерси теперь запрещена, штрафы до $50 000 за запись. Необычная часть: большинство privacy-законов штатов целятся в «дата-брокеров» (компании, чей бизнес — перепродажа чужих данных), а этот распространяется и на «сборщиков данных» — любые компании, монетизирующие данные собственных клиентов. Дедлайны регистрации сдвинуты на 2027-й, но запрет на чувствительные данные действует уже сейчас, и многих в рекламной индустрии это застало врасплох. Privacy-ландшафт США продолжает дробиться на правила отдельных штатов.</p>
+      <p class="why l-en"><b>Why it matters:</b> any data-enriched product needs a state-by-state compliance check in the US.</p>
+      <p class="why l-ru"><b>Почему важно:</b> любой продукт с обогащением данных требует в США проверки по штатам.</p>
+      <p class="src">→ <a href="https://www.adexchanger.com/data-privacy-roundup/do-not-fuhgeddabout-new-jerseys-data-broker-law-because-its-already-live/">AdExchanger</a></p>
+    </div>
+  </details>
 
-  <article class="story s-tech" id="brief-tech">
-    <div class="meta"><span class="cat">Adtech</span><span class="when">Jul 28–29 · Business Wire / Digiday</span></div>
-    <h3 class="l-en">In brief: StackAdapt rebuilds its buying platform around OpenAI models; FreeWheel opens show-level streaming reporting</h3>
-    <h3 class="l-ru">Коротко: StackAdapt перестраивает закупочную платформу вокруг моделей OpenAI; FreeWheel открыл отчётность на уровне шоу</h3>
-    <p class="l-en">StackAdapt introduced Ivy Studio, an AI-first hub for planning and running campaigns with OpenAI model integration. Comcast's FreeWheel added free show-level reporting — which streaming shows your ads ran in — with NBCU, Paramount and WBD opted in.</p>
-    <p class="l-ru">StackAdapt представил Ivy Studio — «AI-first» хаб планирования и ведения кампаний с интеграцией моделей OpenAI. FreeWheel (Comcast) добавил бесплатную отчётность на уровне шоу — в каких именно стриминговых шоу крутилась реклама; подключились NBCU, Paramount и WBD.</p>
-    <p class="why l-en"><b>Why it matters:</b> ad platforms are rebuilding around AI agents; transparency is becoming table stakes.</p>
-    <p class="why l-ru"><b>Почему важно:</b> рекламные платформы перестраиваются вокруг AI-агентов; прозрачность становится гигиеническим минимумом.</p>
-    <p class="src">→ <a href="https://www.businesswire.com/news/home/20260728833079/en/StackAdapt-Introduces-Ivy-Studio-a-New-Hub-for-AI-First-Advertising">StackAdapt</a><a href="https://digiday.com/future-of-tv/future-of-tv-briefing-freewheel-adds-show-level-reporting-to-tackle-streamings-transparency-problem/">FreeWheel</a></p>
-  </article>
+  <details class="story s-tech" id="brief-tech">
+    <summary>
+      <div class="meta"><span class="cat">Adtech</span><span class="when">Jul 28–29 · Business Wire / Digiday</span></div>
+      <h3 class="l-en">In brief: StackAdapt rebuilds its buying platform around OpenAI models; FreeWheel opens show-level streaming reporting</h3>
+      <h3 class="l-ru">Коротко: StackAdapt перестраивает закупочную платформу вокруг моделей OpenAI; FreeWheel открыл отчётность на уровне шоу</h3>
+      <p class="teaser l-en">Two smaller launches worth knowing: another ad platform rebuilt around AI, and streaming advertising finally shows buyers which shows their ads ran in.</p>
+      <p class="teaser l-ru">Два запуска поменьше, о которых стоит знать: ещё одна рекламная платформа перестроилась вокруг AI, а стриминговая реклама наконец показывает покупателям, в каких шоу крутились их ролики.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">StackAdapt, a mid-size programmatic ad platform, introduced Ivy Studio — an "AI-first" hub where campaigns are planned, forecast, optimized and executed with OpenAI's models integrated for advertising tasks. Separately, Comcast-owned FreeWheel added free show-level reporting for streaming TV ads: buyers can now see exactly which shows their ads appeared in (NBCUniversal, Paramount and Warner Bros. Discovery opted in) — closing one of streaming advertising's oldest transparency gaps.</p>
+      <p class="l-ru">StackAdapt, programmatic-платформа среднего размера, представила Ivy Studio — «AI-first» хаб, где кампании планируются, прогнозируются, оптимизируются и запускаются с интеграцией моделей OpenAI под рекламные задачи. Отдельно FreeWheel (принадлежит Comcast) добавил бесплатную отчётность на уровне шоу для стриминговой ТВ-рекламы: покупатели теперь видят, в каких именно шоу появлялась их реклама (подключились NBCUniversal, Paramount и Warner Bros. Discovery) — закрыта одна из старейших дыр прозрачности в стриминге.</p>
+      <p class="why l-en"><b>Why it matters:</b> ad platforms are rebuilding around AI, and transparency is becoming table stakes in every channel.</p>
+      <p class="why l-ru"><b>Почему важно:</b> рекламные платформы перестраиваются вокруг AI, а прозрачность становится гигиеническим минимумом в каждом канале.</p>
+      <p class="src">→ <a href="https://www.businesswire.com/news/home/20260728833079/en/StackAdapt-Introduces-Ivy-Studio-a-New-Hub-for-AI-First-Advertising">StackAdapt</a><a href="https://digiday.com/future-of-tv/future-of-tv-briefing-freewheel-adds-show-level-reporting-to-tackle-streamings-transparency-problem/">FreeWheel</a></p>
+    </div>
+  </details>
 
   <section class="sec s-ai" id="ai">
     <h2 class="l-en">4 · AI × Affiliate</h2>
@@ -396,104 +550,167 @@
     <p class="note l-ru">Самый плотный блок недели: рекламные назначения без кликов, жёсткие данные о сжатии AI-поиска и агентский чекаут, доказанный в масштабе в Китае.</p>
   </section>
 
-  <article class="story s-ai" id="agent-ads">
-    <div class="meta"><span class="cat">OpenAI</span><span class="when">Jul 31 · Search Engine Land</span></div>
-    <h3 class="l-en">New ChatGPT ad format: clicking opens the brand's AI agent — not a website</h3>
-    <h3 class="l-ru">Новый формат рекламы в ChatGPT: клик открывает AI-агента бренда, а не сайт</h3>
-    <p class="l-en">OpenAI is testing an "Agent" campaign type in ChatGPT Ads Manager: the ad's "click" starts a conversation with the advertiser's own AI business agent, auto-built from a crawl of the company's website, connectable to product feeds, capturing leads via forms — all inside ChatGPT, with no URL or landing page involved.</p>
-    <p class="l-ru">OpenAI тестирует тип кампаний «Agent» в ChatGPT Ads Manager: «клик» по рекламе запускает разговор с собственным AI-агентом рекламодателя, который автоматически собирается по краулу сайта компании, подключается к товарным фидам и собирает лиды через формы — всё внутри ChatGPT, без URL и лендинга.</p>
-    <p class="why l-en"><b>Why it matters:</b> if ad destinations stop being URLs, the click — the atomic unit of affiliate tracking — disappears from a growing share of journeys.</p>
-    <p class="why l-ru"><b>Почему важно:</b> если назначение рекламы перестаёт быть ссылкой, клик — атомарная единица аффилиатного трекинга — исчезает из растущей доли путей.</p>
-    <p class="src">→ <a href="https://searchengineland.com/openai-appears-to-be-building-chatbot-native-ads-that-launch-ai-agents-484107">Search Engine Land</a></p>
-  </article>
+  <details class="story s-ai" id="agent-ads">
+    <summary>
+      <div class="meta"><span class="cat">OpenAI</span><span class="when">Jul 31 · Search Engine Land</span></div>
+      <h3 class="l-en">New ChatGPT ad format: clicking opens the brand's AI agent — not a website</h3>
+      <h3 class="l-ru">Новый формат рекламы в ChatGPT: клик открывает AI-агента бренда, а не сайт</h3>
+      <p class="teaser l-en">OpenAI is testing ads whose "click" starts a conversation with the advertiser's own bot inside ChatGPT. No URL, no landing page — and nothing for click-based tracking to grab onto.</p>
+      <p class="teaser l-ru">OpenAI тестирует рекламу, где «клик» запускает разговор с ботом рекламодателя прямо внутри ChatGPT. Ни ссылки, ни лендинга — и не за что зацепиться кликовому трекингу.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The new "Agent" campaign type in ChatGPT Ads Manager works like this: instead of sending the user to a website, the ad opens a chat with the advertiser's own AI business agent. That agent is auto-built by crawling the company's website, can be connected to product feeds, and collects leads through forms — the entire customer journey happens inside ChatGPT. Why this is a big deal for affiliate: the industry's whole measurement model is built on the click on a link. If ad destinations stop being URLs, there is no link, no click, and no place to attach classic affiliate tracking. This is the strongest signal yet that attribution will have to move to other mechanisms (like the citation-based models in the APMA report above).</p>
+      <p class="l-ru">Новый тип кампаний «Agent» в ChatGPT Ads Manager работает так: вместо перехода на сайт реклама открывает чат с собственным AI-агентом рекламодателя. Агент автоматически собирается по краулу сайта компании, подключается к товарным фидам и собирает лиды через формы — весь путь клиента проходит внутри ChatGPT. Почему это важно для аффилиата: вся измерительная модель индустрии построена на клике по ссылке. Если назначение рекламы перестаёт быть URL, нет ни ссылки, ни клика, ни места, куда прицепить классический аффилиатный трекинг. Это самый сильный на сегодня сигнал, что атрибуции придётся переезжать на другие механизмы (вроде моделей по цитированию из доклада APMA выше).</p>
+      <p class="why l-en"><b>Why it matters:</b> the click — the atomic unit of affiliate tracking — disappears from a growing share of journeys.</p>
+      <p class="why l-ru"><b>Почему важно:</b> клик — атомарная единица аффилиатного трекинга — исчезает из растущей доли путей.</p>
+      <p class="src">→ <a href="https://searchengineland.com/openai-appears-to-be-building-chatbot-native-ads-that-launch-ai-agents-484107">Search Engine Land</a></p>
+    </div>
+  </details>
 
-  <article class="story s-ai" id="squeeze">
-    <div class="meta"><span class="cat"><span class="l-en">Data · AI search</span><span class="l-ru">Данные · AI-поиск</span></span><span class="when">Jul 27–29 · TechCrunch / PPC Land</span></div>
-    <h3 class="l-en">The AI-search squeeze in two numbers: AI answers on 43% of Google searches; AI Mode shows 95% fewer products</h3>
-    <h3 class="l-ru">Сжатие AI-поиска в двух цифрах: AI-ответы в 43% поисков Google; AI Mode показывает на 95% меньше товаров</h3>
-    <p class="l-en">Similarweb: AI Overviews now appear on 43% of Google searches (15% a year ago); AI Mode visits doubled to 279M/month. Separately, Productrise tracked 100,000+ identical shopping queries: AI Mode returns product listings on only 23% of queries vs 88% in classic search, averaging 4.3 listings vs 22.5 — and only ~0.8% of products appear in both surfaces.</p>
-    <p class="l-ru">Similarweb: AI Overviews показываются в 43% поисков Google (год назад — 15%); визиты в AI Mode удвоились до 279 млн/мес. Отдельно Productrise прогнал 100 000+ одинаковых товарных запросов: AI Mode выдаёт товарные листинги лишь в 23% запросов против 88% в классическом поиске, в среднем 4,3 позиции против 22,5 — и только ~0,8% товаров попадают в обе выдачи.</p>
-    <p class="why l-en"><b>Why it matters:</b> visibility inside AI answers is a different game with ~5% of the shelf space — not "SEO but smaller."</p>
-    <p class="why l-ru"><b>Почему важно:</b> видимость внутри AI-ответов — другая игра с ~5% полки, а не «SEO, только меньше».</p>
-    <p class="src">→ <a href="https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/">TechCrunch</a><a href="https://ppc.land/ai-mode-cuts-google-shopping-listings-95-productrise-finds/">PPC Land</a></p>
-  </article>
+  <details class="story s-ai" id="squeeze">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research · Similarweb / Productrise</span><span class="l-ru">Исследования · Similarweb / Productrise</span></span><span class="when">Jul 27–29 · TechCrunch / PPC Land</span></div>
+      <h3 class="l-en">Research — Similarweb &amp; Productrise: AI answers now cover 43% of Google searches, and Google's AI Mode shows 95% fewer products</h3>
+      <h3 class="l-ru">Исследования Similarweb и Productrise: AI-ответы уже в 43% поисков Google, а AI Mode Google показывает на 95% меньше товаров</h3>
+      <p class="teaser l-en">Two independent data studies this week quantify the same shift: Google increasingly answers instead of linking — and its AI shopping surface has a tiny fraction of the old shelf space.</p>
+      <p class="teaser l-ru">Два независимых исследования за неделю измерили один сдвиг: Google всё чаще отвечает сам вместо ссылок — а на его AI-шопинг-поверхности осталась крошечная доля прежней «полки».</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Similarweb (web traffic analytics): AI Overviews — the AI answer block at the top of Google results — now appear on 43% of searches, up from 15% a year ago; visits to Google's fully conversational AI Mode doubled to 279M a month. Productrise ran a harder experiment: 100,000+ identical shopping queries through classic search and AI Mode. Classic search showed product listings on 88% of queries, averaging 22.5 products; AI Mode showed products on only 23% of queries, averaging 4.3 — and only ~0.8% of products appeared in both. Key insight: getting your product visible in AI answers is not "SEO but smaller" — it's a different game with about 5% of the shelf space and almost zero overlap with the old one.</p>
+      <p class="l-ru">Similarweb (аналитика веб-трафика): AI Overviews — блок AI-ответа наверху выдачи Google — теперь показывается в 43% поисков против 15% год назад; визиты в полностью диалоговый AI Mode удвоились до 279 млн в месяц. Productrise поставил более жёсткий эксперимент: 100 000+ одинаковых товарных запросов через классический поиск и AI Mode. Классический поиск показывал товарные листинги в 88% запросов, в среднем 22,5 товара; AI Mode — только в 23% запросов, в среднем 4,3 — и лишь ~0,8% товаров попали в обе выдачи. Ключевой инсайт: видимость товара в AI-ответах — это не «SEO, только меньше», а другая игра с примерно 5% полки и почти нулевым пересечением со старой.</p>
+      <p class="why l-en"><b>Why it matters:</b> publisher referral traffic — affiliate's raw material — keeps shrinking, and AI visibility is a new discipline.</p>
+      <p class="why l-ru"><b>Почему важно:</b> реферальный трафик паблишеров — сырьё аффилиата — продолжает сжиматься, а видимость в AI — новая дисциплина.</p>
+      <p class="src">→ <a href="https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/">TechCrunch</a><a href="https://ppc.land/ai-mode-cuts-google-shopping-listings-95-productrise-finds/">PPC Land</a></p>
+    </div>
+  </details>
 
-  <article class="story s-ai" id="agentic-scale">
-    <div class="meta"><span class="cat"><span class="l-en">Data · Commerce</span><span class="l-ru">Данные · Коммерция</span></span><span class="when">Jul 30–31 · Salesforce / Business Wire</span></div>
-    <h3 class="l-en">Agent shopping is getting real: AI-chat journeys tripled in a year, and Alipay ran 120M agent payments in one week</h3>
-    <h3 class="l-ru">Агентский шопинг становится реальностью: пути из AI-чата выросли втрое за год, а Alipay провёл 120 млн агентских платежей за неделю</h3>
-    <p class="l-en">Salesforce's State of Commerce report: "agentic search" grew 200% year-over-year, AI-chat referral traffic to retailers is growing 150–428% per quarter, traditional search traffic fell 15%; 86% of commerce leaders expect LLMs to be essential to product discovery within a year. Meanwhile a NielsenIQ report highlights Alipay's "AI Pay" crossing 120M agent-initiated transactions in a single week — agent-led checkout already works at mass scale in China.</p>
-    <p class="l-ru">Salesforce State of Commerce: «агентский поиск» вырос на 200% год к году, реферальный трафик из AI-чатов к ритейлерам растёт на 150–428% за квартал, классический поисковый трафик упал на 15%; 86% лидеров коммерции ждут, что LLM станут ключевыми для дискавери в течение года. Параллельно отчёт NielsenIQ: «AI Pay» Alipay перевалил за 120 млн агентских транзакций за одну неделю — агентский чекаут уже работает в массовом масштабе в Китае.</p>
-    <p class="why l-en"><b>Why it matters:</b> the open question of the next 24 months is who attributes and monetizes the agent journey.</p>
-    <p class="why l-ru"><b>Почему важно:</b> открытый вопрос ближайших 24 месяцев — кто атрибутирует и монетизирует агентский путь.</p>
-    <p class="src">→ <a href="https://www.salesforce.com/in/news/stories/agentic-search-growth/">Salesforce</a><a href="https://www.businesswire.com/news/home/20260730837106/en/120-Million-AI-Pay-Transactions-in-a-Single-Week-AI-Shopping-Agents-Move-From-Theory-to-Checkout">NIQ / Alipay</a></p>
-  </article>
+  <details class="story s-ai" id="agentic-scale">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research · Salesforce / NIQ</span><span class="l-ru">Исследования · Salesforce / NIQ</span></span><span class="when">Jul 30–31 · Salesforce / Business Wire</span></div>
+      <h3 class="l-en">Research — Salesforce &amp; NielsenIQ: AI-chat shopping journeys tripled in a year, and Alipay ran 120M agent payments in one week</h3>
+      <h3 class="l-ru">Исследования Salesforce и NielsenIQ: покупки через AI-чаты выросли втрое за год, а Alipay провёл 120 млн агентских платежей за неделю</h3>
+      <p class="teaser l-en">Two data points in one week: shopping discovery is moving into AI chats (Salesforce), and in China AI agents already complete payments at mass scale (NielsenIQ on Alipay).</p>
+      <p class="teaser l-ru">Две цифры за одну неделю: поиск товаров переезжает в AI-чаты (Salesforce), а в Китае AI-агенты уже совершают платежи в массовом масштабе (NielsenIQ об Alipay).</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Salesforce's State of Commerce report (based on activity across its commerce platform): "agentic search" grew 200% year over year, referral traffic from AI chats to retailer sites is growing 150–428% per quarter, while traditional search traffic fell 15%; 86% of commerce leaders expect LLMs to be essential to product discovery within a year. Separately, a NielsenIQ report highlights that Alipay's "AI Pay" — payments initiated by AI agents rather than humans — crossed 120 million transactions in a single week. Key insight: discovery is moving into AI chat in the West, and China has already proven that agent-led checkout works at mass scale. The unanswered question: who tracks and monetizes the journey when an agent, not a person, walks it?</p>
+      <p class="l-ru">Отчёт Salesforce State of Commerce (на данных её коммерс-платформы): «агентский поиск» вырос на 200% год к году, реферальный трафик из AI-чатов на сайты ритейлеров растёт на 150–428% за квартал, классический поисковый трафик упал на 15%; 86% лидеров коммерции ждут, что LLM станут ключевыми для поиска товаров в течение года. Отдельно отчёт NielsenIQ: «AI Pay» Alipay — платежи, которые инициируют AI-агенты, а не люди, — превысил 120 млн транзакций за одну неделю. Ключевой инсайт: на Западе дискавери переезжает в AI-чат, а Китай уже доказал, что агентский чекаут работает в массовом масштабе. Открытый вопрос: кто отслеживает и монетизирует путь, который проходит агент, а не человек?</p>
+      <p class="why l-en"><b>Why it matters:</b> the open question of the next 24 months is who attributes and monetizes the agent journey.</p>
+      <p class="why l-ru"><b>Почему важно:</b> открытый вопрос ближайших 24 месяцев — кто атрибутирует и монетизирует агентский путь.</p>
+      <p class="src">→ <a href="https://www.salesforce.com/in/news/stories/agentic-search-growth/">Salesforce</a><a href="https://www.businesswire.com/news/home/20260730837106/en/120-Million-AI-Pay-Transactions-in-a-Single-Week-AI-Shopping-Agents-Move-From-Theory-to-Checkout">NIQ / Alipay</a></p>
+    </div>
+  </details>
 
-  <article class="story s-ai" id="time-agents">
-    <div class="meta"><span class="cat"><span class="l-en">Publisher monetization</span><span class="l-ru">Монетизация паблишеров</span></span><span class="when">Jul 30 · Digiday</span></div>
-    <h3 class="l-en">Time started selling ads to AI agents instead of humans</h3>
-    <h3 class="l-ru">Time начал продавать рекламу AI-агентам вместо людей</h3>
-    <p class="l-en">Time converts its pages to markdown and, with ad-tech firm Mobian, serves ads designed for AI agents visiting its content; Ally Bank and the Project Management Institute are the first buyers. Time's COO calls agent visits "a growing source of inventory" — the first major publisher to monetize bot traffic rather than fight it.</p>
-    <p class="l-ru">Time конвертирует страницы в markdown и вместе с adtech-компанией Mobian показывает рекламу, рассчитанную на AI-агентов, посещающих контент; первые покупатели — Ally Bank и Project Management Institute. COO Time называет визиты агентов «растущим источником инвентаря» — это первый крупный паблишер, монетизирующий бот-трафик вместо борьбы с ним.</p>
-    <p class="why l-en"><b>Why it matters:</b> agent visits that never fire a click can still be monetized.</p>
-    <p class="why l-ru"><b>Почему важно:</b> агентские визиты, не дающие клика, всё равно можно монетизировать.</p>
-    <p class="src">→ <a href="https://digiday.com/media/time-has-started-serving-ads-to-ai-agents/">Digiday</a></p>
-  </article>
+  <details class="story s-ai" id="time-agents">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Publisher monetization</span><span class="l-ru">Монетизация паблишеров</span></span><span class="when">Jul 30 · Digiday</span></div>
+      <h3 class="l-en">Time started selling ads to AI agents instead of humans</h3>
+      <h3 class="l-ru">Time начал продавать рекламу AI-агентам вместо людей</h3>
+      <p class="teaser l-en">AI bots now visit publisher sites more than people do on some pages. Time is the first major publisher to monetize those bot visits rather than fight them.</p>
+      <p class="teaser l-ru">На некоторых страницах AI-боты уже заходят к паблишерам чаще людей. Time — первый крупный паблишер, который решил эти визиты монетизировать, а не бороться с ними.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The mechanics: Time converts its pages into machine-readable format (markdown) and, together with ad-tech firm Mobian, serves ads designed to be read by AI agents that visit its content while gathering answers for users. The first buyers are Ally Bank and the Project Management Institute. Time's COO calls agent visits "a growing source of inventory." The bet: when an AI assistant reads a Time article to answer someone's question, the ad message travels into the AI's answer — reaching the human at the other end without a single click.</p>
+      <p class="l-ru">Механика: Time конвертирует страницы в машиночитаемый формат (markdown) и вместе с adtech-компанией Mobian показывает рекламу, рассчитанную на чтение AI-агентами, которые заходят на его контент, собирая ответы для пользователей. Первые покупатели — Ally Bank и Project Management Institute. COO Time называет визиты агентов «растущим источником инвентаря». Ставка такая: когда AI-ассистент читает статью Time, чтобы ответить на чей-то вопрос, рекламное сообщение проникает в его ответ — и доходит до человека на другом конце без единого клика.</p>
+      <p class="why l-en"><b>Why it matters:</b> agent visits that never fire a click can still be monetized — a template other commerce publishers will copy.</p>
+      <p class="why l-ru"><b>Почему важно:</b> агентские визиты без кликов всё равно можно монетизировать — шаблон, который скопируют другие коммерческие паблишеры.</p>
+      <p class="src">→ <a href="https://digiday.com/media/time-has-started-serving-ads-to-ai-agents/">Digiday</a></p>
+    </div>
+  </details>
 
-  <article class="story s-ai" id="firstpromoter">
-    <div class="meta"><span class="cat"><span class="l-en">Report · Fraud &amp; payment</span><span class="l-ru">Отчёт · Фрод и выплаты</span></span><span class="when">Jul 29 · FirstPromoter</span></div>
-    <h3 class="l-en">Report: AI makes fake affiliates cheap to fabricate — while the real publishers AI cites go unpaid</h3>
-    <h3 class="l-ru">Отчёт: AI позволяет дёшево фабриковать фейковых аффилиатов — а настоящие паблишеры, которых цитирует AI, остаются без денег</h3>
-    <p class="l-en">FirstPromoter's 2026 report argues AI lets fraudsters spin up convincing fake publisher sites in days, while legitimate publishers cited by ChatGPT and Google AI drive sales that never register as tracked clicks (~68% of Google searches now end without a click). Recommendations: overhaul affiliate vetting, and pay AI-cited publishers via flat placement fees and higher commissions.</p>
-    <p class="l-ru">Отчёт FirstPromoter 2026: AI позволяет мошенникам за дни собирать убедительные фейковые сайты паблишеров, в то время как настоящие паблишеры, которых цитируют ChatGPT и Google AI, приводят продажи, никогда не отражающиеся в кликах (~68% поисков Google заканчиваются без клика). Рекомендации: пересобрать веттинг и платить AI-цитируемым паблишерам фиксированные размещения и повышенные комиссии.</p>
-    <p class="why l-en"><b>Why it matters:</b> vetting and non-click compensation are becoming the two product battlegrounds for networks.</p>
-    <p class="why l-ru"><b>Почему важно:</b> веттинг и некликовая компенсация — два продуктовых поля боя для сетей.</p>
-    <p class="src">→ <a href="https://www.globenewswire.com/news-release/2026/07/29/3335403/0/en/while-you-re-paying-fake-affiliates-your-competitors-are-recruiting-the-publishers-chatgpt-trusts-firstpromoter-2026-report.html">Report</a></p>
-  </article>
+  <details class="story s-ai" id="firstpromoter">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research · FirstPromoter</span><span class="l-ru">Исследование · FirstPromoter</span></span><span class="when">Jul 29 · FirstPromoter</span></div>
+      <h3 class="l-en">Research — FirstPromoter: AI makes fake affiliates cheap to fabricate, while the real publishers AI cites go unpaid</h3>
+      <h3 class="l-ru">Исследование FirstPromoter: AI позволяет дёшево фабриковать фейковых аффилиатов, а настоящие паблишеры, которых цитирует AI, остаются без денег</h3>
+      <p class="teaser l-en">The affiliate software firm's 2026 report describes a double failure of click-based tracking: fraud gets in easily, and honest work goes uncompensated.</p>
+      <p class="teaser l-ru">Отчёт-2026 разработчика аффилиатного софта описывает двойной сбой кликовой модели: фрод проходит легко, а честная работа не оплачивается.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Failure one: generative AI lets fraudsters spin up convincing fake publisher websites — with content, traffic history, the works — in days instead of months, and standard affiliate vetting doesn't catch them. Failure two, the mirror image: legitimate publishers whose articles ChatGPT and Google AI cite in their answers genuinely influence purchases — but those purchases never register as tracked clicks (the report cites that ~68% of Google searches now end without any click), so the publishers earn nothing. Key insight: the report recommends networks overhaul vetting for the AI era, and start paying AI-cited publishers through flat placement fees and higher commissions instead of pure click-based payouts.</p>
+      <p class="l-ru">Сбой первый: генеративный AI позволяет мошенникам собирать убедительные фейковые сайты паблишеров — с контентом, историей трафика, всем положенным — за дни вместо месяцев, и стандартный веттинг сетей их не ловит. Сбой второй, зеркальный: настоящие паблишеры, чьи статьи ChatGPT и Google AI цитируют в ответах, реально влияют на покупки — но эти покупки никогда не отражаются в отслеживаемых кликах (в отчёте: ~68% поисков Google теперь заканчиваются без единого клика), и паблишеры не получают ничего. Ключевой инсайт: отчёт рекомендует сетям пересобрать веттинг под AI-эпоху и начать платить AI-цитируемым паблишерам фиксированные размещения и повышенные комиссии вместо чисто кликовых выплат.</p>
+      <p class="why l-en"><b>Why it matters:</b> vetting and non-click compensation are becoming the two product battlegrounds for networks.</p>
+      <p class="why l-ru"><b>Почему важно:</b> веттинг и некликовая компенсация — два продуктовых поля боя для сетей.</p>
+      <p class="src">→ <a href="https://www.globenewswire.com/news-release/2026/07/29/3335403/0/en/while-you-re-paying-fake-affiliates-your-competitors-are-recruiting-the-publishers-chatgpt-trusts-firstpromoter-2026-report.html">Report</a></p>
+    </div>
+  </details>
 
-  <article class="story s-ai" id="iab-4p">
-    <div class="meta"><span class="cat"><span class="l-en">Standards</span><span class="l-ru">Стандарты</span></span><span class="when">Aug 3 · AdExchanger</span></div>
-    <h3 class="l-en">IAB publishes first guidance for measuring how brands show up inside AI answers</h3>
-    <h3 class="l-ru">IAB выпустил первое руководство по измерению видимости брендов внутри AI-ответов</h3>
-    <p class="l-en">"Measuring Visibility in the AI Era" defines four metrics — presence, prominence, portrayal, persuasion (the 4 P's) — for tracking brand appearance in AI-generated responses, and warns that tests under ~50 queries are statistically meaningless. Deliberately guidance rather than a standard while the space stabilizes.</p>
-    <p class="l-ru">«Measuring Visibility in the AI Era» определяет четыре метрики — presence, prominence, portrayal, persuasion (4 P) — для отслеживания появления брендов в AI-ответах и предупреждает: тесты меньше ~50 запросов статистически бесполезны. Пока это руководство, а не стандарт — область не устоялась.</p>
-    <p class="why l-en"><b>Why it matters:</b> this is the measurement layer any AI-era attribution model will sit on.</p>
-    <p class="why l-ru"><b>Почему важно:</b> это измерительный слой, на который ляжет любая модель атрибуции AI-эпохи.</p>
-    <p class="src">→ <a href="https://www.adexchanger.com/ai/iabs-new-advice-on-how-to-measure-ai-search-visibility/">AdExchanger</a></p>
-  </article>
+  <details class="story s-ai" id="iab-4p">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Standards · IAB</span><span class="l-ru">Стандарты · IAB</span></span><span class="when">Aug 3 · AdExchanger</span></div>
+      <h3 class="l-en">IAB publishes first guidance for measuring how brands show up inside AI answers</h3>
+      <h3 class="l-ru">IAB выпустил первое руководство по измерению видимости брендов внутри AI-ответов</h3>
+      <p class="teaser l-en">Every marketer is currently improvising "how do we look in ChatGPT's answers?" — the ad industry's standards body just made the first attempt to standardize the discipline.</p>
+      <p class="teaser l-ru">Каждый маркетолог сейчас импровизирует с вопросом «как мы выглядим в ответах ChatGPT?» — орган стандартизации рекламной индустрии сделал первую попытку стандартизировать дисциплину.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The IAB's guidance, "Measuring Visibility in the AI Era," defines four metrics — the "4 P's": presence (does the brand appear in AI answers at all?), prominence (how high/visible?), portrayal (what does the AI say about it?), and persuasion (does it nudge the user toward the brand?). A practical warning: because AI answers vary run to run, tests on fewer than ~50 queries are statistically meaningless — reliable measurement needs diverse prompts at volume. It's deliberately framed as guidance rather than a formal standard while the space is still unstable.</p>
+      <p class="l-ru">Руководство IAB «Measuring Visibility in the AI Era» определяет четыре метрики — «4 P»: presence (появляется ли бренд в AI-ответах вообще), prominence (насколько заметно), portrayal (что именно AI о нём говорит) и persuasion (подталкивает ли пользователя к бренду). Практическое предупреждение: поскольку ответы AI меняются от запуска к запуску, тесты меньше ~50 запросов статистически бессмысленны — надёжное измерение требует разнообразных промптов в объёме. Это сознательно оформлено как руководство, а не формальный стандарт: область ещё не устоялась.</p>
+      <p class="why l-en"><b>Why it matters:</b> this is the measurement layer any AI-era attribution model will sit on.</p>
+      <p class="why l-ru"><b>Почему важно:</b> это измерительный слой, на который ляжет любая модель атрибуции AI-эпохи.</p>
+      <p class="src">→ <a href="https://www.adexchanger.com/ai/iabs-new-advice-on-how-to-measure-ai-search-visibility/">AdExchanger</a></p>
+    </div>
+  </details>
 
-  <article class="story s-ai" id="retail-agents">
-    <div class="meta"><span class="cat"><span class="l-en">Retailer agents</span><span class="l-ru">Агенты ритейлеров</span></span><span class="when">Jul 27–30 · Retail Dive / Modern Retail</span></div>
-    <h3 class="l-en">Retailers keep building their own shopping agents: Kohl's (on Gemini) and grocer Schnucks this week</h3>
-    <h3 class="l-ru">Ритейлеры продолжают строить собственных шопинг-агентов: на этой неделе — Kohl's (на Gemini) и сеть супермаркетов Schnucks</h3>
-    <p class="l-en">Kohl's launched a Gemini-powered assistant (recommendations, deal aggregation, image search, order help), following Macy's, Michaels and Lowe's. Regional grocer Schnucks debuted an agent tied to shoppers' personal health goals. Big-box and grocery aren't waiting for ChatGPT — they're shipping their own assistants.</p>
-    <p class="l-ru">Kohl's запустил ассистента на Gemini (рекомендации, агрегация скидок, поиск по картинке, помощь с заказами) — вслед за Macy's, Michaels и Lowe's. Региональная продуктовая сеть Schnucks выпустила агента, привязанного к личным целям здоровья покупателя. Крупный ритейл не ждёт ChatGPT — выпускает своих ассистентов.</p>
-    <p class="why l-en"><b>Why it matters:</b> retailer-owned agents are a third surface where product discovery happens without publisher clicks.</p>
-    <p class="why l-ru"><b>Почему важно:</b> агенты самих ритейлеров — третья поверхность, где дискавери происходит без кликов паблишеров.</p>
-    <p class="src">→ <a href="https://www.retaildive.com/news/kohls-ai-shopping-assistant/826585/">Kohl's</a><a href="https://www.modernretail.co/technology/schnucks-new-health-tracking-ai-assistant-is-a-model-for-other-retailers/">Schnucks</a></p>
-  </article>
+  <details class="story s-ai" id="retail-agents">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Retailer agents</span><span class="l-ru">Агенты ритейлеров</span></span><span class="when">Jul 27–30 · Retail Dive / Modern Retail</span></div>
+      <h3 class="l-en">Retailers keep building their own shopping agents: Kohl's (on Gemini) and grocer Schnucks this week</h3>
+      <h3 class="l-ru">Ритейлеры продолжают строить собственных шопинг-агентов: на этой неделе — Kohl's (на Gemini) и сеть супермаркетов Schnucks</h3>
+      <p class="teaser l-en">Big retail isn't waiting for ChatGPT to own the shopping conversation — chains keep shipping their own AI assistants, and this week even a regional grocer joined.</p>
+      <p class="teaser l-ru">Крупный ритейл не ждёт, пока шопинг-диалог заберёт ChatGPT, — сети выпускают собственных AI-ассистентов, и на этой неделе подключился даже региональный продуктовый ритейлер.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Kohl's — a major US department-store chain — launched an assistant built on Google's Gemini that recommends products, aggregates deals, searches by image and helps with orders, following similar launches by Macy's, Michaels and Lowe's. Regional grocery chain Schnucks went further into personalization: its agent ties recommendations to the shopper's personal health goals. The pattern: retailer-owned agents are becoming a third surface (besides AI assistants like ChatGPT and AI search) where product discovery happens without any publisher click — but these agents will need content, offers and comparison data from somewhere.</p>
+      <p class="l-ru">Kohl's — крупная американская сеть универмагов — запустил ассистента на Gemini от Google: рекомендации, агрегация скидок, поиск по картинке, помощь с заказами; ранее аналогично запустились Macy's, Michaels и Lowe's. Региональная продуктовая сеть Schnucks пошла дальше в персонализацию: её агент привязывает рекомендации к личным целям здоровья покупателя. Паттерн: агенты самих ритейлеров становятся третьей поверхностью (кроме AI-ассистентов вроде ChatGPT и AI-поиска), где выбор товара происходит без единого клика по паблишеру — но этим агентам откуда-то нужны контент, офферы и данные для сравнения.</p>
+      <p class="why l-en"><b>Why it matters:</b> a third discovery surface without publisher clicks — and a possible integration surface for partner content and offers.</p>
+      <p class="why l-ru"><b>Почему важно:</b> третья поверхность дискавери без кликов паблишеров — и возможная точка интеграции партнёрского контента и офферов.</p>
+      <p class="src">→ <a href="https://www.retaildive.com/news/kohls-ai-shopping-assistant/826585/">Kohl's</a><a href="https://www.modernretail.co/technology/schnucks-new-health-tracking-ai-assistant-is-a-model-for-other-retailers/">Schnucks</a></p>
+    </div>
+  </details>
 
-  <article class="story s-ai" id="trust">
-    <div class="meta"><span class="cat"><span class="l-en">Trust &amp; rules</span><span class="l-ru">Доверие и правила</span></span><span class="when">Jul 30 · Reuters / Hello Partner</span></div>
-    <h3 class="l-en">Trust check: shopping agents don't flag false claims, and consumers of all ages still won't let AI buy for them</h3>
-    <h3 class="l-ru">Проверка доверия: шопинг-агенты не предупреждают о ложных заявлениях, а потребители всех возрастов пока не дают AI покупать за них</h3>
-    <p class="l-en">Columbia Law research (via Reuters) found Amazon's and Walmart's AI shopping assistants detect false "Made in USA" claims but don't warn shoppers. Separately, a 2,000-person UK study (Reflect Digital) shows trust lagging adoption: nearly half of consumers are uncomfortable with AI-automated checkout; Gen Z is the most skeptical group, with 45% fact-checking AI outputs via links.</p>
-    <p class="l-ru">Исследование Columbia Law (через Reuters): AI-ассистенты Amazon и Walmart распознают ложные заявления «Made in USA», но не предупреждают покупателей. Отдельно опрос 2000 британцев (Reflect Digital): доверие отстаёт от использования — почти половине некомфортен AI-чекаут; скептичнее всех Gen Z, 45% перепроверяют ответы AI по ссылкам.</p>
-    <p class="why l-en"><b>Why it matters:</b> disclosure rules for agents are coming, and the "verification click" consumers still make is an attribution surface worth defending.</p>
-    <p class="why l-ru"><b>Почему важно:</b> правила раскрытия для агентов на подходе, а «проверочный клик» потребителей — атрибуционная поверхность, которую стоит защищать.</p>
-    <p class="src">→ <a href="https://www.reuters.com/business/retail-consumer/amazon-walmart-ai-detect-made-usa-fraud-do-not-flag-it-study-says-2026-07-30/">Reuters</a><a href="https://hellopartner.com/ai-hesitancy-for-online-shopping-witnessed-across-generations-research-finds/">Hello Partner</a></p>
-  </article>
+  <details class="story s-ai" id="trust">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research · Columbia / Reflect Digital</span><span class="l-ru">Исследования · Columbia / Reflect Digital</span></span><span class="when">Jul 30 · Reuters / Hello Partner</span></div>
+      <h3 class="l-en">Research — Columbia Law &amp; Reflect Digital: shopping agents don't flag false claims, and consumers still won't let AI buy for them</h3>
+      <h3 class="l-ru">Исследования Columbia Law и Reflect Digital: шопинг-агенты не предупреждают о ложных заявлениях, а потребители пока не дают AI покупать за них</h3>
+      <p class="teaser l-en">Two studies that cool the agentic-commerce hype: the agents miss deception, and the humans don't trust them with checkout yet.</p>
+      <p class="teaser l-ru">Два исследования, охлаждающие хайп агентской коммерции: агенты пропускают обман, а люди пока не доверяют им оплату.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Study one (Columbia Law School, via Reuters): Amazon's and Walmart's AI shopping assistants can detect false "Made in USA" claims in product listings — but don't warn shoppers about them. Key insight: agents currently optimize for completing the sale, not protecting the buyer, which is exactly what disclosure regulation will target. Study two (UK agency Reflect Digital, 2,000 consumers): trust lags adoption across all ages — nearly half of consumers are uncomfortable letting AI complete a purchase for them, and Gen Z, supposedly the AI-native generation, is the most skeptical: 45% fact-check AI answers by clicking through to sources. That "verification click" is, for now, a place where tracking still happens.</p>
+      <p class="l-ru">Исследование первое (Columbia Law School, через Reuters): AI-ассистенты Amazon и Walmart умеют распознавать ложные заявления «Made in USA» в карточках товаров — но не предупреждают о них покупателей. Ключевой инсайт: агенты сейчас оптимизируют завершение продажи, а не защиту покупателя — ровно сюда придёт регулирование раскрытия информации. Исследование второе (британское агентство Reflect Digital, 2000 потребителей): доверие отстаёт от использования во всех возрастах — почти половине людей некомфортно давать AI завершать покупку, а Gen Z, якобы AI-нативное поколение, скептичнее всех: 45% перепроверяют ответы AI, переходя по ссылкам на источники. Этот «проверочный клик» — пока ещё место, где живёт трекинг.</p>
+      <p class="why l-en"><b>Why it matters:</b> disclosure rules for agents are coming, and the verification click is an attribution surface worth defending.</p>
+      <p class="why l-ru"><b>Почему важно:</b> правила раскрытия для агентов на подходе, а проверочный клик — атрибуционная поверхность, которую стоит защищать.</p>
+      <p class="src">→ <a href="https://www.reuters.com/business/retail-consumer/amazon-walmart-ai-detect-made-usa-fraud-do-not-flag-it-study-says-2026-07-30/">Reuters</a><a href="https://hellopartner.com/ai-hesitancy-for-online-shopping-witnessed-across-generations-research-finds/">Hello Partner</a></p>
+    </div>
+  </details>
 
-  <article class="story s-ai" id="crawlers">
-    <div class="meta"><span class="cat"><span class="l-en">Publishers vs Google</span><span class="l-ru">Паблишеры vs Google</span></span><span class="when">Jul 30 · Digiday</span></div>
-    <h3 class="l-en">Publishers weigh their last lever against AI answers: blocking Google's crawlers</h3>
-    <h3 class="l-ru">Паблишеры примеряют последний рычаг против AI-ответов: блокировку краулеров Google</h3>
-    <p class="l-en">Digiday's Media Briefing reports publishers increasingly consider cutting off Google's crawlers — now technically easy via Cloudflare's controls — as their main remaining leverage in the fight over AI answers consuming their referral traffic.</p>
-    <p class="l-ru">Digiday Media Briefing: паблишеры всё чаще рассматривают отключение краулеров Google — теперь это технически просто через инструменты Cloudflare — как главный оставшийся рычаг в борьбе за реферальный трафик, который съедают AI-ответы.</p>
-    <p class="why l-en"><b>Why it matters:</b> if publishers gate content from AI crawlers, brokered licensed access to commerce content becomes a business.</p>
-    <p class="why l-ru"><b>Почему важно:</b> если паблишеры закроют контент от AI-краулеров, брокеридж лицензированного доступа к shopping-контенту станет бизнесом.</p>
-    <p class="src">→ <a href="https://digiday.com/media/media-briefing-threatening-to-quit-google-crawlers-is-just-publishers-new-hope/">Digiday</a></p>
-  </article>
+  <details class="story s-ai" id="crawlers">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Publishers vs Google</span><span class="l-ru">Паблишеры vs Google</span></span><span class="when">Jul 30 · Digiday</span></div>
+      <h3 class="l-en">Publishers weigh their last lever against AI answers: blocking Google's crawlers</h3>
+      <h3 class="l-ru">Паблишеры примеряют последний рычаг против AI-ответов: блокировку краулеров Google</h3>
+      <p class="teaser l-en">Google's AI answers are built on publishers' content but send them ever less traffic. Cloudflare's new controls make cutting Google off technically easy — for the first time, the threat is credible.</p>
+      <p class="teaser l-ru">AI-ответы Google строятся на контенте паблишеров, но отдают им всё меньше трафика. Новые инструменты Cloudflare делают отключение Google технически простым — впервые угроза выглядит реальной.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The dilemma publishers face: Google's crawlers feed both its search index (which still sends traffic) and its AI answers (which mostly don't). Blocking the crawlers used to mean disappearing from search entirely — commercial suicide. Digiday's Media Briefing reports the calculus is changing: Cloudflare, which sits in front of a huge share of the web's sites, now offers controls that make selective blocking easy, and more publishers see it as their main remaining leverage to force Google into paying for content or sending fairer traffic. If commerce publishers start gating their content from AI crawlers, licensed access to shopping content becomes something someone has to broker.</p>
+      <p class="l-ru">Дилемма паблишеров: краулеры Google кормят и его поисковый индекс (который ещё приносит трафик), и его AI-ответы (которые почти не приносят). Блокировать краулеры раньше означало исчезнуть из поиска целиком — коммерческое самоубийство. Digiday Media Briefing пишет, что расклад меняется: Cloudflare, стоящий перед огромной долей сайтов интернета, теперь даёт инструменты избирательной блокировки, и всё больше паблишеров видят в ней главный оставшийся рычаг, чтобы заставить Google платить за контент или отдавать честный трафик. Если коммерческие паблишеры начнут закрывать контент от AI-краулеров, лицензированный доступ к shopping-контенту станет тем, что кому-то придётся брокерить.</p>
+      <p class="why l-en"><b>Why it matters:</b> if content gets gated, brokered licensed access to commerce content becomes a business.</p>
+      <p class="why l-ru"><b>Почему важно:</b> если контент закроют, брокеридж лицензированного доступа к commerce-контенту станет бизнесом.</p>
+      <p class="src">→ <a href="https://digiday.com/media/media-briefing-threatening-to-quit-google-crawlers-is-just-publishers-new-hope/">Digiday</a></p>
+    </div>
+  </details>
 
   <nav class="pager">
     <a href="index.html"><span class="l-en">← All issues</span><span class="l-ru">← Все выпуски</span></a>
