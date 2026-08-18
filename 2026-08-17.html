@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Weekly Intelligence Digest · Aug 10 – Aug 17, 2026</title>
+<style>
+  :root{
+    --bg:#f7f7f8; --surface:#ffffff; --ink:#16181d; --ink-2:#5b6069; --ink-3:#8a8f98;
+    --accent:#4f46e5; --accent-ink:#ffffff; --line:#e7e8ea; --line-2:#d9dadd;
+    --pill:#eef0ff; --pill-ink:#4338ca;
+    --comp:#1d4ed8; --comp-bg:#eff6ff;
+    --mkt:#15803d; --mkt-bg:#f0fdf4;
+    --tech:#b45309; --tech-bg:#fffbeb;
+    --ai:#7c3aed; --ai-bg:#f5f3ff;
+    --shadow:0 1px 2px rgba(16,18,25,.04), 0 8px 24px -12px rgba(16,18,25,.12);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1116; --surface:#171a21; --ink:#eceef1; --ink-2:#9ba1ab; --ink-3:#6c7280;
+      --accent:#8b93ff; --accent-ink:#0f1116; --line:#252932; --line-2:#30353f;
+      --pill:#232849; --pill-ink:#aeb4ff;
+      --comp:#7ba6ff; --comp-bg:#15233c;
+      --mkt:#6ee7a0; --mkt-bg:#122a1c;
+      --tech:#f0b45a; --tech-bg:#2b2214;
+      --ai:#b79cff; --ai-bg:#241d33;
+      --shadow:0 1px 2px rgba(0,0,0,.2), 0 8px 24px -12px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  [lang-ru] .l-en{display:none !important}
+  body:not([lang-ru]) .l-ru{display:none !important}
+  .top{position:sticky;top:0;z-index:10;
+    background:color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .top-in{max-width:840px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:15px;letter-spacing:-.01em}
+  .brand .dot{width:10px;height:10px;border-radius:3px;background:var(--accent);flex:none;transform:rotate(45deg)}
+  .brand:hover{text-decoration:none}
+  .crumb{font-size:13.5px;color:var(--ink-3)}
+  .top nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+  .lang{display:flex;border:1px solid var(--line-2);border-radius:99px;padding:2px;background:var(--surface)}
+  .lang button{all:unset;cursor:pointer;font-size:12.5px;font-weight:600;padding:4px 12px;border-radius:99px;color:var(--ink-2)}
+  .lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+  .wrap{max-width:840px;margin:0 auto;padding:44px 24px 80px}
+  header.issue-head{margin-bottom:26px}
+  .issue-head .date{font-size:13px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+  .issue-head h1{font-size:clamp(26px,4.5vw,34px);line-height:1.2;letter-spacing:-.02em}
+  .toc{position:sticky;top:57px;z-index:9;display:flex;flex-wrap:wrap;gap:8px;
+    margin:18px -24px 30px;padding:10px 24px;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .toc a{font-size:13px;font-weight:700;padding:6px 14px;border-radius:99px;text-decoration:none;
+    border:1.5px solid var(--line-2);color:var(--ink);background:var(--surface);}
+  .toc a:hover{text-decoration:none;transform:translateY(-1px)}
+  .toc a.t1{color:var(--comp);border-color:var(--comp);background:var(--comp-bg)}
+  .toc a.t2{color:var(--mkt);border-color:var(--mkt);background:var(--mkt-bg)}
+  .toc a.t3{color:var(--tech);border-color:var(--tech);background:var(--tech-bg)}
+  .toc a.t4{color:var(--ai);border-color:var(--ai);background:var(--ai-bg)}
+  .exec{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:var(--radius);padding:20px 24px;margin-bottom:38px;box-shadow:var(--shadow)}
+  .exec h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+  .exec ul{list-style:none;padding:0}
+  .exec li{padding:6px 0 6px 18px;position:relative;font-size:15px}
+  .exec li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .sec{margin:44px 0 16px;scroll-margin-top:120px}
+  .sec h2{font-size:21px;letter-spacing:-.01em;padding-bottom:8px;border-bottom:2px solid var(--sc)}
+  .sec .note{font-size:14px;color:var(--ink-3);margin-top:8px}
+  .sub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+  .sub::after{content:"";height:1px;background:var(--line);flex:1}
+  details.story{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:120px;overflow:hidden}
+  details.story summary{cursor:pointer;list-style:none;padding:22px 24px}
+  details.story summary::-webkit-details-marker{display:none}
+  details.story[open] summary{padding-bottom:6px}
+  .story .meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+  .story .cat{display:inline-flex;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 10px;border-radius:99px;color:var(--sc);background:var(--scbg)}
+  .story .when{font-size:12.5px;color:var(--ink-3)}
+  .story h3{font-size:18.5px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
+  .story .teaser{color:var(--ink-2);font-size:14.5px}
+  .story .more{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent)}
+  details.story[open] .mo-c{display:none}
+  details.story:not([open]) .mo-o{display:none}
+  .story .body{padding:0 24px 20px}
+  .story .body p{margin-bottom:10px;font-size:15px}
+  .story .body p.why{color:var(--ink-2);font-size:14.5px;border-left:3px solid var(--sc);padding-left:12px}
+  .story .body p:last-child{margin-bottom:0}
+  .story .src{font-size:14px;margin-top:12px}
+  .story .src a{font-weight:600;margin-right:14px}
+  .quiet{background:transparent;border:1px dashed var(--line-2);border-radius:12px;padding:12px 18px;font-size:13.5px;color:var(--ink-3);margin-bottom:10px}
+  .s-comp{--sc:var(--comp);--scbg:var(--comp-bg)}
+  .s-mkt{--sc:var(--mkt);--scbg:var(--mkt-bg)}
+  .s-tech{--sc:var(--tech);--scbg:var(--tech-bg)}
+  .s-ai{--sc:var(--ai);--scbg:var(--ai-bg)}
+  .pager{display:flex;justify-content:space-between;margin-top:40px;font-size:14.5px;font-weight:600}
+  footer{max-width:840px;margin:0 auto;padding:0 24px 48px;color:var(--ink-3);font-size:13px}
+  footer .in{border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Market&nbsp;Intelligence</a>
+    <span class="crumb l-en">/ Aug 10 – Aug 17</span>
+    <span class="crumb l-ru">/ 10 – 17 авг</span>
+    <nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+        <button id="btn-ru" aria-pressed="false" onclick="setLang('ru')">RU</button>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <header class="issue-head">
+    <div class="date"><span class="l-en">Issue · August 17, 2026 · window Aug 10 – Aug 17, all publication dates verified</span><span class="l-ru">Выпуск · 17 августа 2026 · окно 10 – 17 августа, даты публикаций проверены</span></div>
+    <h1 class="l-en">impact.com suspends Phia, Google pulls YouTube affiliate clicks out of "organic", and the Honey case reaches discovery</h1>
+    <h1 class="l-ru">impact.com отстраняет Phia, Google выводит партнёрские клики YouTube из «органики», а дело Honey доходит до раскрытия документов</h1>
+  </header>
+
+  <nav class="toc" aria-label="Sections">
+    <a class="t1" href="#competitors"><span class="l-en">1 · Competitors</span><span class="l-ru">1 · Конкуренты</span></a>
+    <a class="t2" href="#market"><span class="l-en">2 · Market &amp; Industry</span><span class="l-ru">2 · Рынок и индустрия</span></a>
+    <a class="t3" href="#tech"><span class="l-en">3 · Tech &amp; Tracking</span><span class="l-ru">3 · Технологии и трекинг</span></a>
+    <a class="t4" href="#ai"><span class="l-en">4 · AI × Affiliate</span><span class="l-ru">4 · AI × Affiliate</span></a>
+  </nav>
+
+  <div class="exec">
+    <h2><span class="l-en">The week in five points</span><span class="l-ru">Неделя в пяти пунктах</span></h2>
+    <ul>
+      <li class="l-en"><b>impact.com suspended the AI shopping app Phia from its marketplace and is reversing its commissions back to 20 June.</b> Leaked internal messages indicate the founders knew for seven months that the app was claiming sales it had not driven. Rakuten Advertising has opened its own investigation.</li>
+      <li class="l-ru"><b>impact.com отстранил AI-шопинг-приложение Phia от своего маркетплейса и отзывает его комиссии с 20 июня.</b> Утёкшая внутренняя переписка показывает: основатели семь месяцев знали, что приложение забирает себе продажи, которых не приводило. Rakuten Advertising начал собственное расследование.</li>
+      <li class="l-en"><b>From 24 August, Google Merchant Center reports YouTube affiliate clicks as their own line instead of burying them in "organic"</b> — and restates six weeks of history. Merchants have been crediting affiliate-driven demand to organic traffic without knowing it.</li>
+      <li class="l-ru"><b>С 24 августа Google Merchant Center показывает партнёрские клики YouTube отдельной строкой, а не внутри «органики»</b> — и пересчитывает шесть недель истории. Мерчанты всё это время записывали спрос от партнёров в органический трафик, не зная об этом.</li>
+      <li class="l-en"><b>The creators' lawsuit against PayPal's Honey survived dismissal and is going into discovery,</b> where the extension's internal code becomes visible. Honey's merchant base has fallen from about 35,000 to 28,000 and its Chrome installs from over 20 million to 14 million.</li>
+      <li class="l-ru"><b>Иск креаторов против Honey (PayPal) устоял и уходит в стадию раскрытия документов,</b> где внутренний код расширения станет доступен. База мерчантов Honey упала примерно с 35 000 до 28 000, установки в Chrome — с более чем 20 млн до 14 млн.</li>
+      <li class="l-en"><b>From 15 September Cloudflare blocks mixed-purpose AI crawlers by default on ad-supported pages,</b> and is building a model that pays publishers when their content appears in an AI answer rather than when it is crawled.</li>
+      <li class="l-ru"><b>С 15 сентября Cloudflare по умолчанию блокирует «смешанные» AI-краулеры на страницах с рекламой</b> и строит модель, которая платит паблишеру за появление контента в AI-ответе, а не за факт обхода.</li>
+      <li class="l-en"><b>Germany's competition authority ordered Apple to rewrite the iOS tracking permission prompt within four months</b> — dropping the word "tracking" and the warning symbol, and giving third parties up to 4,000 characters to explain themselves.</li>
+      <li class="l-ru"><b>Антимонопольный регулятор Германии обязал Apple переписать окно разрешения на отслеживание в iOS за четыре месяца</b> — убрать слово «отслеживание» и предупреждающий символ и дать сторонним компаниям до 4 000 символов на объяснение.</li>
+    </ul>
+  </div>
+
+  <section class="sec s-comp" id="competitors">
+    <h2 class="l-en">1 · Competitors</h2>
+    <h2 class="l-ru">1 · Конкуренты</h2>
+    <p class="note l-en">No M&amp;A, funding or leadership changes among the Tier 1 networks with a verifiable date inside the window — Awin, impact.com, CJ, Partnerize, Everflow, PartnerStack, LTK, ShopMy, TradeTracker, Webgains, Linehub and Adtraction all published nothing. What did happen: the first network enforcement action against an AI-native shopping app, two sets of quarterly numbers, and two shareholders quietly building positions in Brazil's listed cashback company.</p>
+    <p class="note l-ru">Ни сделок, ни раундов, ни кадровых перемен у сетей первого эшелона с подтверждённой датой внутри окна — Awin, impact.com, CJ, Partnerize, Everflow, PartnerStack, LTK, ShopMy, TradeTracker, Webgains, Linehub и Adtraction не выпустили ничего. Что было: первое применение санкций сетью к AI-нативному шопинг-приложению, два квартальных отчёта и два акционера, тихо набирающих позиции в бразильской публичной кэшбэк-компании.</p>
+  </section>
+
+  <details class="story s-comp" id="phia">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Enforcement</span><span class="l-ru">Санкции</span></span><span class="when">Aug 11–13 · Bloomberg / TechCrunch / Yahoo Finance</span></div>
+      <h3 class="l-en">impact.com suspends the AI shopping app Phia and claws back its commissions — leaked messages say the founders knew for seven months</h3>
+      <h3 class="l-ru">impact.com отстранил AI-шопинг-приложение Phia и отзывает его комиссии — из переписки следует, что основатели знали семь месяцев</h3>
+      <p class="teaser l-en">Phia's browser extension was dropping affiliate tracking cookies on purchases it had not driven, then collecting the commission. impact.com has suspended the company from its marketplace and is reprocessing transactions back to 20 June; Rakuten Advertising says it is investigating.</p>
+      <p class="teaser l-ru">Браузерное расширение Phia ставило партнёрские куки на покупки, которых не приводило, и забирало комиссию. impact.com отстранил компанию от своего маркетплейса и пересчитывает транзакции с 20 июня; Rakuten Advertising сообщил, что ведёт расследование.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Phia is a shopping and price-comparison app founded in 2025 by Phoebe Gates and Sophia Kianni; it earns affiliate commissions when users buy through it. In July the company said it had discovered "within the last 24 hours" that its browser extension was mis-attributing sales. Bloomberg's second investigation, published 11 August, cites internal Slack messages, company data and old source code indicating both founders knew since at least December 2025. The mechanism was a feature called "passive trigger": it re-dropped Phia's affiliate cookie every two hours across the top 1,000 sites a user had visited, so any later purchase looked like Phia had sent the shopper. That is cookie stuffing — inserting your affiliate tag into purchases you did not drive, so the last-click rule pays you instead of the publisher or the merchant who actually earned it. Nike and Nordstrom are named among affected retailers.</p>
+      <p class="l-ru">Phia — шопинг- и прайс-компарисон-приложение, основанное в 2025 году Фиби Гейтс и Софией Киани; зарабатывает на партнёрских комиссиях с покупок пользователей. В июле компания заявила, что «за последние 24 часа» обнаружила неверную атрибуцию продаж. Второе расследование Bloomberg от 11 августа ссылается на внутреннюю переписку в Slack, данные компании и старый исходный код: оба основателя знали об этом как минимум с декабря 2025 года. Механика называлась «passive trigger»: каждые два часа расширение заново ставило партнёрскую куку Phia на тысяче сайтов, которые пользователь посещал, — и любая последующая покупка выглядела так, будто покупателя привёл Phia. Это cookie stuffing — подстановка своей партнёрской метки в покупки, которых ты не приводил, чтобы правило последнего клика заплатило тебе, а не тому паблишеру или мерчанту, который на самом деле сделал продажу. Среди затронутых ритейлеров названы Nike и Nordstrom.</p>
+      <p class="l-en">The numbers show the scale. A Phia data scientist estimated on 7 July that stuffed activity accounted for roughly 51% of the merchandise value the company claimed in June 2026. Internal charts published by Bloomberg show average daily revenue falling from about $80,000 to between $10,000 and $28,000 once the feature was switched off on 7 July. The feature had been running since October 2025 — including through the company's $35.5m Series A in May 2026, raised on a story of elevenfold revenue growth.</p>
+      <p class="l-ru">Масштаб виден по цифрам. 7 июля дата-сайентист Phia оценил, что на «набитые» куки приходится около 51% товарооборота, который компания записывала себе за июнь 2026 года. Опубликованные Bloomberg внутренние графики показывают: после отключения функции 7 июля средняя дневная выручка упала примерно с $80 000 до $10 000–28 000. Функция работала с октября 2025 года — в том числе во время раунда Series A на $35,5 млн в мае 2026-го, привлечённого под историю одиннадцатикратного роста выручки.</p>
+      <p class="l-en">The network response is the part that sets a precedent. impact.com is reprocessing unpaid transactions attributed to Phia between 20 June and 29 July 2026 and has suspended the company from its marketplace for new brand partnerships until it can demonstrate compliance. Rakuten Advertising says it is investigating. Phia says it is reviewing every transaction, has begun issuing reversals to brand partners, and will hire a head of compliance.</p>
+      <p class="l-ru">Прецедент здесь — реакция сетей. impact.com пересчитывает неоплаченные транзакции, приписанные Phia с 20 июня по 29 июля 2026 года, и отстранил компанию от маркетплейса для новых брендов до подтверждения соответствия правилам. Rakuten Advertising заявил о расследовании. Phia сообщает, что проверяет каждую транзакцию, начала возвраты брендам-партнёрам и наймёт руководителя комплаенса.</p>
+      <p class="why l-en"><b>Why it matters:</b> this is the first public case of a major network suspending an AI-native shopping app for attribution fraud, which sets the standard others will be measured against.</p>
+      <p class="why l-ru"><b>Почему важно:</b> это первый публичный случай, когда крупная сеть отстранила AI-нативное шопинг-приложение за фрод в атрибуции — по этой планке будут мерить остальных.</p>
+      <p class="src">→ <a href="https://techcrunch.com/2026/08/11/phoebe-gates-and-sophia-kianni-reportedly-knew-phia-was-cookie-stuffing-for-months/">TechCrunch</a><a href="https://uk.finance.yahoo.com/news/phoebe-gates-phia-says-reverse-161516794.html">Yahoo Finance</a><a href="https://www.affiversemedia.com/phia-affiliate-cookie-stuffing-allegations/">Affiverse</a></p>
+    </div>
+  </details>
+
+  <details class="story s-comp" id="interspace">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Results</span><span class="l-ru">Отчётность</span></span><span class="when">Aug 12 · TDnet / Media Innovation</span></div>
+      <h3 class="l-en">AccessTrade's owner nearly doubled operating profit, and the affiliate business grew 29% while its media business shrank</h3>
+      <h3 class="l-ru">Владелец AccessTrade почти удвоил операционную прибыль: партнёрский бизнес вырос на 29%, медийный — упал</h3>
+      <p class="teaser l-en">Japan's Interspace reported nine-month operating profit up 91.8%, with the ACCESSTRADE affiliate segment up 28.6% on cost work in Indonesia. Its own media properties fell 22.8%. Full-year guidance was left unchanged.</p>
+      <p class="teaser l-ru">Японская Interspace отчиталась за девять месяцев: операционная прибыль +91,8%, партнёрский сегмент ACCESSTRADE +28,6% за счёт работы с издержками в Индонезии. Собственные медиа-активы упали на 22,8%. Прогноз на год оставлен без изменений.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Interspace (Tokyo Stock Exchange Standard, code 2122) runs ACCESSTRADE, one of the largest affiliate networks in Japan and a significant player across Southeast Asia, particularly Indonesia and Vietnam. Its nine-month results to June 2026, filed 12 August, show consolidated net sales of ¥7,330m, up 10.2% year on year; operating profit of ¥592m, up 91.8%; ordinary profit of ¥685m, up 121.2%; and net income of ¥415m, up 256.4%.</p>
+      <p class="l-ru">Interspace (Tokyo Stock Exchange Standard, код 2122) управляет ACCESSTRADE — одной из крупнейших партнёрских сетей Японии и заметным игроком в Юго-Восточной Азии, прежде всего в Индонезии и Вьетнаме. Отчёт за девять месяцев до июня 2026 года, поданный 12 августа: консолидированная выручка ¥7 330 млн (+10,2% год к году), операционная прибыль ¥592 млн (+91,8%), обычная прибыль ¥685 млн (+121,2%), чистая прибыль ¥415 млн (+256,4%).</p>
+      <p class="l-en">The split inside the company is the interesting part. The Performance Marketing segment — the affiliate network itself — grew sales 28.6% to ¥5,497m and more than doubled segment profit to ¥546m, which management attributes to cost efficiency and operational cleanup in the overseas business, Indonesia above all. The Media segment, which includes the Mamasta parenting property and comparison sites, fell 22.8% to ¥1,833m as advertising revenue dropped and comparison-media clients cut budgets. Despite three strong quarters, the company left full-year guidance untouched, citing the business environment and currency risk.</p>
+      <p class="l-ru">Интереснее всего разрез внутри компании. Сегмент Performance Marketing — собственно партнёрская сеть — вырос на 28,6% до ¥5 497 млн, а прибыль сегмента более чем удвоилась до ¥546 млн; менеджмент объясняет это оптимизацией издержек и наведением порядка в зарубежном бизнесе, прежде всего в Индонезии. Медийный сегмент, куда входят родительский портал Mamasta и сравнительные сайты, упал на 22,8% до ¥1 833 млн: рекламная выручка снизилась, клиенты сравнительных медиа урезали бюджеты. Несмотря на три сильных квартала, годовой прогноз оставлен без изменений — компания ссылается на конъюнктуру и валютные риски.</p>
+      <p class="why l-en"><b>Why it matters:</b> the same company's network business is expanding while its own publisher business contracts — a clean read on where the margin currently sits.</p>
+      <p class="why l-ru"><b>Почему важно:</b> у одной и той же компании сетевой бизнес растёт, а собственный паблишерский — сжимается: наглядно видно, где сейчас маржа.</p>
+      <p class="src">→ <a href="https://www.release.tdnet.info/inbs/140120260812517936.pdf">TDnet filing</a><a href="https://media-innovation.jp/article/2026/08/13/143616.html">Media Innovation</a></p>
+    </div>
+  </details>
+
+  <details class="story s-comp" id="rakuten-q2">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Results</span><span class="l-ru">Отчётность</span></span><span class="when">Aug 10 · Rakuten Group</span></div>
+      <h3 class="l-en">Rakuten Group posted its first quarterly profit in six years, with advertising revenue up 15.6%</h3>
+      <h3 class="l-ru">Rakuten Group впервые за шесть лет вышел в квартальную прибыль, рекламная выручка выросла на 15,6%</h3>
+      <p class="teaser l-en">The parent of Rakuten Advertising reported record Q2 revenue of ¥665.5bn and net income of ¥7.7bn — its first quarterly net profit since it entered the mobile business. Note the caveat: the ¥65.6bn advertising line is the Japanese domestic ad business, not the international affiliate network.</p>
+      <p class="teaser l-ru">Материнская компания Rakuten Advertising отчиталась о рекордной выручке II квартала ¥665,5 млрд и чистой прибыли ¥7,7 млрд — первой с момента выхода в мобильный бизнес. Важная оговорка: строка рекламы в ¥65,6 млрд — это японский внутренний рекламный бизнес, а не международная партнёрская сеть.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Rakuten Group reported Q2 consolidated revenue of ¥665.5bn, up 11.6% year on year, non-GAAP operating income of ¥42.0bn, up 109.6%, and net income of ¥7.7bn — the first quarterly net profit since the group started building its own mobile network six years ago, an investment that had kept the consolidated result in the red. FinTech was the main profit driver at ¥69.2bn, up 60.1%. Internet Services, the segment that contains advertising, produced ¥338.1bn of revenue, up 4.2%, and ¥23.1bn of non-GAAP operating income, up 68.6%.</p>
+      <p class="l-ru">Rakuten Group отчитался за II квартал: консолидированная выручка ¥665,5 млрд (+11,6% год к году), non-GAAP операционная прибыль ¥42,0 млрд (+109,6%), чистая прибыль ¥7,7 млрд — первая квартальная чистая прибыль с тех пор, как группа шесть лет назад начала строить собственную мобильную сеть; эти вложения и держали консолидированный результат в минусе. Основной драйвер прибыли — FinTech: ¥69,2 млрд (+60,1%). Сегмент Internet Services, куда входит реклама, дал выручку ¥338,1 млрд (+4,2%) и non-GAAP операционную прибыль ¥23,1 млрд (+68,6%).</p>
+      <p class="l-en">The advertising line came in at ¥65.6bn, up 15.6%, which the company credits to AI-powered search and targeted banner advertising across Rakuten Ichiba and Rakuten Travel. Read that figure carefully: it is the domestic Japanese advertising business. Rakuten does not break out Rakuten Advertising, the international affiliate and partner-marketing network, as a separate reporting entity, and the release makes no mention of it or of the migration of its technology onto impact.com's platform announced in May.</p>
+      <p class="l-ru">Рекламная строка — ¥65,6 млрд (+15,6%); компания объясняет рост AI-поиском и таргетированной баннерной рекламой в Rakuten Ichiba и Rakuten Travel. Читать эту цифру нужно аккуратно: это внутренний японский рекламный бизнес. Rakuten не выделяет Rakuten Advertising — международную партнёрскую сеть — в отдельную отчётную единицу, и в релизе нет ни упоминания о ней, ни о переводе её технологии на платформу impact.com, объявленном в мае.</p>
+      <p class="why l-en"><b>Why it matters:</b> a parent finally in profit has less pressure to cut, but the network itself is still not visible in the numbers.</p>
+      <p class="why l-ru"><b>Почему важно:</b> у материнской компании, вышедшей в прибыль, меньше давления резать расходы — но самой сети в цифрах по-прежнему не видно.</p>
+      <p class="src">→ <a href="https://global.rakuten.com/corp/news/press/2026/0810_01.html">Rakuten Group</a></p>
+    </div>
+  </details>
+
+  <details class="story s-comp" id="meliuz-stakes">
+    <summary>
+      <div class="meta"><span class="cat">LatAm</span><span class="when">Aug 12–13 · Méliuz IR filings</span></div>
+      <h3 class="l-en">Two large banks disclosed positions in Brazil's listed cashback company within 48 hours</h3>
+      <h3 class="l-ru">Два крупных банка за 48 часов раскрыли позиции в бразильской публичной кэшбэк-компании</h3>
+      <p class="teaser l-en">BTG Pactual reported 10.51% of Méliuz's shares — alongside derivatives giving it an 8.14% short exposure. JP Morgan reported 5.14%, built entirely through equity swaps. Both say the positions are financial, not strategic.</p>
+      <p class="teaser l-ru">BTG Pactual раскрыл 10,51% акций Méliuz — вместе с деривативами, дающими короткую позицию на 8,14%. JP Morgan раскрыл 5,14%, целиком через свопы на акции. Оба заявляют, что позиции финансовые, а не стратегические.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Méliuz (ticker CASH3 on Brazil's B3 exchange) is the country's largest cashback and coupon platform: shoppers click through to a retailer, buy, and get part of the retailer's commission back in cash. It also runs a bitcoin treasury strategy, holding 604.7 BTC. On 12 August the company filed a notice that JP Morgan Chase, through J.P. Morgan Securities PLC, had crossed 5.14% of its ordinary shares — 5,359,808 shares-equivalent out of 104,171,852 outstanding — held not as stock but through equity swaps, for "investment and protection of financial risks".</p>
+      <p class="l-ru">Méliuz (тикер CASH3 на бразильской бирже B3) — крупнейшая в стране кэшбэк- и купонная платформа: покупатель переходит к ритейлеру, покупает и получает часть комиссии ритейлера обратно деньгами. Компания также держит биткоин в казначействе — 604,7 BTC. 12 августа Méliuz подала уведомление о том, что JP Morgan Chase через J.P. Morgan Securities PLC перешёл порог 5,14% обыкновенных акций — эквивалент 5 359 808 акций из 104 171 852 — причём не акциями, а через свопы, «для инвестиций и защиты от финансовых рисков».</p>
+      <p class="l-en">A day later, Banco BTG Pactual filed its own notice: approximately 10,956,620 shares, or 10.51%. The same filing discloses derivative instruments giving BTG a short exposure equivalent to roughly 8,479,100 shares, about 8.14% — meaning the bank holds the stock and a large offsetting bet against it at the same time. BTG states the position is for "mere financial operations" with no intent to change control or the company's management. Two disclosures of this size inside 48 hours, both derivative-heavy, point to arbitrage activity around the stock rather than an ownership move — most plausibly tied to the bitcoin holding and the 8.1m-share buyback the board approved with Q2 results on 5 August.</p>
+      <p class="l-ru">Днём позже собственное уведомление подал Banco BTG Pactual: около 10 956 620 акций, или 10,51%. В том же документе раскрыты деривативы, дающие BTG короткую позицию на эквивалент примерно 8 479 100 акций — около 8,14%; то есть банк одновременно держит бумагу и крупную встречную ставку против неё. BTG указывает, что позиция носит характер «исключительно финансовых операций» и не предполагает смены контроля или управления. Два раскрытия такого размера за 48 часов, оба с большой долей деривативов, говорят скорее об арбитраже вокруг бумаги, чем о заходе в капитал — вероятнее всего, вокруг биткоин-позиции и выкупа 8,1 млн акций, одобренного советом вместе с отчётом за II квартал 5 августа.</p>
+      <p class="why l-en"><b>Why it matters:</b> the only listed pure-play cashback publisher in the region is now being traded on its treasury policy rather than its affiliate business.</p>
+      <p class="why l-ru"><b>Почему важно:</b> единственного в регионе публичного «чистого» кэшбэк-паблишера сейчас торгуют по казначейской политике, а не по партнёрскому бизнесу.</p>
+      <p class="src">→ <a href="https://ri.meliuz.com.br/">Méliuz Investor Relations</a></p>
+    </div>
+  </details>
+
+  <details class="story s-comp" id="synatix">
+    <summary>
+      <div class="meta"><span class="cat">DACH</span><span class="when">Aug 12 · affiliateBLOG.de</span></div>
+      <h3 class="l-en">Synatix buys the German price-comparison site Preisvergleich.de</h3>
+      <h3 class="l-ru">Synatix покупает немецкий сравнительный сайт Preisvergleich.de</h3>
+      <p class="teaser l-en">A German operator of comparison and lead-generation portals has taken over one of the country's long-established price-comparison brands, extending itself from financial comparison into general product comparison. No deal value was disclosed.</p>
+      <p class="teaser l-ru">Немецкий оператор сравнительных и лидогенерационных порталов забрал один из старейших ценовых агрегаторов страны, расширившись из финансовых сравнений в товарные. Сумма сделки не раскрыта.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Synatix already runs KREDIT.DE, a financial-services comparison site that makes money by sending qualified applicants to banks and lenders. Preisvergleich.de is a general price-comparison portal — the type of publisher that sits inside affiliate programmes and earns a commission or a cost-per-click when a shopper leaves it for a retailer. The stated rationale is expanding Synatix's position in the German online-comparison market and offering "independent and transparent" comparison for both purchase and financial decisions. No deal value, executive names or integration timeline were published; the announcement is a short corporate item in the main German affiliate trade blog.</p>
+      <p class="l-ru">Synatix уже управляет KREDIT.DE — сайтом сравнения финансовых продуктов, который зарабатывает, отправляя квалифицированных заявителей в банки и к кредиторам. Preisvergleich.de — универсальный ценовой агрегатор, то есть тип паблишера, который сидит внутри партнёрских программ и получает комиссию или оплату за клик, когда покупатель уходит от него к ритейлеру. Заявленная логика — усиление позиций Synatix на немецком рынке онлайн-сравнений и «независимое и прозрачное» сравнение как для покупок, так и для финансовых решений. Ни сумма сделки, ни имена, ни сроки интеграции не опубликованы; сообщение вышло короткой корпоративной заметкой в главном немецком отраслевом блоге по аффилиату.</p>
+      <p class="why l-en"><b>Why it matters:</b> comparison portals are being consolidated by the lead-generation businesses that already buy their traffic.</p>
+      <p class="why l-ru"><b>Почему важно:</b> сравнительные порталы консолидируют лидогенерационные компании, которые и так покупают их трафик.</p>
+      <p class="src">→ <a href="https://www.affiliateblog.de/neustart-fuer-preisvergleich-de-synatix-uebernimmt-vergleichsportal/">affiliateBLOG.de</a></p>
+    </div>
+  </details>
+
+  <details class="story s-comp" id="exec-ai">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Executives</span><span class="l-ru">Топ-менеджмент</span></span><span class="when">Aug 13–14 · Partnerize / Keep on Learning</span></div>
+      <h3 class="l-en">Two platform bosses set out opposite bets on what an affiliate platform sells in the AI era</h3>
+      <h3 class="l-ru">Два руководителя платформ сформулировали противоположные ставки на то, что продаёт партнёрская платформа в эпоху AI</h3>
+      <p class="teaser l-en">Partnerize's CEO argues visibility inside AI answers is worthless on its own and launched a metric called Share of Shortlist. Everflow's CMO argues nothing fundamental changes — an AI agent is just another partner that needs tracking.</p>
+      <p class="teaser l-ru">Гендиректор Partnerize утверждает, что видимость в AI-ответах сама по себе ничего не стоит, и представил метрику Share of Shortlist. Директор по маркетингу Everflow считает, что ничего принципиально не меняется: AI-агент — просто ещё один партнёр, которого надо трекать.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">On 13 August Partnerize CEO Matt Gilbert published a piece arguing the industry is chasing the wrong metric: the scramble to help brands "appear" in AI answers is beside the point because being mentioned has no commercial value by itself. He introduced Share of Shortlist, a metric Partnerize positions as measuring whether an AI answer actually changed the set of brands a shopper is considering, not merely whether the brand was named. His line: "Visibility has never created enterprise value. Commercial outcomes do." He explicitly frames Partnerize as building infrastructure rather than another dashboard.</p>
+      <p class="l-ru">13 августа гендиректор Partnerize Мэтт Гилберт опубликовал текст о том, что индустрия гонится не за той метрикой: попытки помочь брендам «появиться» в AI-ответах бессмысленны, потому что само по себе упоминание не имеет коммерческой ценности. Он представил Share of Shortlist — метрику, которая, по позиционированию Partnerize, измеряет, изменил ли AI-ответ набор брендов, которые покупатель реально рассматривает, а не просто назвал ли он бренд. Его формулировка: «Видимость никогда не создавала стоимость компании. Её создают коммерческие результаты». Partnerize он прямо описывает как строителя инфраструктуры, а не ещё одного дашборда.</p>
+      <p class="l-en">A day later Everflow CMO Michael Cole took the opposite position in an interview with the Keep on Learning newsletter: "Whether managing a super-affiliate or an automated AI agent, the foundational needs of an affiliate manager remain identical: seamless tracking, clear attribution, and granular visibility into true value drivers." He points to Everflow's conversational assistant and its open MCP server — an interface that lets a team drive the platform from an external AI tool — as the practical expression of that, and argues the platform should be treated as a "central intelligence hub" rather than a click recorder.</p>
+      <p class="l-ru">Днём позже директор по маркетингу Everflow Майкл Коул занял противоположную позицию в интервью рассылке Keep on Learning: «Управляете ли вы супер-аффилиатом или автоматизированным AI-агентом, базовые потребности партнёрского менеджера одинаковы: бесшовный трекинг, ясная атрибуция и детальная видимость реальных драйверов ценности». В качестве практического воплощения он называет разговорный ассистент Everflow и открытый MCP-сервер — интерфейс, позволяющий управлять платформой из внешнего AI-инструмента, — и предлагает считать платформу «центральным интеллектуальным хабом», а не регистратором кликов.</p>
+      <p class="why l-en"><b>Why it matters:</b> one side is trying to sell a new unit of measurement, the other is betting the existing one still works — and buyers will pick between them within a year.</p>
+      <p class="why l-ru"><b>Почему важно:</b> одна сторона пытается продать новую единицу измерения, другая ставит на то, что старая ещё работает, — и покупатели выберут между ними в течение года.</p>
+      <p class="src">→ <a href="https://partnerize.com/resources/blog/visibility-isnt-value-the-missing-layer-in-ai-commerce">Partnerize</a><a href="https://keeponlearningwithlaura.substack.com/p/everflow-brings-the-next-chapter">Keep on Learning</a></p>
+    </div>
+  </details>
+
+  <details class="story s-comp" id="digistore24">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Product</span><span class="l-ru">Продукт</span></span><span class="when">Aug 11 · Yahoo Finance</span></div>
+      <h3 class="l-en">Digistore24 plugs an AI funnel builder into its checkout and affiliate payouts</h3>
+      <h3 class="l-ru">Digistore24 подключает AI-конструктор воронок к своей кассе и партнёрским выплатам</h3>
+      <p class="teaser l-en">The German digital-products marketplace integrated Pagewheel, a tool that generates sales pages and funnels from a prompt, so a seller can go from idea to a live checkout with affiliate tracking attached without writing code.</p>
+      <p class="teaser l-ru">Немецкий маркетплейс цифровых товаров интегрировал Pagewheel — инструмент, который генерирует продающие страницы и воронки по запросу, — чтобы продавец мог дойти от идеи до работающей кассы с партнёрским трекингом без кода.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Digistore24 sells digital products — courses, ebooks, software — and handles the checkout, the payment processing and the affiliate commission payouts on behalf of the seller. Pagewheel, founded in 2023 by Rachel Miller and Holly Homer, generates landing pages and sales funnels using AI. The integration connects the two so a vendor can produce a product page and funnel and have it wired into Digistore24's checkout and affiliate infrastructure; the companies claim the setup takes about ten minutes with no code. CEO Francis Wolff said the integration "removes technical barriers and gives users a simplified path to revenue growth". The release cites lifetime platform figures of $4.5bn in total sales.</p>
+      <p class="l-ru">Digistore24 продаёт цифровые товары — курсы, электронные книги, софт — и берёт на себя кассу, обработку платежей и выплату партнёрских комиссий за продавца. Pagewheel, основанный в 2023 году Рэйчел Миллер и Холли Хомер, генерирует лендинги и воронки с помощью AI. Интеграция связывает их так, что продавец может собрать страницу товара и воронку и сразу подключить её к кассе и партнёрской инфраструктуре Digistore24; компании утверждают, что настройка занимает около десяти минут и не требует кода. Гендиректор Фрэнсис Вольф говорит, что интеграция «убирает технические барьеры и даёт пользователям упрощённый путь к росту выручки». В релизе приводится накопленный оборот платформы — $4,5 млрд.</p>
+      <p class="why l-en"><b>Why it matters:</b> shortening the time from idea to a tracked, commissionable offer is how these platforms compete for sellers.</p>
+      <p class="why l-ru"><b>Почему важно:</b> сокращение пути от идеи до отслеживаемого оффера с комиссией — это то, чем такие платформы конкурируют за продавцов.</p>
+      <p class="src">→ <a href="https://finance.yahoo.com/small-business/articles/digistore24-pagewheel-launch-integration-empowering-123400009.html">Yahoo Finance</a></p>
+    </div>
+  </details>
+
+  <div class="quiet"><span class="l-en"><b>Watch list:</b> Google Merchant Center's YouTube affiliate reporting split goes live Aug 24, alongside YouTube counting a view from the first frame · Shopify auto-upgrades legacy Thank You and Order Status pages on Aug 26, which removes the script slots some affiliate postbacks still live in · Cloudflare's default block on mixed-purpose AI crawlers starts Sept 15 · IAB Tech Lab's Global Privacy Platform consultation closes Sept 11 · 2Performant publishes H1 results Sept 25 · impact.com has historically issued a quarterly momentum release in early September. Also worth verifying: PartnerStack's own releases now describe Bryn Jones as "GM and Co-founder" rather than CEO after the AppDirect acquisition, while its author page still says CEO.</span><span class="l-ru"><b>На радаре:</b> 24 августа Google Merchant Center выделяет партнёрские клики YouTube в отдельную строку, тогда же YouTube начинает считать просмотр с первого кадра · 26 августа Shopify принудительно обновляет старые страницы Thank You и Order Status, убирая слоты скриптов, в которых до сих пор живут некоторые партнёрские постбэки · 15 сентября начинает действовать блокировка «смешанных» AI-краулеров у Cloudflare по умолчанию · 11 сентября закрывается обсуждение Global Privacy Platform в IAB Tech Lab · 25 сентября 2Performant публикует результаты за первое полугодие · impact.com обычно выпускает квартальный релиз о динамике в начале сентября. Отдельно стоит проверить: в собственных релизах PartnerStack Брин Джонс теперь указан как «GM и сооснователь», а не CEO, после покупки компанией AppDirect — при этом на авторской странице он всё ещё CEO.</span></div>
+
+  <section class="sec s-mkt" id="market">
+    <h2 class="l-en">2 · Market &amp; Industry</h2>
+    <h2 class="l-ru">2 · Рынок и индустрия</h2>
+    <p class="note l-en">Regulation and channel economics dominated: the UK regulator wants to offer AI chatbots as search defaults, Pinterest put affiliate and programmatic under one manager, and a retailer-funded commerce publication was switched off. On the research radar: no output from McKinsey, BCG, Bain, Deloitte, Accenture, Forrester or Gartner with a verified date inside the window — the studies below come from CreatorIQ, Epsilon and PartnerCentric.</p>
+    <p class="note l-ru">Доминировали регуляторика и экономика каналов: британский регулятор хочет предлагать AI-чатботы как поисковики по умолчанию, Pinterest свёл партнёрку и программатик под одного руководителя, а издание, финансировавшееся ритейлером, выключили. На research radar: у McKinsey, BCG, Bain, Deloitte, Accenture, Forrester и Gartner ничего с подтверждённой датой внутри окна — исследования ниже от CreatorIQ, Epsilon и PartnerCentric.</p>
+  </section>
+
+  <details class="story s-mkt" id="cma-choice">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Regulation</span><span class="l-ru">Регулирование</span></span><span class="when">Aug 17 · A Media Operator</span></div>
+      <h3 class="l-en">The UK regulator wants Google to offer users a yearly choice of search engine — with AI chatbots on the list</h3>
+      <h3 class="l-ru">Британский регулятор хочет, чтобы Google ежегодно предлагал пользователям выбор поисковика — с AI-чатботами в списке</h3>
+      <p class="teaser l-en">The CMA proposes annual choice screens across multiple platforms, a 14-day trial period before switching, and looser eligibility rules so generative AI services like ChatGPT and Perplexity can appear as search options. Publishers say this speeds up the loss of referral traffic.</p>
+      <p class="teaser l-ru">CMA предлагает ежегодные экраны выбора на нескольких платформах, 14-дневный тестовый период перед переключением и смягчение критериев, чтобы генеративные AI-сервисы вроде ChatGPT и Perplexity могли попадать в список поисковиков. Издатели говорят, что это ускорит потерю переходного трафика.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The Competition and Markets Authority published responses and next steps on the conduct requirements it plans to impose on Google under its Strategic Market Status regime — the UK's new power to set rules for firms it designates as dominant. A "choice screen" is the prompt that asks a user which search engine they want as default. Today these appear mainly on Android handsets; the CMA proposes extending them to multiple platforms, running them once a year rather than once at setup, adding a 14-day period in which a user can test an alternative before committing, widening which services qualify to appear, and halving the time it takes to admit a new entrant.</p>
+      <p class="l-ru">Управление по конкуренции и рынкам (CMA) опубликовало отклики и следующие шаги по требованиям к поведению, которые оно планирует наложить на Google в рамках режима Strategic Market Status — нового британского механизма, позволяющего устанавливать правила для компаний, признанных доминирующими. «Экран выбора» — это окно, в котором пользователя спрашивают, какой поисковик поставить по умолчанию. Сейчас такие окна показываются в основном на Android; CMA предлагает распространить их на несколько платформ, показывать раз в год, а не однократно при настройке, дать 14 дней на тест альтернативы перед окончательным выбором, расширить круг сервисов, которые могут в него попасть, и вдвое сократить срок допуска новых участников.</p>
+      <p class="l-en">The CMA explicitly cited "the growth of new generative AI-based services" as its reason for widening eligibility — meaning ChatGPT or Perplexity could be offered to UK users as a default search option by regulatory design. The News Media Association raised "serious concerns", pointing out that AI chatbots do not pass users onward to websites the way a search engine does, so promoting them accelerates the collapse in publisher referral traffic. It also sits awkwardly beside the CMA's separate rule allowing publishers to opt out of Google's AI Overviews: publishers can protect themselves inside Google, but not from a state-promoted alternative. The consultation opened in January and is closed; no final decision has been announced.</p>
+      <p class="l-ru">Причиной смягчения критериев CMA прямо назвало «рост новых сервисов на базе генеративного AI» — то есть ChatGPT или Perplexity могут по решению регулятора предлагаться британским пользователям как поисковик по умолчанию. Ассоциация новостных медиа (News Media Association) заявила о «серьёзных опасениях»: AI-чатботы не передают пользователя дальше на сайты так, как это делает поисковик, поэтому их продвижение ускоряет обвал переходного трафика к издателям. Есть и неувязка с другим правилом CMA, которое позволяет издателям отказаться от попадания в AI Overviews у Google: защититься внутри Google издатель может, а от продвигаемой государством альтернативы — нет. Консультация открылась в январе и закрыта; окончательного решения не объявлено.</p>
+      <p class="why l-en"><b>Why it matters:</b> a regulator is about to hand default-search placement to services that do not send clicks to publishers.</p>
+      <p class="why l-ru"><b>Почему важно:</b> регулятор готов отдать позицию поиска по умолчанию сервисам, которые не отдают клики издателям.</p>
+      <p class="src">→ <a href="https://www.amediaoperator.com/news/cma-google-uk-ai-choice-screen-search-engine-conduct-requirements/">A Media Operator</a></p>
+    </div>
+  </details>
+
+  <details class="story s-mkt" id="pinterest">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Key hire</span><span class="l-ru">Назначение</span></span><span class="when">Aug 13 · AdExchanger</span></div>
+      <h3 class="l-en">Pinterest puts programmatic and affiliate under one manager and starts selling its shoppers off-platform</h3>
+      <h3 class="l-ru">Pinterest свёл программатик и партнёрку под одного руководителя и начинает продавать свою аудиторию за пределами платформы</h3>
+      <p class="teaser l-en">Jason Fairchild, CEO of the CTV ad platform tvScientific, becomes general manager of programmatic and affiliate at Pinterest. The plan is to let advertisers reach Pinterest's shopping audience through affiliate and programmatic buys outside Pinterest itself.</p>
+      <p class="teaser l-ru">Джейсон Фэйрчайлд, гендиректор CTV-платформы tvScientific, становится генеральным менеджером по программатику и партнёрке в Pinterest. Задача — дать рекламодателям доступ к шопинговой аудитории Pinterest через партнёрские и программатик-закупки вне самого Pinterest.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Pinterest acquired tvScientific and runs it as an independent business; Fairchild stays its CEO while taking the new Pinterest role. The stated aim is to make Pinterest's audience — people actively planning purchases — available to advertisers off-platform, through programmatic and affiliate buying channels, and to fold tvScientific's capabilities into Performance+, the AI ad platform Pinterest launched in 2024. Fairchild said early tests suggested scaling those audiences off-platform "would be a big business", with connected TV the first expansion surface. The target customer is the performance-led ecommerce brand that currently spends on search and social. No financial figures were disclosed.</p>
+      <p class="l-ru">Pinterest купил tvScientific и управляет им как самостоятельным бизнесом; Фэйрчайлд остаётся его гендиректором и одновременно занимает новую роль в Pinterest. Заявленная цель — сделать аудиторию Pinterest, то есть людей, активно планирующих покупки, доступной рекламодателям за пределами платформы, через программатик и партнёрские каналы закупки, и встроить возможности tvScientific в Performance+, AI-рекламную платформу, запущенную Pinterest в 2024 году. Фэйрчайлд сказал, что ранние тесты показали: масштабирование этих аудиторий вне платформы «может стать большим бизнесом», а первой площадкой расширения станет подключённое ТВ. Целевой клиент — перформанс-ориентированный e-commerce-бренд, который сейчас тратит на поиск и соцсети. Финансовые показатели не раскрыты.</p>
+      <p class="why l-en"><b>Why it matters:</b> a large social platform is now managing affiliate in the same P&amp;L as programmatic, which is where budget comparisons get made.</p>
+      <p class="why l-ru"><b>Почему важно:</b> крупная соцплатформа управляет партнёркой в том же P&amp;L, что и программатиком, — а именно там и сравнивают бюджеты.</p>
+      <p class="src">→ <a href="https://www.adexchanger.com/ctv-roundup/pinterest-names-jason-fairchild-gm-of-programmatic-and-affiliate/">AdExchanger</a></p>
+    </div>
+  </details>
+
+  <details class="story s-mkt" id="restart">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Publishers</span><span class="l-ru">Паблишеры</span></span><span class="when">Aug 12 · Modern Retail</span></div>
+      <h3 class="l-en">Walmart's gaming publication laid off its entire editorial team eight months after launch</h3>
+      <h3 class="l-ru">Игровое издание Walmart уволило всю редакцию через восемь месяцев после запуска</h3>
+      <p class="teaser l-en">Restart.run launched as "independent gaming news powered by Walmart", ran affiliate links to Walmart carrying partner-tracking codes, and said it received 0% of the sale. Walmart funded it directly. This week the whole editorial staff was cut.</p>
+      <p class="teaser l-ru">Restart.run запускался как «независимые игровые новости при поддержке Walmart», ставил партнёрские ссылки на Walmart с трекинговыми метками и утверждал, что не получает ничего с продажи. Walmart финансировал проект напрямую. На этой неделе всю редакцию сократили.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Restart.run launched in December 2024, built by the gaming agency Moonrock and funded by Walmart. Its business model was unusual: the site carried affiliate links to Walmart's ecommerce platform with partner-tracking codes attached, but claimed it received "0% of the sale". In other words it was not a commerce publisher earning commission — it was a customer-acquisition asset paid for out of Walmart's marketing budget, with the tracking codes there to measure the retailer's own return rather than to pay the publisher. Editor-in-chief Brandy Berthelson said the editorial team operated independently of Walmart's KPIs.</p>
+      <p class="l-ru">Restart.run запустился в декабре 2024 года: сайт собрало игровое агентство Moonrock, финансировал Walmart. Бизнес-модель была необычной: сайт ставил партнёрские ссылки на площадку Walmart с трекинговыми метками, но утверждал, что получает «0% с продажи». То есть это был не коммерс-паблишер, зарабатывающий комиссию, а актив по привлечению клиентов, оплаченный из маркетингового бюджета Walmart; метки нужны были, чтобы измерять отдачу самого ритейлера, а не платить издателю. Главный редактор Брэнди Бертельсон говорит, что редакция работала независимо от KPI Walmart.</p>
+      <p class="l-en">The cut took the whole editorial staff, including Berthelson, editors Jesse Vitelli and Imran Khan, and deals writer Myles Obenza; the staff page listed around ten names. No explanation about performance or funding was given. It lands in the middle of a broader contraction in gaming media — Polygon and Game Informer have both been hit — driven by AI search absorbing informational queries, publishers marketing direct, and creators taking the audience.</p>
+      <p class="l-ru">Сокращение затронуло всю редакцию, включая Бертельсон, редакторов Джесси Вителли и Имрана Хана и автора рубрики скидок Майлза Обензу; на странице команды значилось около десяти человек. Объяснений про результаты или финансирование не дали. Всё это происходит на фоне общего сжатия игровых медиа — под ударом уже были Polygon и Game Informer — из-за того, что AI-поиск забирает информационные запросы, издатели идут в прямой маркетинг, а аудиторию уводят креаторы.</p>
+      <p class="why l-en"><b>Why it matters:</b> a retailer-funded commerce publication can be switched off in a budget cycle, which is the risk of being paid by the merchant rather than by the sale.</p>
+      <p class="why l-ru"><b>Почему важно:</b> издание, финансируемое ритейлером, выключается в рамках бюджетного цикла — в этом и есть риск получать деньги от мерчанта, а не с продажи.</p>
+      <p class="src">→ <a href="https://www.modernretail.co/marketing/walmart-backed-gaming-publication-lays-off-editorial-team/">Modern Retail</a></p>
+    </div>
+  </details>
+
+  <details class="story s-mkt" id="pub-diversify">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Publishers</span><span class="l-ru">Паблишеры</span></span><span class="when">Aug 13 · Digiday</span></div>
+      <h3 class="l-en">Publishers are replacing Google traffic with many small channels rather than one substitute</h3>
+      <h3 class="l-ru">Издатели заменяют трафик Google множеством мелких каналов, а не одной альтернативой</h3>
+      <p class="teaser l-en">Q2 earnings calls show the shape of the retreat: People Inc still takes 21% of traffic from Google search, Ziff Davis says AI Overviews now appear on around 50% of relevant queries, and the Wall Street Journal now takes 81% of revenue from subscriptions.</p>
+      <p class="teaser l-ru">Звонки по итогам II квартала показывают форму отступления: People Inc всё ещё получает 21% трафика из поиска Google, Ziff Davis говорит, что AI Overviews появляются примерно в 50% релевантных запросов, а Wall Street Journal получает 81% выручки от подписки.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Digiday pulled the diversification numbers out of Q2 2026 earnings calls. People Inc still gets about 21% of traffic from Google search and says it cannot yet block Google's crawlers — because the crawler that feeds AI Overviews is the same one that feeds search results — but revenue that does not depend on traffic is now 43% of its digital revenue, and rising ad rates per pageview are covering the decline. Ziff Davis reports AI Overviews now appear on roughly 50% of the Google queries relevant to it, up from 36%. USA Today Co. said nearly 65% of its World Cup traffic previously came from search and is moving to newsletters, social video and higher-value subscriptions.</p>
+      <p class="l-ru">Digiday собрал цифры диверсификации из отчётных звонков за II квартал 2026 года. People Inc всё ещё получает около 21% трафика из поиска Google и говорит, что пока не может заблокировать краулеры Google — потому что краулер, который питает AI Overviews, тот же, что питает поисковую выдачу; при этом выручка, не зависящая от трафика, составляет уже 43% её цифровой выручки, а рост ставок за просмотр компенсирует падение. Ziff Davis сообщает, что AI Overviews теперь появляются примерно в 50% релевантных для неё запросов Google против 36% ранее. USA Today Co. заявила, что раньше почти 65% её трафика по чемпионату мира приходило из поиска, и переходит на рассылки, соцвидео и более дорогие подписки.</p>
+      <p class="l-en">The rest of the picture: News Corp's Wall Street Journal now takes 81% of revenue from circulation against 17% from advertising, and raised its digital subscription from $39.99 to $44.99 a month. BuzzFeed cut headcount 35% for $30m in annualised savings and moved to contract contributors. The New York Times is scaling reporter-led video. Nobody named a single replacement channel — the pattern is a dozen partial ones.</p>
+      <p class="l-ru">Остальная картина: у Wall Street Journal (News Corp) 81% выручки теперь приходится на подписку против 17% на рекламу, а цена цифровой подписки поднята с $39,99 до $44,99 в месяц. BuzzFeed сократил штат на 35% ради $30 млн годовой экономии и перешёл на контрактных авторов. New York Times наращивает видео с участием репортёров. Никто не назвал один заменяющий канал — вместо него десяток частичных.</p>
+      <p class="why l-en"><b>Why it matters:</b> commerce content teams are being asked to grow revenue on a traffic base that is shrinking everywhere at once.</p>
+      <p class="why l-ru"><b>Почему важно:</b> от команд коммерческого контента ждут роста выручки на трафиковой базе, которая сжимается сразу везде.</p>
+      <p class="src">→ <a href="https://digiday.com/media/media-briefing-publishers-are-replacing-google-with-a-little-bit-of-everything/">Digiday</a></p>
+    </div>
+  </details>
+
+  <details class="story s-mkt" id="tiktok-highticket">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Channel shift</span><span class="l-ru">Сдвиг канала</span></span><span class="when">Aug 11 · Affiverse</span></div>
+      <h3 class="l-en">TikTok Shop is selling $2,000 saunas, and that breaks the way affiliate programmes recruit creators</h3>
+      <h3 class="l-ru">TikTok Shop продаёт сауны за $2 000 — и это ломает привычный способ набора креаторов в партнёрские программы</h3>
+      <p class="teaser l-en">Sales of pools and spas grew 125% year on year, outdoor furniture 275% and lawn and garden 150%. When the product costs four to five times the platform's historic price point, sending free samples to a hundred creators stops being affordable.</p>
+      <p class="teaser l-ru">Продажи бассейнов и спа выросли на 125% год к году, уличной мебели — на 275%, товаров для сада — на 150%. Когда товар стоит в четыре-пять раз дороже привычного для площадки, рассылка бесплатных образцов сотне креаторов перестаёт быть подъёмной.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">TikTok Shop's affiliate model was built for impulse purchases: recruit a large number of creators, send them a cheap product to demonstrate, and accept that most produce nothing because the few who work pay for the rest. That arithmetic depends on the sample being cheap. Category data shows the mix moving to considered, high-ticket purchases — pools and spas up 125%, outdoor furniture up 275%, lawn and garden up 150%, with items such as $2,000 saunas now selling.</p>
+      <p class="l-ru">Партнёрская модель TikTok Shop строилась под импульсные покупки: набрать много креаторов, отправить им дешёвый товар для демонстрации и смириться с тем, что большинство не даст результата, потому что немногие сработавшие окупают остальных. Эта арифметика держится на дешевизне образца. Данные по категориям показывают сдвиг к обдуманным дорогим покупкам: бассейны и спа +125%, уличная мебель +275%, товары для сада +150%, и теперь продаются, например, сауны за $2 000.</p>
+      <p class="l-en">Seeding a $500 product to 100 creators means risking $50,000 of inventory before anything ships to a customer, which is indefensible when only 5–10% of an affiliate roster typically produces meaningful sales. The argument is that programmes have to move from mass recruitment to a managed portfolio — selecting creators on product relevance and audience fit rather than reach, and setting commissions against contribution margin rather than gross sales. Fulfilment speed and returns handling also become decisive, because on a high-ticket item the gap between an order and a settled sale is where the margin goes. TikTok's split between open and targeted affiliate collaborations lets brands reserve higher commissions and samples for vetted creators.</p>
+      <p class="l-ru">Разослать товар за $500 сотне креаторов — это риск на $50 000 товарных запасов ещё до первой отгрузки покупателю, что трудно оправдать, когда заметные продажи обычно дают лишь 5–10% списка партнёров. Отсюда вывод: программам нужно уходить от массового набора к управляемому портфелю — отбирать креаторов по релевантности товару и совпадению аудитории, а не по охвату, и считать комиссию от маржинального вклада, а не от валовых продаж. Решающими становятся также скорость доставки и работа с возвратами: на дорогом товаре именно в разрыве между заказом и итоговой продажей и теряется маржа. Разделение открытых и адресных партнёрских коллабораций в TikTok позволяет резервировать повышенные комиссии и образцы для проверенных креаторов.</p>
+      <p class="why l-en"><b>Why it matters:</b> the cost of recruiting a creator now depends on the price of the product, which ends the one-size-fits-all programme.</p>
+      <p class="why l-ru"><b>Почему важно:</b> стоимость привлечения креатора теперь зависит от цены товара — универсальная программа на этом заканчивается.</p>
+      <p class="src">→ <a href="https://www.affiversemedia.com/tiktok-shop-affiliates-high-ticket-products/">Affiverse</a></p>
+    </div>
+  </details>
+
+  <details class="story s-mkt" id="apple-fees">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Platforms</span><span class="l-ru">Платформы</span></span><span class="when">Aug 17 · AdExchanger / TechCrunch</span></div>
+      <h3 class="l-en">Apple proposes charging 15% on purchases made outside its own payment system</h3>
+      <h3 class="l-ru">Apple предлагает брать 15% с покупок, совершённых вне её платёжной системы</h3>
+      <p class="teaser l-en">The proposal takes 15% on purchases through third-party payment systems on iOS and 10% on subscription renewals — setting a floor for any commerce routed off-platform from an iPhone app.</p>
+      <p class="teaser l-ru">Предложение предполагает 15% с покупок через сторонние платёжные системы в iOS и 10% с продлений подписок — это задаёт нижнюю планку для любой торговли, уводимой из iPhone-приложения наружу.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Apple's original App Store rule took up to 30% of any purchase made inside an app, which is why so many businesses moved checkout to the web. The new proposal reclaims part of that: 15% on purchases completed through a third-party payment system on iOS and 10% on subscription renewals. It reaches beyond app developers because it sets a take-rate floor for any commerce or subscription transaction routed off-platform from an iOS app — which includes creator-commerce apps, cashback and loyalty apps that pay users out of merchant commission, and publisher subscription businesses that moved to external checkout precisely to escape the original fee.</p>
+      <p class="l-ru">Изначальное правило App Store забирало до 30% с любой покупки внутри приложения — именно поэтому множество компаний увели оплату в веб. Новое предложение возвращает часть этих денег: 15% с покупок через стороннюю платёжную систему в iOS и 10% с продлений подписок. Это касается не только разработчиков приложений: устанавливается нижняя планка комиссии для любой торговой или подписочной транзакции, уводимой из iOS-приложения наружу, — включая приложения креатор-коммерса, кэшбэк- и лояльностные приложения, которые платят пользователям из комиссии мерчанта, и подписочные проекты издателей, ушедшие во внешнюю кассу как раз ради экономии на исходной комиссии.</p>
+      <p class="why l-en"><b>Why it matters:</b> a cashback app paying users out of merchant commission has thin margins, and 15% off the top is most of them.</p>
+      <p class="why l-ru"><b>Почему важно:</b> у кэшбэк-приложения, платящего пользователям из комиссии мерчанта, маржа тонкая, и 15% сверху — это почти вся она.</p>
+      <p class="src">→ <a href="https://www.adexchanger.com/daily-news-roundup/monday-17082026/">AdExchanger</a></p>
+    </div>
+  </details>
+
+  <div class="sub"><span class="l-en">Research radar — publisher economy</span><span class="l-ru">Research radar — экономика паблишеров</span></div>
+
+  <details class="story s-mkt" id="creatoriq">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research</span><span class="l-ru">Исследование</span></span><span class="when">Aug 11 · CreatorIQ</span></div>
+      <h3 class="l-en">Research — CreatorIQ: two thirds of creators earn under $10,000 a year, and the market still pays for follower count</h3>
+      <h3 class="l-ru">Исследование — CreatorIQ: две трети креаторов зарабатывают меньше $10 000 в год, а рынок по-прежнему платит за число подписчиков</h3>
+      <p class="teaser l-en">A survey of 5,095 creators across 100 regions found 67% earning under $10,000 a year and fewer than 5% clearing $100,000. Follower count predicts actual earnings better than engagement does — even though brands say engagement is what they buy.</p>
+      <p class="teaser l-ru">Опрос 5 095 креаторов в 100 регионах: 67% зарабатывают меньше $10 000 в год, и менее 5% переходят планку в $100 000. Число подписчиков предсказывает реальный доход лучше, чем вовлечённость, — хотя бренды говорят, что покупают именно вовлечённость.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">CreatorIQ published State of Creators 2026, produced with Influencers.club. The sample is 5,095 creators across 100 regions, surveyed between 29 May and 29 June 2026, with a stated margin of error of ±1.4 percentage points. The earnings distribution is the headline: 67% earn under $10,000 a year, fewer than 5% clear $100,000, and 62% say content creation is not their primary income.</p>
+      <p class="l-ru">CreatorIQ выпустил отчёт State of Creators 2026, подготовленный вместе с Influencers.club. Выборка — 5 095 креаторов в 100 регионах, опрос с 29 мая по 29 июня 2026 года, заявленная погрешность ±1,4 п.п. Главная цифра — распределение доходов: 67% зарабатывают меньше $10 000 в год, менее 5% переходят планку $100 000, а 62% говорят, что создание контента не их основной источник дохода.</p>
+      <p class="l-en">The structural finding underneath it is a pricing disconnect. Follower count correlates more strongly with what a creator actually earns than engagement does — so despite every brand saying it prioritises audience fit and engagement, the money still follows reach. Creative friction is widespread: 42% report a conflict between what their audience wants and what brands ask for, rising to 53% among creators with 500,000+ Instagram followers. AI use is near-universal but shallow — 72% use AI tools, mostly for brainstorming, writing and editing, and only 4% for strategy. Half have launched or plan to launch their own brand. Key insight: the creator market pays for reach while claiming to buy performance, and the top of it is very thin.</p>
+      <p class="l-ru">За этим стоит структурный разрыв в ценообразовании. Число подписчиков коррелирует с реальным доходом креатора сильнее, чем вовлечённость: сколько бы бренды ни говорили о приоритете совпадения аудитории и вовлечённости, деньги идут за охватом. Творческое трение распространено широко: 42% сообщают о конфликте между тем, чего хочет аудитория, и тем, что просит бренд, а среди креаторов с 500 000+ подписчиков в Instagram — 53%. AI используют почти все, но поверхностно: 72% применяют AI-инструменты, в основном для генерации идей, написания и монтажа, и только 4% — для стратегии. Половина уже запустила или планирует запустить собственный бренд. Ключевой вывод: рынок креаторов платит за охват, заявляя, что покупает результат, а его верхушка очень тонкая.</p>
+      <p class="why l-en"><b>Why it matters:</b> a programme paying commission rather than a flat fee is competing against a market that still rewards follower count.</p>
+      <p class="why l-ru"><b>Почему важно:</b> программа, платящая комиссию, а не фикс, конкурирует с рынком, который до сих пор вознаграждает число подписчиков.</p>
+      <p class="src">→ <a href="https://www.creatoriq.com/press/releases/creatoriq-state-of-creators-report-2026">CreatorIQ</a><a href="https://www.affiversemedia.com/tiktok-vs-instagram-creator-earnings/">Affiverse (platform split)</a></p>
+    </div>
+  </details>
+
+  <details class="story s-mkt" id="epsilon">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research</span><span class="l-ru">Исследование</span></span><span class="when">Aug 14 · Epsilon / Censuswide</span></div>
+      <h3 class="l-en">Research — Epsilon: 79% of UK marketing spend is going to performance channels, into a market where 71% of shoppers are cutting back</h3>
+      <h3 class="l-ru">Исследование — Epsilon: 79% британских маркетинговых бюджетов уходит в перформанс-каналы на рынке, где 71% покупателей урезает траты</h3>
+      <p class="teaser l-en">Two parallel surveys — 2,000 UK consumers and 200 marketing decision-makers — found £17.9bn of planned peak-season spend against nearly £50bn of advertising chasing it, while UK internet-user growth is under 1% and time online is falling.</p>
+      <p class="teaser l-ru">Два параллельных опроса — 2 000 британских потребителей и 200 маркетинговых руководителей — показали £17,9 млрд планируемых трат в высокий сезон против почти £50 млрд рекламы, которая за ними гонится, при росте числа интернет-пользователей менее 1% и падающем времени онлайн.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Epsilon commissioned two Censuswide studies in June 2026, one of 2,000 UK consumers and one of 200 UK marketing decision-makers. Consumers expect to spend £17.9bn in the peak "golden quarter" season, but 71% say they are cutting back on non-essentials and 68% are actively looking for lower prices; just under half plan to treat themselves and 60% are open to trying new grocery brands. On the marketer side, 93% expect Q4 to outperform, nearly 90% of brands expect budget growth in the second half, and 79% of marketing spend is going to performance channels.</p>
+      <p class="l-ru">Epsilon заказала Censuswide два исследования в июне 2026 года: опрос 2 000 британских потребителей и 200 маркетинговых руководителей. Потребители планируют потратить £17,9 млрд в высокий сезон «золотого квартала», но 71% сокращает траты на необязательное, а 68% активно ищет цены пониже; чуть менее половины планируют побаловать себя, а 60% готовы попробовать новые продуктовые бренды. Со стороны маркетологов: 93% ждут, что IV квартал будет лучше прошлого, почти 90% брендов ожидают роста бюджетов во втором полугодии, и 79% маркетинговых расходов уходит в перформанс-каналы.</p>
+      <p class="l-en">The demand-side context is what makes those two numbers uncomfortable together. UK internet-user growth is under 1% year on year and average daily time online has fallen by 26 minutes. Epsilon's framing is that roughly £50bn of advertising is chasing a consumer pool that is not growing, on attention inventory that is shrinking. Key insight: performance budgets are rising into flat demand and falling attention, which makes cost-per-acquisition inflation in Q4 close to arithmetic rather than a forecast.</p>
+      <p class="l-ru">Неудобным сочетание этих двух цифр делает контекст со стороны спроса: число интернет-пользователей в Британии растёт менее чем на 1% год к году, а среднее ежедневное время онлайн упало на 26 минут. Формулировка Epsilon: около £50 млрд рекламы гонится за аудиторией, которая не растёт, на сжимающемся инвентаре внимания. Ключевой вывод: перформанс-бюджеты растут в условиях плоского спроса и падающего внимания, поэтому рост стоимости привлечения в IV квартале — это скорее арифметика, чем прогноз.</p>
+      <p class="why l-en"><b>Why it matters:</b> when paid channels get more expensive in Q4, commission-based channels look better on price without doing anything differently.</p>
+      <p class="why l-ru"><b>Почему важно:</b> когда платные каналы дорожают в IV квартале, каналы с оплатой за результат выигрывают по цене, ничего не меняя в себе.</p>
+      <p class="src">→ <a href="https://hellopartner.com/as-shoppers-cut-back-on-non-essentials-brand-competition-heats-up-in-golden-quarter/">Hello Partner</a></p>
+    </div>
+  </details>
+
+  <details class="story s-mkt" id="partnercentric">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research</span><span class="l-ru">Исследование</span></span><span class="when">Aug 17 · PartnerCentric</span></div>
+      <h3 class="l-en">Research — PartnerCentric: shoppers who trust AI recommendations trust creators six times more, not less</h3>
+      <h3 class="l-ru">Исследование — PartnerCentric: покупатели, доверяющие AI-рекомендациям, доверяют креаторам в шесть раз больше, а не меньше</h3>
+      <p class="teaser l-en">43% of respondents said they had bought something an AI chatbot recommended in the previous three months. The headline finding cuts against the assumption that chatbots replace human recommendation: the two kinds of trust rise together.</p>
+      <p class="teaser l-ru">43% опрошенных сказали, что за последние три месяца покупали то, что порекомендовал AI-чатбот. Главный вывод противоречит предположению, что чатботы вытесняют человеческую рекомендацию: два вида доверия растут вместе.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">PartnerCentric, a performance-marketing agency, published consumer research on trust along the AI-assisted path to purchase. The finding it leads with is that shoppers who place trust in AI are six times more likely to also value and trust creators — meaning AI and human recommendation behave as complements rather than substitutes. Separately, 43% of respondents said they had purchased a product recommended by an AI chatbot within the previous three months.</p>
+      <p class="l-ru">Агентство перформанс-маркетинга PartnerCentric опубликовало потребительское исследование о доверии на пути к покупке с участием AI. Главный вывод: покупатели, доверяющие AI, в шесть раз чаще ценят и доверяют креаторам — то есть AI и человеческая рекомендация ведут себя как дополняющие друг друга, а не как замена. Отдельно 43% респондентов сказали, что за последние три месяца купили товар, порекомендованный AI-чатботом.</p>
+      <p class="l-en">Treat the numbers as directional: the methodology, sample size and fielding dates sit behind the publisher's paywall and were not disclosed in the accessible portion. It is worth logging anyway because it is one of very few pieces of primary research produced from inside the affiliate industry on how AI actually changes buying behaviour, rather than commentary about it. Key insight: if AI trust and creator trust rise together, chatbot commerce may expand the recommendation market rather than cannibalise it — but the methodology is undisclosed, so this is a hypothesis to test, not a result to plan on.</p>
+      <p class="l-ru">К цифрам стоит относиться как к направлению: методология, размер выборки и даты полевого этапа находятся за пейволом издателя и в открытой части не раскрыты. Зафиксировать это всё равно стоит: это одно из очень немногих собственных исследований изнутри партнёрской индустрии о том, как AI реально меняет покупательское поведение, а не комментарий об этом. Ключевой вывод: если доверие к AI и доверие к креаторам растут вместе, коммерция в чатботах может расширять рынок рекомендаций, а не съедать его, — но без раскрытой методологии это гипотеза для проверки, а не результат, на который можно планировать.</p>
+      <p class="why l-en"><b>Why it matters:</b> the assumption that AI assistants take the publisher's place may be backwards, and it is cheap to test.</p>
+      <p class="why l-ru"><b>Почему важно:</b> предположение, что AI-ассистенты занимают место паблишера, может быть перевёрнутым, и проверить это недорого.</p>
+      <p class="src">→ <a href="https://hellopartner.com/ai-chatbot-creator-or-a-combo-of-the-two-who-do-shoppers-trust-on-the-path-to-purchase/">Hello Partner</a></p>
+    </div>
+  </details>
+
+  <section class="sec s-tech" id="tech">
+    <h2 class="l-en">3 · Tech &amp; Tracking</h2>
+    <h2 class="l-ru">3 · Технологии и трекинг</h2>
+    <p class="note l-en">The strongest week for affiliate tracking specifically in a while: Google is separating YouTube affiliate clicks from organic traffic, the Honey case reaches the stage where the extension's code becomes visible, and a German regulator is rewriting Apple's tracking prompt. No dated Privacy Sandbox, Chrome cookie or Safari ITP announcement appeared inside the window.</p>
+    <p class="note l-ru">Одна из самых насыщенных недель именно для партнёрского трекинга: Google отделяет партнёрские клики YouTube от органического трафика, дело Honey доходит до стадии, где становится виден код расширения, а немецкий регулятор переписывает окно разрешения Apple. Датированных анонсов по Privacy Sandbox, кукам в Chrome или ITP в Safari внутри окна не было.</p>
+  </section>
+
+  <details class="story s-tech" id="merchant-center">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Tracking</span><span class="l-ru">Трекинг</span></span><span class="when">Aug 11–12 · PPC Land / Search Engine Roundtable</span></div>
+      <h3 class="l-en">From 24 August, Google stops hiding YouTube affiliate clicks inside "organic" — and restates six weeks of history</h3>
+      <h3 class="l-ru">С 24 августа Google перестаёт прятать партнёрские клики YouTube внутри «органики» — и пересчитывает шесть недель истории</h3>
+      <p class="teaser l-en">Clicks from YouTube creator product tags get their own "YouTube affiliate" line in Merchant Center instead of being counted as organic traffic. The change is backdated to 1 July, so July will look broken next to unchanged Google Ads numbers.</p>
+      <p class="teaser l-ru">Клики по товарным меткам креаторов YouTube получают отдельную строку «YouTube affiliate» в Merchant Center вместо учёта в органическом трафике. Изменение задним числом с 1 июля — поэтому июль будет выглядеть сломанным рядом с неизменившимися цифрами Google Ads.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Google Merchant Center is where a retailer sees how its products perform across Google's surfaces. Until now, clicks arriving from a YouTube creator's product tag — commission-eligible affiliate traffic — were folded silently into the "Organic" bucket alongside free product listings. From 24 August they get their own "YouTube affiliate" line. That means merchants have, until now, been crediting affiliate-driven demand to organic traffic without being able to see it, which understates what the channel produced and overstates what organic did.</p>
+      <p class="l-ru">Google Merchant Center — это место, где ритейлер видит, как его товары работают на площадках Google. До сих пор клики по товарной метке креатора YouTube — то есть партнёрский трафик, с которого платится комиссия, — молча попадали в корзину «Органика» вместе с бесплатными товарными карточками. С 24 августа у них появится отдельная строка «YouTube affiliate». Это значит, что до сих пор мерчанты записывали спрос от партнёров в органический трафик, не имея возможности его увидеть: канал недооценивался, а органика — переоценивалась.</p>
+      <p class="l-en">Google is separately realigning how it counts YouTube organic clicks and impressions to match YouTube's own reporting standards, which pushes the organic number down a second time. Both changes are retroactive to 1 July 2026, so roughly six weeks of history will be restated under the new rules while the equivalent Google Ads metrics keep their original definitions — an asymmetry that will make July look broken in any side-by-side report. Google says the organic drop will be "significant" but published no expected size. Product-level reporting also expands to all Performance Max networks plus Video, App and Demand Gen, with a "Network" segmentation dimension arriving later.</p>
+      <p class="l-ru">Отдельно Google приводит подсчёт органических кликов и показов на YouTube в соответствие с собственными стандартами отчётности YouTube, что опускает органическую цифру ещё раз. Оба изменения действуют задним числом с 1 июля 2026 года, то есть около шести недель истории будут пересчитаны по новым правилам, тогда как аналогичные метрики в Google Ads сохранят прежние определения. Из-за этой асимметрии июль будет выглядеть сломанным в любом сопоставлении. Google предупреждает, что падение органики будет «значительным», но размер не назвал. Отчётность на уровне товаров также расширяется на все сети Performance Max плюс Video, App и Demand Gen, а измерение по сетям добавят позже.</p>
+      <p class="why l-en"><b>Why it matters:</b> anyone reporting on "organic" performance needs to rebaseline before 24 August, and YouTube affiliate volume becomes separately visible for the first time.</p>
+      <p class="why l-ru"><b>Почему важно:</b> всем, кто отчитывается по «органике», нужно пересобрать базу сравнения до 24 августа, а объём партнёрки YouTube впервые становится виден отдельно.</p>
+      <p class="src">→ <a href="https://ppc.land/google-merchant-center-organic-traffic-drops-in-august-24-reporting-change/">PPC Land</a><a href="https://www.seroundtable.com/google-merchant-center-performance-report-update-41859.html">Search Engine Roundtable</a></p>
+    </div>
+  </details>
+
+  <details class="story s-tech" id="honey">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Litigation</span><span class="l-ru">Судебное</span></span><span class="when">Aug 11 · PPC Land</span></div>
+      <h3 class="l-en">The Honey lawsuit is going into discovery, and the extension has lost 7,000 merchants and 6 million users</h3>
+      <h3 class="l-ru">Дело Honey уходит в раскрытие документов, а расширение потеряло 7 000 мерчантов и 6 млн пользователей</h3>
+      <p class="teaser l-en">A judge let every claim in the creators' class action proceed, so the internal engineering documentation behind the extension becomes accessible. Honey's merchant base has fallen from about 35,000 to 28,000 and its Chrome installs from over 20 million to 14 million.</p>
+      <p class="teaser l-ru">Судья пропустил все требования коллективного иска креаторов, поэтому внутренняя инженерная документация расширения станет доступной. База мерчантов Honey упала примерно с 35 000 до 28 000, установки в Chrome — с более чем 20 млн до 14 млн.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Honey is PayPal's coupon browser extension. The creators suing it allege it overwrote the affiliate tracking cookie already set by the publisher who sent the shopper to the store, so the commission went to Honey instead. The affiliate industry has a "stand-down" convention for exactly this: an extension is supposed to leave an existing tracking cookie alone. The complaint describes what it calls a defeat device — rather than honouring the convention uniformly, Honey allegedly profiled each user by account age, cashback points and browsing history to decide whether to comply, behaving differently for likely auditors than for ordinary shoppers. PayPal's defence is that the code touched "less than 0.1% of traffic".</p>
+      <p class="l-ru">Honey — купонное браузерное расширение PayPal. Подающие иск креаторы утверждают, что оно перезаписывало партнёрскую куку, уже поставленную паблишером, который привёл покупателя в магазин, и комиссия уходила к Honey. В индустрии для этого есть договорённость «stand-down»: расширение не должно трогать уже установленную трекинговую куку. В иске это описано как «устройство обхода»: вместо единообразного соблюдения правила Honey якобы профилировало каждого пользователя по возрасту аккаунта, накопленным баллам и истории просмотров и на этом основании решало, соблюдать ли правило, — то есть вело себя иначе с вероятными проверяющими, чем с обычными покупателями. Защита PayPal состоит в том, что код затрагивал «менее 0,1% трафика».</p>
+      <p class="l-en">Judge Beth Labson Freeman denied PayPal's motion to dismiss on 22 June and every claim survived, which pushes the case into discovery — the stage where the other side gets access to internal engineering documentation. The commercial damage is now quantified: merchants fell from around 35,000 in December 2024 to around 28,000 in August 2026, the coupon database halved from about 90,000 codes to 50,000, and Chrome installs dropped from over 20 million to 14 million. Rakuten terminated Honey on 12 January, impact.com on 16 January and Awin on 21 January 2026; Rakuten reinstated it on 6 May 2026 after Honey shipped stand-down verification technology.</p>
+      <p class="l-ru">22 июня судья Бет Лабсон Фриман отклонила ходатайство PayPal о прекращении дела, и все требования устояли, — дело переходит в стадию раскрытия документов, где противоположная сторона получает доступ к внутренней инженерной документации. Коммерческий ущерб теперь измерен: число мерчантов упало примерно с 35 000 в декабре 2024 года до примерно 28 000 в августе 2026-го, база купонов сократилась вдвое — с около 90 000 кодов до 50 000, а установки в Chrome — с более чем 20 млн до 14 млн. Rakuten разорвал отношения с Honey 12 января, impact.com — 16 января, Awin — 21 января 2026 года; 6 мая 2026-го Rakuten восстановил Honey после того, как та внедрила технологию проверки соблюдения stand-down.</p>
+      <p class="why l-en"><b>Why it matters:</b> discovery into how an extension decides whose cookie to overwrite sets the evidence standard every network will be judged against.</p>
+      <p class="why l-ru"><b>Почему важно:</b> раскрытие того, как расширение решает, чью куку перезаписать, задаёт стандарт доказательств, по которому будут судить каждую сеть.</p>
+      <p class="src">→ <a href="https://ppc.land/honey-loses-7-000-merchants-as-judge-lets-creator-lawsuit-proceed/">PPC Land</a></p>
+    </div>
+  </details>
+
+  <details class="story s-tech" id="att-germany">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Consent</span><span class="l-ru">Согласия</span></span><span class="when">Aug 17 · PPC Land</span></div>
+      <h3 class="l-en">Germany orders Apple to rewrite the iOS tracking prompt within four months</h3>
+      <h3 class="l-ru">Германия обязала Apple переписать окно разрешения на отслеживание в iOS за четыре месяца</h3>
+      <p class="teaser l-en">The warning symbol and the word "tracking" have to go, the wording must match what Apple shows for its own advertising, and third parties get up to 4,000 characters to explain why they are asking — instead of one or two sentences.</p>
+      <p class="teaser l-ru">Предупреждающий символ и слово «отслеживание» должны исчезнуть, формулировка должна совпадать с той, что Apple показывает для собственной рекламы, а сторонние компании получают до 4 000 символов на объяснение вместо одного-двух предложений.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">App Tracking Transparency is the iOS prompt that asks whether an app may track you across other companies' apps and websites. Since 2021 it has carried a warning-hand symbol and the word "tracking", while Apple's own Personalised Ads prompt used softer wording — an asymmetry that made third-party consent rates structurally lower than Apple's own. Germany's competition authority issued its decision on 13 August and announced it on 17 August: Apple must remove the symbol and the word, and fix the wording mismatch between the two prompts.</p>
+      <p class="l-ru">App Tracking Transparency — это окно в iOS, которое спрашивает, может ли приложение отслеживать вас в приложениях и на сайтах других компаний. С 2021 года в нём есть предупреждающий символ руки и слово «отслеживание», тогда как собственное окно Apple про персонализированную рекламу сформулировано мягче, — из-за этой асимметрии доля согласий у сторонних компаний структурно ниже, чем у самой Apple. Антимонопольный регулятор Германии вынес решение 13 августа и объявил о нём 17 августа: Apple должна убрать символ и слово и устранить расхождение формулировок между двумя окнами.</p>
+      <p class="l-en">Third-party publishers also gain a "Customizable Purpose String" of up to 4,000 characters to explain the benefit of personalised advertising, against the one or two sentences allowed today, plus a second-layer button leading to granular settings. Three consent architectures become permissible: a combined prompt merging GDPR and Apple consent, separate prompts that cross-reference each other subject to the 12-month re-display rule, or fully independent prompts as today. Scope is users with a German App Store billing address on devices located in Germany; the commitment runs seven years from implementation under an independent trustee, and the deadline is four months from service of the decision.</p>
+      <p class="l-ru">Сторонние издатели также получают «настраиваемую строку цели» до 4 000 символов, чтобы объяснить пользу персонализированной рекламы, против одного-двух предложений сейчас, плюс кнопку второго уровня с детальными настройками. Разрешаются три схемы получения согласия: объединённое окно, совмещающее согласие по GDPR и согласие Apple; раздельные окна, ссылающиеся друг на друга, с учётом правила о повторном показе раз в 12 месяцев; либо полностью независимые окна, как сейчас. Действие распространяется на пользователей с немецким платёжным адресом в App Store на устройствах, находящихся в Германии; обязательство действует семь лет с момента внедрения под контролем независимого доверенного лица, срок — четыре месяца с даты вручения решения.</p>
+      <p class="why l-en"><b>Why it matters:</b> higher iOS opt-in rates in one large market mean more measurable app conversions for every partner running installs there.</p>
+      <p class="why l-ru"><b>Почему важно:</b> рост доли согласий в iOS на одном крупном рынке означает больше измеримых конверсий в приложениях для всех партнёров, которые там льют установки.</p>
+      <p class="src">→ <a href="https://ppc.land/apple-faces-four-month-deadline-to-redesign-att-prompt-in-germany/">PPC Land</a></p>
+    </div>
+  </details>
+
+  <details class="story s-tech" id="iab-gpp">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Standards</span><span class="l-ru">Стандарты</span></span><span class="when">Aug 11 · MarTech.org</span></div>
+      <h3 class="l-en">IAB Tech Lab proposes stripping down the signal that carries US consent between vendors</h3>
+      <h3 class="l-ru">IAB Tech Lab предлагает упростить сигнал, который передаёт согласия пользователей между вендорами в США</h3>
+      <p class="teaser l-en">The Global Privacy Platform would drop the state-by-state approach and several optional modes in favour of one simplified set of fields. The data deletion request specification also reached version 2.0. Comments close 11 September.</p>
+      <p class="teaser l-ru">Global Privacy Platform предлагают избавить от подхода «штат за штатом» и нескольких опциональных режимов в пользу одного упрощённого набора полей. Спецификация запросов на удаление данных вышла в версии 2.0. Приём комментариев — до 11 сентября.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">The Global Privacy Platform is the standard envelope that carries "what this user agreed to" from a publisher to an ad platform to a vendor, so that each party in the chain knows what it may legally do. The proposed update — open for public comment until 11 September 2026 — removes support for the previous state-by-state approach under the multi-state privacy agreement, eliminates the Service Provider and Opt-Out Option modes, drops secondary usage consents, and simplifies the notice and choice fields, aligning the signal with the Fifth Amended and Restated Multi-State Privacy Agreement. In plain terms it collapses a per-state patchwork into one simpler set of fields.</p>
+      <p class="l-ru">Global Privacy Platform — это стандартный «конверт», который передаёт информацию о том, на что согласился пользователь, от паблишера к рекламной платформе и дальше к вендору, чтобы каждый участник цепочки понимал, что ему юридически можно. Предлагаемое обновление, открытое для комментариев до 11 сентября 2026 года, убирает поддержку прежнего подхода «штат за штатом» в рамках многоштатного соглашения о приватности, ликвидирует режимы Service Provider и Opt-Out Option, отменяет согласия на вторичное использование и упрощает поля уведомления и выбора, приводя сигнал в соответствие с пятой редакцией Multi-State Privacy Agreement. Проще говоря — лоскутное одеяло по штатам сворачивается в один упрощённый набор полей.</p>
+      <p class="l-en">Separately, the Data Deletion Request Framework 2.0 is now final. It clarifies how identities and deletion requests are described in the tokens passed between systems, improves feedback and troubleshooting when a deletion fails, hardens framework integrity and allows implementation-specific extensions. Together the two reduce the need for bespoke point-to-point integrations between publishers, platforms and vendors handling consumer data.</p>
+      <p class="l-ru">Отдельно финализирована версия 2.0 Data Deletion Request Framework — механизма запросов на удаление данных. Она уточняет, как описываются идентификаторы и сами запросы в токенах, передаваемых между системами, улучшает обратную связь и диагностику при сбое удаления, повышает целостность фреймворка и допускает расширения под конкретную реализацию. Вместе эти два обновления снижают потребность в индивидуальных интеграциях «точка-точка» между паблишерами, платформами и вендорами, работающими с пользовательскими данными.</p>
+      <p class="why l-en"><b>Why it matters:</b> these are the pipes an affiliate network has to speak to receive consent state and honour deletion requests across US states.</p>
+      <p class="why l-ru"><b>Почему важно:</b> это те самые «трубы», на языке которых партнёрская сеть должна получать статус согласия и обрабатывать запросы на удаление по штатам США.</p>
+      <p class="src">→ <a href="https://martech.org/iab-tech-lab-releases-new-privacy-standards/">MarTech.org</a></p>
+    </div>
+  </details>
+
+  <details class="story s-tech" id="lunio">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research</span><span class="l-ru">Исследование</span></span><span class="when">Aug 13 · Lunio</span></div>
+      <h3 class="l-en">Research — Lunio: retail search campaigns using Google's AI Max carry 72% more invalid traffic</h3>
+      <h3 class="l-ru">Исследование — Lunio: розничные поисковые кампании на AI Max от Google получают на 72% больше невалидного трафика</h3>
+      <p class="teaser l-en">An analysis of 414 million clicks found invalid traffic on retail AI Max campaigns rising from 2.46% to 5.28% over three quarters, with Google Shopping worst at 6.33% — roughly one bad click in every sixteen.</p>
+      <p class="teaser l-ru">Анализ 414 млн кликов показал: доля невалидного трафика в розничных кампаниях AI Max выросла с 2,46% до 5,28% за три квартала, а хуже всего Google Shopping — 6,33%, примерно один плохой клик из шестнадцати.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">"Invalid traffic" means clicks that Google's own filters should have caught — bots and other non-human activity that spend budget with no chance of converting. Lunio analysed 414 million clicks from October 2025 to June 2026 and found retail search campaigns with AI Max enabled were exposed to 72% more of it than campaigns without. AI Max is Google's automation layer for query matching, asset personalisation and landing-page routing, and legacy Search campaigns are being migrated onto it during September.</p>
+      <p class="l-ru">«Невалидный трафик» — это клики, которые должны были отсеять собственные фильтры Google: боты и другая нечеловеческая активность, тратящая бюджет без шансов на конверсию. Lunio проанализировала 414 млн кликов с октября 2025 по июнь 2026 года и обнаружила, что розничные поисковые кампании с включённым AI Max получали его на 72% больше, чем кампании без него. AI Max — слой автоматизации Google для подбора запросов, персонализации объявлений и маршрутизации на посадочные страницы; старые поисковые кампании переводят на него в сентябре.</p>
+      <p class="l-en">The trend line matters more than the level. Invalid traffic on retail AI Max campaigns climbed from 2.46% in Q4 2025 to 5.28% in Q2 2026. Google Shopping showed the highest rate at 6.33%, with the steepest trajectory reaching 7.51% — roughly one in thirteen Shopping clicks. AI Max campaigns accounted for 68% of all invalid clicks observed. Context from the same week: Smarter Ecommerce found exact-match keywords are now only 71% exact, down from near-100% in early 2025, so query-level control is loosening alongside traffic quality. Key insight: the campaign type advertisers are being migrated into, with no opt-out, is the one measured as carrying materially more waste.</p>
+      <p class="l-ru">Важнее уровня — динамика. Доля невалидного трафика в розничных кампаниях AI Max выросла с 2,46% в IV квартале 2025 года до 5,28% во II квартале 2026-го. Хуже всего Google Shopping — 6,33%, а на пике траектории 7,51%, то есть примерно один клик из тринадцати. На кампании AI Max пришлось 68% всех зафиксированных невалидных кликов. Контекст той же недели: по данным Smarter Ecommerce, точное соответствие ключевых слов теперь точно лишь на 71% против почти 100% в начале 2025 года, то есть контроль на уровне запроса ослабевает вместе с качеством трафика. Ключевой вывод: тип кампаний, в который рекламодателей переводят без возможности отказаться, — тот самый, у которого измеренные потери заметно выше.</p>
+      <p class="why l-en"><b>Why it matters:</b> rising waste on the paid side is the strongest argument for channels where payment only happens after a completed sale.</p>
+      <p class="why l-ru"><b>Почему важно:</b> рост потерь на платной стороне — самый сильный аргумент в пользу каналов, где платят только после состоявшейся продажи.</p>
+      <p class="src">→ <a href="https://ppc.land/ai-max-shows-72-more-invalid-traffic-in-retail-search-lunio-finds/">PPC Land</a></p>
+    </div>
+  </details>
+
+  <details class="story s-tech" id="clarity">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Measurement</span><span class="l-ru">Измерения</span></span><span class="when">Aug 13 · Search Engine Land</span></div>
+      <h3 class="l-en">Microsoft ships a number that tells a publisher how much each AI crawler takes versus gives back</h3>
+      <h3 class="l-ru">Microsoft выпустила метрику, которая показывает паблишеру, сколько каждый AI-краулер забирает и сколько возвращает</h3>
+      <p class="teaser l-en">Microsoft Clarity's new scrape-to-referral ratio divides how often an AI platform crawls a site by how much traffic it sends back. In Microsoft's own example, one operator scraped 6,000 times per single referral.</p>
+      <p class="teaser l-ru">Новая метрика Microsoft Clarity делит частоту обхода сайта AI-платформой на объём трафика, который та возвращает. В примере самой Microsoft один оператор обошёл сайт 6 000 раз на один переход.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Clarity is Microsoft's free site-analytics tool. Its new AI Scrape-to-Referral Ratio card, in Bot Analytics within the AI Visibility Dashboard, gives site owners a per-operator number: how many times each AI platform crawled the site, divided by how many visitors that platform actually sent back. Microsoft frames it as a way to "evaluate the tradeoff between content extraction and traffic return". The worked example in the announcement is stark — one operator scraped 6,000 times for every single referral, producing 41 referral visits in total.</p>
+      <p class="l-ru">Clarity — бесплатный инструмент веб-аналитики Microsoft. Новая карточка AI Scrape-to-Referral Ratio в разделе Bot Analytics внутри AI Visibility Dashboard даёт владельцу сайта цифру по каждому оператору: сколько раз AI-платформа обошла сайт, делённое на то, сколько посетителей она реально вернула. Microsoft описывает это как способ «оценить размен между извлечением контента и возвратом трафика». Пример в анонсе показателен: один оператор обошёл сайт 6 000 раз на каждый единственный переход, дав в сумме 41 визит.</p>
+      <p class="l-en">The report breaks results down per operator, so a site owner can see which AI sources reciprocate and which purely extract, and decide which to allow. It adds session-recording filters to analyse how AI-referred visitors behave after they land, and includes safeguards for accurate domain mapping.</p>
+      <p class="l-ru">Отчёт разбивает результаты по операторам, чтобы владелец сайта видел, кто отвечает взаимностью, а кто только извлекает, и решал, кого пускать. Добавлены фильтры записей сессий для анализа поведения пришедших из AI посетителей и механизмы корректного сопоставления доменов.</p>
+      <p class="why l-en"><b>Why it matters:</b> content-driven affiliates now have a per-crawler number to decide access with, instead of an all-or-nothing robots.txt choice.</p>
+      <p class="why l-ru"><b>Почему важно:</b> у контентных партнёров появилась цифра по каждому краулеру для решения о доступе — вместо выбора «всё или ничего» в robots.txt.</p>
+      <p class="src">→ <a href="https://searchengineland.com/microsoft-clarity-ai-scrape-to-referral-insights-report-484959">Search Engine Land</a></p>
+    </div>
+  </details>
+
+  <details class="story s-tech" id="attr-windows">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Attribution</span><span class="l-ru">Атрибуция</span></span><span class="when">Aug 14–17 · Search Engine Land</span></div>
+      <h3 class="l-en">Google lets advertisers set any lookback window they like, and starts counting video views toward conversions by default</h3>
+      <h3 class="l-ru">Google разрешил рекламодателям задавать любое окно атрибуции и по умолчанию начинает засчитывать просмотры видео в конверсии</h3>
+      <p class="teaser l-en">Click-through attribution windows in Google Analytics become any value from 1 to 90 days instead of six fixed presets. Separately, view-through conversions in Demand Gen become video-only and switch on automatically for new campaigns.</p>
+      <p class="teaser l-ru">Окно атрибуции по кликам в Google Analytics теперь любое от 1 до 90 дней вместо шести фиксированных вариантов. Отдельно конверсии по просмотрам в Demand Gen становятся только видео и включаются автоматически в новых кампаниях.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">An attribution window is simply how far back in time a conversion is allowed to look for an ad interaction to credit. Widen it and more sales get attributed to ads; narrow it and fewer do — with no change in actual sales. Google has replaced its fixed presets with free-form values: engaged-view conversions move from a hard 3-day window to anything from 1 to 30 days, and click-through conversions move from the ladder of 1, 7, 14, 30, 60 or 90 days to any value from 1 to 90. The settings sit under Advertising &gt; Conversion management &gt; Settings in both Google Analytics and Google Ads.</p>
+      <p class="l-ru">Окно атрибуции — это просто то, как далеко назад конверсии разрешено искать рекламное взаимодействие, которому её засчитать. Расширьте окно — рекламе припишут больше продаж, сузьте — меньше, при том что реальные продажи не изменятся. Google заменил фиксированные варианты произвольными значениями: конверсии по вовлечённому просмотру переходят с жёстких 3 дней на любое значение от 1 до 30 дней, а конверсии по клику — с лестницы 1, 7, 14, 30, 60 или 90 дней на любое значение от 1 до 90. Настройки находятся в разделе «Реклама &gt; Управление конверсиями &gt; Настройки» и в Google Analytics, и в Google Ads.</p>
+      <p class="l-en">The second change is narrower but has a default attached. In Demand Gen campaigns, view-through conversion bidding becomes video-only: conversions credited to someone seeing an image ad without clicking will still be reported as secondary but stop being eligible for bidding and leave the primary Conversions column. New Demand Gen campaigns get view-through optimisation enabled automatically, so advertisers must opt out rather than in. Inventory expands beyond YouTube and Discover to the Google Display Network, and video assets served on Display move from cost-per-click to cost-per-thousand-impressions billing.</p>
+      <p class="l-ru">Второе изменение уже, но с настройкой по умолчанию. В кампаниях Demand Gen назначение ставок по конверсиям от просмотров становится только видео: конверсии, засчитанные тем, кто увидел баннер без клика, продолжат попадать во вторичные, но перестанут участвовать в назначении ставок и уйдут из основного столбца «Конверсии». В новых кампаниях Demand Gen оптимизация по просмотрам включается автоматически, то есть отказываться нужно вручную. Инвентарь расширяется с YouTube и Discover на контекстно-медийную сеть Google, а видео на медийке переходит с оплаты за клик на оплату за тысячу показов.</p>
+      <p class="why l-en"><b>Why it matters:</b> a partner benchmarked against a client's Google-reported cost per sale can see that number move with no change in performance at all.</p>
+      <p class="why l-ru"><b>Почему важно:</b> партнёр, которого сравнивают со стоимостью продажи в отчётах Google у клиента, увидит сдвиг этой цифры вообще без изменения результатов.</p>
+      <p class="src">→ <a href="https://searchengineland.com/google-analytics-adds-custom-conversion-attribution-windows-485014">Search Engine Land</a><a href="https://searchengineland.com/google-updates-demand-gen-view-through-conversion-optimization-485127">Search Engine Land</a></p>
+    </div>
+  </details>
+
+  <details class="story s-tech" id="watermark">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Content</span><span class="l-ru">Контент</span></span><span class="when">Aug 12–13 · Hello Partner / Affiverse</span></div>
+      <h3 class="l-en">Anthropic starts embedding invisible markers in text written by Claude</h3>
+      <h3 class="l-ru">Anthropic начинает встраивать невидимые метки в текст, написанный Claude</h3>
+      <p class="teaser l-en">Machine-readable watermarks plus signed provenance metadata on files, driven by EU AI Act transparency rules, with worldwide rollout planned. Affiliate publishers producing review and comparison content at scale are directly in scope.</p>
+      <p class="teaser l-ru">Машиночитаемые водяные знаки плюс подписанные метаданные о происхождении файлов — под требования прозрачности EU AI Act, с планом глобального развёртывания. Партнёрские паблишеры, массово производящие обзоры и сравнения, попадают под это напрямую.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Anthropic is embedding invisible machine-readable watermarks in text produced by supported Claude models, alongside signed provenance metadata on generated files. New Claude models launched in the EU from 2 August 2026 support machine-readable marking from launch, and Anthropic plans a worldwide rollout. The driver is the EU AI Act's transparency obligations, but the practical reach extends to any publisher producing review, deals or comparison content at scale.</p>
+      <p class="l-ru">Anthropic встраивает невидимые машиночитаемые водяные знаки в текст, созданный поддерживаемыми моделями Claude, а также подписанные метаданные о происхождении в генерируемые файлы. Новые модели Claude, выпущенные в ЕС с 2 августа 2026 года, поддерживают машиночитаемую маркировку с момента запуска; Anthropic планирует глобальное развёртывание. Причина — требования прозрачности EU AI Act, но практический охват касается любого паблишера, который массово производит обзоры, подборки скидок или сравнения.</p>
+      <p class="l-en">The detection limits run in both directions and are worth understanding before anyone builds policy on this. A detected mark does not prove an article was AI-generated — Claude may only have edited, formatted or translated it. And the absence of a mark does not prove human authorship, since heavy editing can remove it. There is currently no evidence the watermark triggers a Google ranking penalty; Google assesses usefulness and originality rather than whether a machine was involved. The practical advice in the coverage is unglamorous: document where generative AI enters the workflow, set a disclosure policy, require transparency from content vendors, and keep manual review on product claims and pricing.</p>
+      <p class="l-ru">Ограничения детекции работают в обе стороны, и это стоит понимать до того, как строить на этом политику. Найденная метка не доказывает, что статья сгенерирована AI: Claude мог лишь отредактировать, отформатировать или перевести её. Отсутствие метки не доказывает авторства человека, потому что при плотной правке она может исчезнуть. Свидетельств того, что водяной знак ведёт к понижению в выдаче Google, сейчас нет: Google оценивает полезность и оригинальность, а не участие машины. Практический совет в публикациях звучит буднично: зафиксировать, где именно в процессе появляется генеративный AI, определить политику раскрытия, требовать прозрачности от подрядчиков по контенту и оставить ручную проверку на утверждениях о товаре и на ценах.</p>
+      <p class="why l-en"><b>Why it matters:</b> content-driven partners will be asked by merchants what part of their review pages a machine wrote, and will need an answer.</p>
+      <p class="why l-ru"><b>Почему важно:</b> контентных партнёров мерчанты будут спрашивать, какую часть их обзоров написала машина, — и ответ понадобится.</p>
+      <p class="src">→ <a href="https://hellopartner.com/anthropic-introduces-ai-content-watermark-what-it-means-for-the-industry/">Hello Partner</a><a href="https://www.affiversemedia.com/claude-ai-watermarks-affiliate-content/">Affiverse</a></p>
+    </div>
+  </details>
+
+  <section class="sec s-ai" id="ai">
+    <h2 class="l-en">4 · AI × Affiliate</h2>
+    <h2 class="l-ru">4 · AI × Affiliate</h2>
+    <p class="note l-en">This week's AI news was about who gets paid for content and what AI systems actually read. No AI-shopping or AI-affiliate funding round or acquisition had a verifiable date inside the window, and there was no new agent-checkout protocol news — the only movement on that front was a merchant testing one.</p>
+    <p class="note l-ru">AI-новости недели были о том, кому платят за контент и что AI-системы на самом деле читают. Ни один раунд или поглощение в AI-шопинге и AI-аффилиате не имел подтверждённой даты внутри окна, новостей по протоколам агентской оплаты тоже не было — единственное движение здесь — мерчант, который начал их тестировать.</p>
+  </section>
+
+  <details class="story s-ai" id="cloudflare">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Infrastructure</span><span class="l-ru">Инфраструктура</span></span><span class="when">Aug 17 · Press Gazette</span></div>
+      <h3 class="l-en">Cloudflare will block mixed-purpose AI crawlers by default from 15 September, and is building a model that pays per appearance</h3>
+      <h3 class="l-ru">С 15 сентября Cloudflare по умолчанию блокирует «смешанные» AI-краулеры и строит модель оплаты за появление в ответе</h3>
+      <p class="teaser l-en">Cloudflare's strategy chief argues blocking scrapers creates the scarcity that lets publishers negotiate licensing deals. From 15 September, crawlers that combine search and training functions get blocked by default on ad-supported pages unless the platform separates the two.</p>
+      <p class="teaser l-ru">Директор по стратегии Cloudflare утверждает, что блокировка скраперов создаёт дефицит, который позволяет издателям договариваться о лицензиях. С 15 сентября краулеры, совмещающие поиск и обучение моделей, по умолчанию блокируются на страницах с рекламой, если платформа не разделит эти функции.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Cloudflare sits in front of a large share of the web and can decide which automated visitors reach a site. Chief strategy officer Stephanie Cohen argues that blocking AI scrapers creates "reliable scarcity" — if the content cannot simply be taken, the AI company has to buy it. She named the Financial Times, The Atlantic, Ziff Davis, Condé Nast and the Associated Press as publishers working with Cloudflare on AI deals. People Inc CEO Neil Vogel said his company now blocks almost all AI crawlers except OpenAI, which has a licensing agreement, and Google — and that restricting access is precisely why buyers now value the content.</p>
+      <p class="l-ru">Cloudflare стоит перед значительной частью веба и может решать, какие автоматические посетители доходят до сайта. Директор по стратегии Стефани Коэн утверждает, что блокировка AI-скраперов создаёт «надёжный дефицит»: если контент нельзя просто взять, AI-компании приходится его покупать. В числе издателей, работающих с Cloudflare над AI-сделками, она назвала Financial Times, The Atlantic, Ziff Davis, Condé Nast и Associated Press. Гендиректор People Inc Нил Фогель говорит, что его компания сейчас блокирует почти все AI-краулеры, кроме OpenAI, с которой есть лицензионное соглашение, и Google, — и что покупатели ценят контент именно потому, что доступ ограничен.</p>
+      <p class="l-en">Two concrete things follow. From 15 September 2026, mixed-purpose AI crawlers — those that combine search indexing and model training in one bot, which is how a platform makes blocking an all-or-nothing choice — will be blocked by default on ad-supported pages unless the platform separates the two functions first. And Cloudflare is at an early stage on a "pay-per-use" model in which a publisher is compensated when its content actually appears in an AI answer, rather than when it is crawled; its pay-per-crawl model is in closed beta. A new AI visibility dashboard lets publishers track where their content surfaces inside ChatGPT and Claude.</p>
+      <p class="l-ru">Отсюда следуют две конкретные вещи. С 15 сентября 2026 года «смешанные» AI-краулеры — те, что совмещают поисковую индексацию и обучение моделей в одном боте, из-за чего блокировка превращается в выбор «всё или ничего», — по умолчанию блокируются на страницах с рекламой, если платформа заранее не разделит эти функции. Кроме того, Cloudflare на ранней стадии разрабатывает модель «оплаты за использование», при которой издатель получает деньги за фактическое появление контента в AI-ответе, а не за факт обхода; модель оплаты за обход находится в закрытой бете. Новый дашборд видимости позволяет издателям отслеживать, где их контент всплывает внутри ChatGPT и Claude.</p>
+      <p class="why l-en"><b>Why it matters:</b> pay-per-use is the first mechanism that could replace a lost affiliate click with a payment for the recommendation itself.</p>
+      <p class="why l-ru"><b>Почему важно:</b> оплата за использование — первый механизм, способный заменить потерянный партнёрский клик оплатой за саму рекомендацию.</p>
+      <p class="src">→ <a href="https://pressgazette.co.uk/platforms/cloudflare-says-bot-blocking-is-fueling-publisher-ai-deals/">Press Gazette</a></p>
+    </div>
+  </details>
+
+  <details class="story s-ai" id="resoneo">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research</span><span class="l-ru">Исследование</span></span><span class="when">Aug 11–17 · Resoneo / Search Engine Land</span></div>
+      <h3 class="l-en">Research — Resoneo: ChatGPT surfaced 61,332 links to free users but actually opened only 759 of the pages</h3>
+      <h3 class="l-ru">Исследование — Resoneo: ChatGPT показал бесплатным пользователям 61 332 ссылки, но реально открыл лишь 759 страниц</h3>
+      <p class="teaser l-en">A French agency reverse-engineered how ChatGPT retrieves sources: a page it actually opens gets cited 74% of the time, one it merely retrieves 7%. A second study found unlicensed publishers are served on exactly the same terms as OpenAI's paying content partners.</p>
+      <p class="teaser l-ru">Французское агентство разобрало, как ChatGPT достаёт источники: страницу, которую он реально открывает, цитируют в 74% случаев, а просто найденную — в 7%. Второе исследование показало, что нелицензированные издатели выдаются ровно на тех же условиях, что и платные контент-партнёры OpenAI.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Olivier de Segonzac, co-founder of the French agency Resoneo, analysed 1,200 ChatGPT responses, 88,000 search results and 26,900 distinct pages, captured through a browser extension reading the raw data stream plus test pages with full server logging. He describes a three-layer system: a discovery index that finds pages, a reading cache that holds full copies, and a much narrower set of pages the model actually opens live. Four internal pipelines appear in the data — one is OpenAI's own index, dominant on the free tier, two are scraped Google results, and one is a general search pipeline. The cache refreshes roughly every 30 minutes.</p>
+      <p class="l-ru">Оливье де Сегонзак, сооснователь французского агентства Resoneo, проанализировал 1 200 ответов ChatGPT, 88 000 результатов поиска и 26 900 отдельных страниц, снятых через браузерное расширение, читающее сырой поток данных, плюс тестовые страницы с полным логированием на сервере. Он описывает трёхслойную систему: индекс обнаружения, который находит страницы; кеш чтения, где лежат полные копии; и куда более узкий набор страниц, которые модель реально открывает вживую. В данных видны четыре внутренних конвейера: собственный индекс OpenAI, доминирующий на бесплатном тарифе, два конвейера со спарсенной выдачей Google и один общий поисковый. Кеш обновляется примерно раз в 30 минут.</p>
+      <p class="l-en">The decisive numbers: for free users, 61,332 URLs were surfaced but only 759 pages were actually opened — and a page that gets opened is cited 74% of the time versus 7% for a page retrieved but never opened. Because more than 90% of ChatGPT users are on the free tier, served mainly by OpenAI's own index rather than Google rankings, a strong Google position does not translate into being cited. His practical advice is to put the core commercial message in the first 200 characters after the headline, because that is roughly what the index stores.</p>
+      <p class="l-ru">Решающие цифры: бесплатным пользователям было показано 61 332 URL, но реально открыто лишь 759 страниц — и открытую страницу цитируют в 74% случаев против 7% для найденной, но не открытой. Поскольку более 90% пользователей ChatGPT сидят на бесплатном тарифе, который обслуживается в основном собственным индексом OpenAI, а не выдачей Google, сильная позиция в Google не превращается в цитирование. Практический совет автора — помещать основное коммерческое сообщение в первые 200 символов после заголовка, потому что примерно столько индекс и хранит.</p>
+      <p class="l-en">A companion Resoneo study, published 11 August, analysed 1,249 ChatGPT answers from July 2026 and 534 cited pages, and found that hundreds of outlets with no OpenAI content deal were served by OpenAI's own index on identical terms to its licensed partners — same snippet formatting, same length, same freshness. Key insight: a licensing deal appears to buy very little in terms of basic appearance in free-tier answers, and the page a model opens is worth roughly ten times the page it merely finds.</p>
+      <p class="l-ru">Парное исследование Resoneo от 11 августа проанализировало 1 249 ответов ChatGPT за июль 2026 года и 534 процитированные страницы и обнаружило, что сотни изданий без контентной сделки с OpenAI выдаются её собственным индексом ровно на тех же условиях, что и лицензированные партнёры: то же форматирование сниппета, та же длина, та же свежесть. Ключевой вывод: лицензионная сделка почти ничего не даёт с точки зрения базового попадания в ответы на бесплатном тарифе, а страница, которую модель открывает, стоит примерно вдесятеро дороже страницы, которую она просто нашла.</p>
+      <p class="why l-en"><b>Why it matters:</b> for commerce content, being found and being read are different things, and only the second one pays.</p>
+      <p class="why l-ru"><b>Почему важно:</b> для коммерческого контента «быть найденным» и «быть прочитанным» — разные вещи, и платит только вторая.</p>
+      <p class="src">→ <a href="https://searchengineland.com/chatgpt-retrieval-stack-index-cache-pages-485036">Search Engine Land</a><a href="https://www.searchenginejournal.com/chatgpts-search-index-serves-small-sites-too-data-shows/585388/">Search Engine Journal</a></p>
+    </div>
+  </details>
+
+  <details class="story s-ai" id="charities">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research</span><span class="l-ru">Исследование</span></span><span class="when">Aug 17 · Press Gazette</span></div>
+      <h3 class="l-en">Research — Press Gazette: UK charities lost up to 53% of page traffic after AI Overviews reached health queries</h3>
+      <h3 class="l-ru">Исследование — Press Gazette: британские благотворительные организации потеряли до 53% трафика страниц после прихода AI Overviews в медицинские запросы</h3>
+      <p class="teaser l-en">First-party analytics from Blood Cancer UK show its leukaemia page down 53% and MGUS down 45% year on year. The damage lands hardest on narrow factual queries with a single answer — the same query shape that high-intent comparison content depends on.</p>
+      <p class="teaser l-ru">Собственная аналитика Blood Cancer UK показывает падение страницы о лейкозе на 53%, о MGUS — на 45% год к году. Сильнее всего страдают узкие фактические запросы с единственным ответом — те же по форме, на которых держится сравнительный контент с высоким намерением купить.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Press Gazette gathered first-party analytics from UK charities after Google rolled out AI Overviews — the AI-written summary at the top of the results page — on health queries. Blood Cancer UK reported the steepest falls: its leukaemia page down 53% year on year, MGUS down 45%, myeloma down 32%, lymphoma down 28%, AML and MDS pages down 20% and MPN down 17%. The Brain Tumour Charity reported roughly a 27% overall traffic reduction. Mind, the Mental Health Foundation, Cancer UK and Save the Children were also affected; Save the Children said clicks and impressions were down year on year in July and noted that up to 60% of searches now end without a click to any website.</p>
+      <p class="l-ru">Press Gazette собрала собственную аналитику британских благотворительных организаций после того, как Google выкатил AI Overviews — написанную AI сводку в верхней части выдачи — на медицинские запросы. Сильнее всего упал Blood Cancer UK: страница о лейкозе −53% год к году, о MGUS −45%, о миеломе −32%, о лимфоме −28%, страницы об ОМЛ и МДС −20%, о МПН −17%. The Brain Tumour Charity сообщила о падении трафика примерно на 27% в целом. Затронуты также Mind, Mental Health Foundation, Cancer UK и Save the Children; последняя отметила снижение кликов и показов год к году в июле и то, что до 60% поисков сейчас заканчиваются без перехода на какой-либо сайт.</p>
+      <p class="l-en">The reason this belongs in a commercial digest is the query shape. The damage concentrates on narrow, factual questions with a single correct answer — exactly the structure of "which X is best for Y" and "how much does X cost", which is what high-intent comparison and review content is built on. One counter-signal from Blood Cancer UK is worth noting: its community forum engagement rose 86%, suggesting traffic migrates toward content an AI summary cannot easily reproduce. Key insight: a page that answers one factual question is the most exposed asset a content publisher owns.</p>
+      <p class="l-ru">В коммерческий дайджест это попадает из-за формы запроса. Удар концентрируется на узких фактических вопросах с одним правильным ответом — то есть ровно на конструкции «какой X лучше для Y» и «сколько стоит X», на которой и построен сравнительный и обзорный контент с высоким намерением купить. Стоит отметить и встречный сигнал от Blood Cancer UK: вовлечённость на форуме сообщества выросла на 86%, то есть трафик уходит к контенту, который AI-сводка не воспроизводит. Ключевой вывод: страница, отвечающая на один фактический вопрос, — самый уязвимый актив контентного паблишера.</p>
+      <p class="why l-en"><b>Why it matters:</b> the query types AI answers best are the ones commerce content monetises best.</p>
+      <p class="why l-ru"><b>Почему важно:</b> типы запросов, на которые AI отвечает лучше всего, — те же, что лучше всего монетизирует коммерческий контент.</p>
+      <p class="src">→ <a href="https://pressgazette.co.uk/news/charity-websites-hit-by-rollout-of-google-ai-answers/">Press Gazette</a></p>
+    </div>
+  </details>
+
+  <details class="story s-ai" id="tollbit">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research</span><span class="l-ru">Исследование</span></span><span class="when">Aug 14 · TollBit / Digiday</span></div>
+      <h3 class="l-en">Research — TollBit: European publishers get one visitor back for every 179 AI bot visits</h3>
+      <h3 class="l-ru">Исследование — TollBit: европейские издатели получают одного посетителя обратно на каждые 179 визитов AI-ботов</h3>
+      <p class="teaser l-en">An analysis of bots from 40 scraping vendors across 3,906 publishers found European sites scraped four times as often as North American ones, with a scrape-to-referral ratio three times worse — and deteriorating from 150:1 to 227:1 in a single quarter.</p>
+      <p class="teaser l-ru">Анализ ботов 40 скрейпинговых вендоров на 3 906 сайтах издателей показал, что европейские сайты обходят вчетверо чаще североамериканских при втрое худшем соотношении обходов к переходам — и оно ухудшилось со 150:1 до 227:1 за один квартал.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">TollBit analysed AI bots from 40 scraping vendors across 3,906 publishers, including 456 European sites — the Telegraph, Ringier and Styria among them — against a North American comparison set. European sites saw four times the median number of AI scrapes, and the scrape-to-referral ratio was 179:1 against roughly 60:1 in North America. In the first half of 2026 only 0.05% of European external referrals came from AI apps, versus 0.16% in North America. European robots.txt instructions — the file telling crawlers what they may take — were ignored nearly three times more often.</p>
+      <p class="l-ru">TollBit проанализировала AI-ботов 40 скрейпинговых вендоров на 3 906 сайтах издателей, включая 456 европейских — среди них Telegraph, Ringier и Styria, — сопоставив их с североамериканской выборкой. У европейских сайтов медианное число обходов оказалось вчетверо выше, а соотношение обходов к переходам — 179:1 против примерно 60:1 в Северной Америке. В первом полугодии 2026 года лишь 0,05% внешних переходов у европейских сайтов пришли из AI-приложений против 0,16% в Северной Америке. Указания в robots.txt — файле, который сообщает краулерам, что им можно брать, — на европейских сайтах игнорировались почти втрое чаще.</p>
+      <p class="l-en">The trend is worse than the level: scraping on European sites rose almost 20% between January and June 2026, and the scrape-to-referral ratio deteriorated from 150:1 in Q1 to 227:1 in Q2. TollBit's proposed explanation is Europe's linguistic diversity and the demand for non-English training data, though Cloudflare and DataDome data show different regional patterns, so the dataset choice materially affects the conclusion. Key insight: AI platforms take European publisher content at four times the rate while returning a third as much traffic, so the implicit content-for-referrals bargain is breaking down fastest outside the US.</p>
+      <p class="l-ru">Динамика хуже уровня: обходы европейских сайтов выросли почти на 20% с января по июнь 2026 года, а соотношение обходов к переходам ухудшилось со 150:1 в I квартале до 227:1 во II. TollBit объясняет европейский перекос языковым разнообразием и спросом на неанглоязычные обучающие данные, однако данные Cloudflare и DataDome показывают другие региональные картины — то есть выбор набора данных существенно влияет на вывод. Ключевой вывод: AI-платформы забирают контент европейских издателей вчетверо интенсивнее, возвращая втрое меньше трафика, — то есть негласный обмен «контент за переходы» рушится быстрее всего за пределами США.</p>
+      <p class="why l-en"><b>Why it matters:</b> European commerce publishers are subsidising AI systems that send them almost nothing back.</p>
+      <p class="why l-ru"><b>Почему важно:</b> европейские коммерческие паблишеры субсидируют AI-системы, которые почти ничего им не возвращают.</p>
+      <p class="src">→ <a href="https://digiday.com/media/european-publishers-are-getting-hit-harder-by-ai-bot-scraping-report-finds/">Digiday</a></p>
+    </div>
+  </details>
+
+  <details class="story s-ai" id="chatgpt-eu">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Platforms</span><span class="l-ru">Платформы</span></span><span class="when">Aug 10–16 · PPC Land / MarTech.org</span></div>
+      <h3 class="l-en">ChatGPT ads reach Europe this month, and app installs from them can now be tracked</h3>
+      <h3 class="l-ru">Реклама в ChatGPT приходит в Европу в этом месяце, а установки приложений из неё теперь можно отслеживать</h3>
+      <p class="teaser l-en">OpenAI told users advertising arrives on the free and Go plans across the EEA and Switzerland before the end of August, contextual-only at launch. Separately it wired AppsFlyer into ChatGPT ads so app marketers can compare it to Meta and Google on cost per install.</p>
+      <p class="teaser l-ru">OpenAI сообщила пользователям, что реклама появится на бесплатном тарифе и тарифе Go в ЕЭЗ и Швейцарии до конца августа, на старте — только контекстная. Отдельно компания подключила AppsFlyer к рекламе в ChatGPT, чтобы мобильные маркетологи могли сравнивать её с Meta и Google по цене установки.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">OpenAI emailed users on 15 August confirming advertising arrives on ChatGPT Free and Go plans in the European Economic Area and Switzerland before the end of August 2026. The initial rollout is explicitly non-personalised: targeting uses only the current conversation topic, general location and device type, with past chats and stored memories excluded, and personalisation unavailable in the EEA at launch. Ads sit below the response, labelled "sponsored", ranked on conversation context and intent, landing-page relevance, ad copy, advertiser hints and bid. Users can view ad history, delete advertising data — retained 30 days — and toggle personalisation. Pro, Enterprise, Business and Education tiers stay ad-free, under-18s are excluded, and Temporary Chats and the Atlas browser show no ads.</p>
+      <p class="l-ru">15 августа OpenAI разослала пользователям письмо о том, что реклама появится на тарифах ChatGPT Free и Go в Европейской экономической зоне и Швейцарии до конца августа 2026 года. На старте она принципиально неперсонализированная: таргетинг использует только тему текущего разговора, общую геолокацию и тип устройства; прошлые чаты и сохранённая память исключены, персонализация в ЕЭЗ на запуске недоступна. Объявления размещаются под ответом с пометкой «sponsored» и ранжируются по контексту и намерению в разговоре, релевантности посадочной страницы, тексту объявления, подсказкам рекламодателя и ставке. Пользователь может посмотреть историю показов, удалить рекламные данные — они хранятся 30 дней — и отключить персонализацию. Тарифы Pro, Enterprise, Business и Education остаются без рекламы, несовершеннолетние исключены, во временных чатах и браузере Atlas реклама не показывается.</p>
+      <p class="l-en">On the measurement side, OpenAI partnered with the mobile measurement company AppsFlyer so advertisers can track app installs, in-app purchases and subscriptions originating from ChatGPT ads. That means app marketers can finally place ChatGPT alongside Meta, Google and TikTok in one acquisition report and compare cost per install on like-for-like terms. The stated limitation matters: the integration measures conversions but does not assess incrementality, so it can show that a conversion followed a ChatGPT ad without establishing that the ad caused it. Around 40 brands are testing, Grubhub among them.</p>
+      <p class="l-ru">Со стороны измерений OpenAI договорилась с мобильной аналитической компанией AppsFlyer, чтобы рекламодатели могли отслеживать установки приложений, внутренние покупки и подписки, пришедшие из рекламы в ChatGPT. Это значит, что мобильные маркетологи наконец могут поставить ChatGPT рядом с Meta, Google и TikTok в одном отчёте по привлечению и сравнить цену установки на сопоставимых условиях. Важно заявленное ограничение: интеграция измеряет конверсии, но не оценивает инкрементальность, то есть показывает, что конверсия случилась после показа, но не доказывает, что её вызвал показ. Тестируют около 40 брендов, включая Grubhub.</p>
+      <p class="why l-en"><b>Why it matters:</b> a merchant's budget for ads inside an AI assistant competes for the same shopping intent that partner commissions are paid on.</p>
+      <p class="why l-ru"><b>Почему важно:</b> бюджет мерчанта на рекламу внутри AI-ассистента борется за то же покупательское намерение, за которое платят партнёрские комиссии.</p>
+      <p class="src">→ <a href="https://ppc.land/chatgpt-ads-reach-europe-as-its-own-crawler-ignores-publisher-blocks/">PPC Land</a><a href="https://martech.org/openai-adds-technology-to-compete-for-ad-dollars/">MarTech.org</a></p>
+    </div>
+  </details>
+
+  <details class="story s-ai" id="fractl">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Research</span><span class="l-ru">Исследование</span></span><span class="when">Aug 17 · Fractl / Search Engine Land</span></div>
+      <h3 class="l-en">Research — Fractl: only 11% of brands appear across all three major AI models, and 77% show up in just one</h3>
+      <h3 class="l-ru">Исследование — Fractl: лишь 11% брендов появляются во всех трёх крупных AI-моделях, а 77% — только в одной</h3>
+      <p class="teaser l-en">96 industry prompts run 15 times each across three models produced 4,320 responses and over 8,500 brand references. Winning inside ChatGPT says almost nothing about whether a merchant exists inside Gemini.</p>
+      <p class="teaser l-ru">96 отраслевых промптов, прогнанных по 15 раз в трёх моделях, дали 4 320 ответов и более 8 500 упоминаний брендов. Победа внутри ChatGPT почти ничего не говорит о том, существует ли мерчант внутри Gemini.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Kelsey Libert, co-founder of the agency Fractl, published an AI visibility index covering eight industries. The method: 96 industry-specific prompts run 15 times each across GPT-4o, Gemini 2.5 Flash and Claude Sonnet 4.6, producing 4,320 responses and over 8,500 brand references, benchmarked against Ahrefs search data. Only 11% of brands appeared in all three models, while 77% were referenced by just one — meaning AI brand visibility is highly model-specific. About 5% of brands were under-represented in the models despite strong search metrics, and about 4% over-performed relative to their search authority.</p>
+      <p class="l-ru">Келси Либерт, сооснователь агентства Fractl, опубликовала индекс AI-видимости по восьми отраслям. Метод: 96 отраслевых промптов, каждый прогнан 15 раз в GPT-4o, Gemini 2.5 Flash и Claude Sonnet 4.6, — 4 320 ответов и более 8 500 упоминаний брендов, сопоставленных с поисковыми данными Ahrefs. Только 11% брендов появились во всех трёх моделях, а 77% упоминались лишь в одной: видимость бренда в AI сильно зависит от конкретной модели. Около 5% брендов оказались недопредставлены в моделях несмотря на сильные поисковые метрики, около 4% — наоборот, перевыполняли относительно своего поискового авторитета.</p>
+      <p class="l-en">Two category findings are worth noting. In retail, legacy names such as Sephora, Samsung and Whirlpool ranked below direct-to-consumer brands, with the models preferring Patagonia, Allbirds and Eileen Fisher on lifestyle prompts — suggesting the training data over-weights DTC brand narratives. In travel, Booking.com, Airbnb and Expedia together accounted for roughly 20% of all sector mentions, a concentration that narrows the field in one of the highest-commission verticals. Key insight: AI visibility is not one market but three, and a merchant can be dominant in one and absent from another.</p>
+      <p class="l-ru">Отдельно стоит отметить два вывода по категориям. В рознице устоявшиеся имена вроде Sephora, Samsung и Whirlpool оказались ниже D2C-брендов: на лайфстайл-промптах модели предпочитали Patagonia, Allbirds и Eileen Fisher, — похоже, обучающие данные переоценивают нарративы D2C-брендов. В travel на Booking.com, Airbnb и Expedia вместе пришлось около 20% всех упоминаний сектора, и такая концентрация сужает поле в одной из самых высокомаржинальных по комиссии вертикалей. Ключевой вывод: AI-видимость — это не один рынок, а три, и мерчант может доминировать в одном и полностью отсутствовать в другом.</p>
+      <p class="why l-en"><b>Why it matters:</b> a merchant asking a partner to improve its AI visibility has to say which model it means.</p>
+      <p class="why l-ru"><b>Почему важно:</b> мерчант, который просит партнёра улучшить его AI-видимость, обязан уточнить, в какой именно модели.</p>
+      <p class="src">→ <a href="https://searchengineland.com/ai-visibility-index-brands-vanishing-from-ai-search-485057">Search Engine Land</a></p>
+    </div>
+  </details>
+
+  <details class="story s-ai" id="alexa">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Retail</span><span class="l-ru">Ритейл</span></span><span class="when">Aug 13 · PYMNTS</span></div>
+      <h3 class="l-en">Amazon demonstrates Alexa building a shopping list from a photo of your fridge</h3>
+      <h3 class="l-ru">Amazon показал, как Alexa собирает список покупок по фотографии холодильника</h3>
+      <p class="teaser l-en">A shopper photographs the fridge, Alexa for Shopping works out what is missing and assembles the order. There is no search query in that sequence — and no place for a link.</p>
+      <p class="teaser l-ru">Покупатель фотографирует холодильник, Alexa for Shopping определяет, чего не хватает, и собирает заказ. В этой последовательности нет поискового запроса — и нет места для ссылки.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Amazon demonstrated a feature in which a shopper photographs their refrigerator and Alexa for Shopping identifies the missing groceries and builds the list. Amazon Stores CEO Doug Herrington described the system as combining photographs, conversations and purchase history into personalised recommendations, with the stated end goal of homes that replenish themselves. The mechanical shift is that retail moves from answering a stated query to inferring demand from visual context — which removes the search step entirely, and with it the surface where a comparison page or an affiliate link would sit.</p>
+      <p class="l-ru">Amazon показал функцию, в которой покупатель фотографирует холодильник, а Alexa for Shopping определяет недостающие продукты и собирает список. Гендиректор Amazon Stores Даг Херрингтон описал систему как соединение фотографий, разговоров и истории покупок в персональные рекомендации, а конечной целью назвал дома, которые пополняют себя сами. Механический сдвиг здесь в том, что розница переходит от ответа на заданный запрос к выводу спроса из визуального контекста, — а это убирает шаг поиска целиком, вместе с той поверхностью, где стояла бы страница сравнения или партнёрская ссылка.</p>
+      <p class="l-en">PYMNTS frames it as an attack on Walmart's structural advantage of physical proximity — 90% of Americans live within 10 miles of a Walmart store — by moving the competition to the pre-shopping decision layer instead. Supporting data cited: 21% of participants in retail sales events used AI chatbots to shop, rising to 35% among Gen Z, and 57% of those AI users found the technology very or extremely influential on their decision. Walmart's grocery share fell 11 points from 55% to 49% across the summer sales events.</p>
+      <p class="l-ru">PYMNTS трактует это как атаку на структурное преимущество Walmart — физическую близость, ведь 90% американцев живут в пределах 10 миль от магазина сети, — за счёт переноса конкуренции на слой решений до покупки. Приводимые данные: 21% участников розничных распродаж использовали AI-чатботы для покупок, среди поколения Z — 35%, а 57% этих пользователей сочли технологию очень или крайне влияющей на их решение. Доля Walmart в продуктах за летние распродажи упала на 11 пунктов — с 55% до 49%.</p>
+      <p class="why l-en"><b>Why it matters:</b> if the retailer infers the need, nobody gets paid for surfacing the product.</p>
+      <p class="why l-ru"><b>Почему важно:</b> если потребность выводит сам ритейлер, никому не платят за то, что товар показали.</p>
+      <p class="src">→ <a href="https://www.pymnts.com/news/retail/2026/amazon-wants-alexa-to-own-the-shopping-list-before-walmart-ever-sees-it/">PYMNTS</a></p>
+    </div>
+  </details>
+
+  <details class="story s-ai" id="stanley">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Merchants</span><span class="l-ru">Мерчанты</span></span><span class="when">Aug 13 · Modern Retail</span></div>
+      <h3 class="l-en">Stanley 1913 is testing feeding its product catalogue straight into chatbot conversations</h3>
+      <h3 class="l-ru">Stanley 1913 тестирует подачу своего товарного каталога прямо в разговоры с чатботами</h3>
+      <p class="teaser l-en">The drinkware brand is trialling both Shopify's and Google's Universal Commerce Protocol implementations — a merchant-to-agent path with no publisher in the middle. It has built the tracking but has no AI referral or conversion figures yet.</p>
+      <p class="teaser l-ru">Бренд посуды для напитков тестирует реализации Universal Commerce Protocol от Shopify и от Google — путь «мерчант → агент» без паблишера посередине. Трекинг настроен, но цифр по AI-переходам и конверсии пока нет.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Universal Commerce Protocol is the Google-side standard for letting an AI assistant read a merchant's catalogue and act on it — the rival to the protocol OpenAI and Stripe have been building. Stanley 1913 is testing both Shopify's and Google's implementations to place its products directly inside chatbot conversations. Alongside that it is adding product-level FAQs, care instructions and usage guides written for common AI queries around gifting, fitness and travel, implementing structured data so the answers stay consistent across classic and AI search, and tracking which third-party sources — reviews, earned media — AI systems treat as authoritative.</p>
+      <p class="l-ru">Universal Commerce Protocol — стандарт со стороны Google, позволяющий AI-ассистенту читать каталог мерчанта и действовать с ним; это конкурент протокола, который строят OpenAI и Stripe. Stanley 1913 тестирует реализации и Shopify, и Google, чтобы разместить свои товары прямо внутри разговоров с чатботами. Параллельно бренд добавляет FAQ на уровне товара, инструкции по уходу и сценарии использования, написанные под типичные AI-запросы про подарки, спорт и путешествия, внедряет структурированные данные, чтобы ответы совпадали в классическом и AI-поиске, и отслеживает, какие сторонние источники — отзывы, публикации в медиа — AI-системы считают авторитетными.</p>
+      <p class="l-en">Chief Brand Officer Kate Ridley framed the goal as translating brand experience into natural-language answers. Reported traffic was 6.6 million global visits in July 2026, up 35.5% year on year, and the piece cites Pew Research finding 42% of US adults use AI chatbots for information searches. Notably, the brand has no reported figures yet on AI-driven referral traffic or conversion despite having built the tracking for it.</p>
+      <p class="l-ru">Директор по бренду Кейт Ридли описала цель как перевод бренд-опыта в ответы на естественном языке. Заявленный трафик — 6,6 млн визитов по миру в июле 2026 года (+35,5% год к году); в материале приводится исследование Pew Research о том, что 42% взрослых американцев используют AI-чатботы для информационного поиска. Показательно, что цифр по AI-переходам и конверсии у бренда пока нет, хотя трекинг под них уже построен.</p>
+      <p class="why l-en"><b>Why it matters:</b> a merchant feeding its catalogue straight to an assistant is a distribution route with no partner in it.</p>
+      <p class="why l-ru"><b>Почему важно:</b> мерчант, отдающий каталог напрямую ассистенту, создаёт канал сбыта, в котором партнёра нет.</p>
+      <p class="src">→ <a href="https://www.modernretail.co/marketing/how-stanley-1913-is-adapting-its-marketing-for-the-ai-search-era-without-losing-a-human-touch/">Modern Retail</a></p>
+    </div>
+  </details>
+
+  <nav class="pager">
+    <a href="index.html"><span class="l-en">← All issues</span><span class="l-ru">← Все выпуски</span></a>
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><span class="l-en">Back to top ↑</span><span class="l-ru">Наверх ↑</span></a>
+  </nav>
+</main>
+
+<footer>
+  <div class="in">
+    <span class="l-en">Weekly digest · compiled from public sources · publication dates verified, stale news excluded</span>
+    <span class="l-ru">Еженедельный дайджест · собрано из открытых источников · даты публикаций проверены, старые новости исключены</span>
+  </div>
+</footer>
+
+<script>
+  function applyLang(l){
+    if(l==='ru'){document.body.setAttribute('lang-ru','');document.documentElement.lang='ru';}
+    else{document.body.removeAttribute('lang-ru');document.documentElement.lang='en';}
+    document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+    document.getElementById('btn-ru').setAttribute('aria-pressed', l==='ru');
+  }
+  function setLang(l){
+    try{localStorage.setItem('mi-lang', l);}catch(e){}
+    applyLang(l);
+  }
+  (function(){
+    var l='en';
+    try{l=localStorage.getItem('mi-lang')||'en';}catch(e){}
+    applyLang(l);
+  })();
+</script>
+</body>
+</html>
