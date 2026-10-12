@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Weekly Intelligence Digest · Oct 5 – Oct 12, 2026</title>
+<style>
+  :root{
+    --bg:#f7f7f8; --surface:#ffffff; --ink:#16181d; --ink-2:#5b6069; --ink-3:#8a8f98;
+    --accent:#4f46e5; --accent-ink:#ffffff; --line:#e7e8ea; --line-2:#d9dadd;
+    --pill:#eef0ff; --pill-ink:#4338ca;
+    --comp:#1d4ed8; --comp-bg:#eff6ff;
+    --mkt:#15803d; --mkt-bg:#f0fdf4;
+    --tech:#b45309; --tech-bg:#fffbeb;
+    --ai:#7c3aed; --ai-bg:#f5f3ff;
+    --shadow:0 1px 2px rgba(16,18,25,.04), 0 8px 24px -12px rgba(16,18,25,.12);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1116; --surface:#171a21; --ink:#eceef1; --ink-2:#9ba1ab; --ink-3:#6c7280;
+      --accent:#8b93ff; --accent-ink:#0f1116; --line:#252932; --line-2:#30353f;
+      --pill:#232849; --pill-ink:#aeb4ff;
+      --comp:#7ba6ff; --comp-bg:#15233c;
+      --mkt:#6ee7a0; --mkt-bg:#122a1c;
+      --tech:#f0b45a; --tech-bg:#2b2214;
+      --ai:#b79cff; --ai-bg:#241d33;
+      --shadow:0 1px 2px rgba(0,0,0,.2), 0 8px 24px -12px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  [lang-ru] .l-en{display:none !important}
+  body:not([lang-ru]) .l-ru{display:none !important}
+  .top{position:sticky;top:0;z-index:10;
+    background:color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .top-in{max-width:840px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:15px;letter-spacing:-.01em}
+  .brand .dot{width:10px;height:10px;border-radius:3px;background:var(--accent);flex:none;transform:rotate(45deg)}
+  .brand:hover{text-decoration:none}
+  .crumb{font-size:13.5px;color:var(--ink-3)}
+  .top nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+  .lang{display:flex;border:1px solid var(--line-2);border-radius:99px;padding:2px;background:var(--surface)}
+  .lang button{all:unset;cursor:pointer;font-size:12.5px;font-weight:600;padding:4px 12px;border-radius:99px;color:var(--ink-2)}
+  .lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+  .wrap{max-width:840px;margin:0 auto;padding:44px 24px 80px}
+  header.issue-head{margin-bottom:26px}
+  .issue-head .date{font-size:13px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+  .issue-head h1{font-size:clamp(26px,4.5vw,34px);line-height:1.2;letter-spacing:-.02em}
+  .toc{position:sticky;top:57px;z-index:9;display:flex;flex-wrap:wrap;gap:8px;
+    margin:18px -24px 30px;padding:10px 24px;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);}
+  .toc a{font-size:13px;font-weight:700;padding:6px 14px;border-radius:99px;text-decoration:none;
+    border:1.5px solid var(--line-2);color:var(--ink);background:var(--surface);}
+  .toc a:hover{text-decoration:none;transform:translateY(-1px)}
+  .toc a.t1{color:var(--comp);border-color:var(--comp);background:var(--comp-bg)}
+  .toc a.t2{color:var(--mkt);border-color:var(--mkt);background:var(--mkt-bg)}
+  .toc a.t3{color:var(--tech);border-color:var(--tech);background:var(--tech-bg)}
+  .toc a.t4{color:var(--ai);border-color:var(--ai);background:var(--ai-bg)}
+  .exec{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:var(--radius);padding:20px 24px;margin-bottom:38px;box-shadow:var(--shadow)}
+  .exec h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:10px}
+  .exec ul{list-style:none;padding:0}
+  .exec li{padding:6px 0 6px 18px;position:relative;font-size:15px}
+  .exec li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .sec{margin:44px 0 16px;scroll-margin-top:120px}
+  .sec h2{font-size:21px;letter-spacing:-.01em;padding-bottom:8px;border-bottom:2px solid var(--sc)}
+  .sec .note{font-size:14px;color:var(--ink-3);margin-top:8px}
+  .sub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+  .sub::after{content:"";height:1px;background:var(--line);flex:1}
+  details.story{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:14px;box-shadow:var(--shadow);scroll-margin-top:120px;overflow:hidden}
+  details.story summary{cursor:pointer;list-style:none;padding:22px 24px}
+  details.story summary::-webkit-details-marker{display:none}
+  details.story[open] summary{padding-bottom:6px}
+  .story .meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+  .story .cat{display:inline-flex;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 10px;border-radius:99px;color:var(--sc);background:var(--scbg)}
+  .story .when{font-size:12.5px;color:var(--ink-3)}
+  .story h3{font-size:18.5px;line-height:1.4;letter-spacing:-.01em;margin-bottom:8px}
+  .story .teaser{color:var(--ink-2);font-size:14.5px}
+  .story .more{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--accent)}
+  details.story[open] .mo-c{display:none}
+  details.story:not([open]) .mo-o{display:none}
+  .story .body{padding:0 24px 20px}
+  .story .body p{margin-bottom:10px;font-size:15px}
+  .story .body p.why{color:var(--ink-2);font-size:14.5px;border-left:3px solid var(--sc);padding-left:12px}
+  .story .body p:last-child{margin-bottom:0}
+  .story .src{font-size:14px;margin-top:12px}
+  .story .src a{font-weight:600;margin-right:14px}
+  .quiet{background:transparent;border:1px dashed var(--line-2);border-radius:12px;padding:12px 18px;font-size:13.5px;color:var(--ink-3);margin-bottom:10px}
+  .s-comp{--sc:var(--comp);--scbg:var(--comp-bg)}
+  .s-mkt{--sc:var(--mkt);--scbg:var(--mkt-bg)}
+  .s-tech{--sc:var(--tech);--scbg:var(--tech-bg)}
+  .s-ai{--sc:var(--ai);--scbg:var(--ai-bg)}
+  .pager{display:flex;justify-content:space-between;margin-top:40px;font-size:14.5px;font-weight:600}
+  footer{max-width:840px;margin:0 auto;padding:0 24px 48px;color:var(--ink-3);font-size:13px}
+  footer .in{border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><span class="dot"></span>Market&nbsp;Intelligence</a>
+    <span class="crumb l-en">/ Oct 5 – Oct 12</span>
+    <span class="crumb l-ru">/ 5 – 12 окт</span>
+    <nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+        <button id="btn-ru" aria-pressed="false" onclick="setLang('ru')">RU</button>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<main class="wrap">
+  <header class="issue-head">
+    <div class="date"><span class="l-en">Issue · October 12, 2026 · window Oct 5 – Oct 12, all publication dates verified</span><span class="l-ru">Выпуск · 12 октября 2026 · окно 5 – 12 октября, даты публикаций проверены</span></div>
+    <h1 class="l-en">Meta starts charging business pages to post links out of Facebook and leaves its own affiliate links free, Awin makes its reporting readable by AI assistants, and Apple quietly begins unblocking the ad domain it switched off inside Safari</h1>
+    <h1 class="l-ru">Meta начала брать деньги с бизнес-страниц за ссылки из Facebook наружу, оставив свои партнёрские ссылки бесплатными, Awin сделал свою отчётность читаемой для AI-ассистентов, а Apple тихо начала разблокировать рекламный домен, который сама отключила в Safari</h1>
+  </header>
+
+  <nav class="toc" aria-label="Sections">
+    <a class="t1" href="#competitors"><span class="l-en">1 · Competitors</span><span class="l-ru">1 · Конкуренты</span></a>
+    <a class="t2" href="#market"><span class="l-en">2 · Market &amp; Industry</span><span class="l-ru">2 · Рынок и индустрия</span></a>
+    <a class="t3" href="#tech"><span class="l-en">3 · Tech &amp; Tracking</span><span class="l-ru">3 · Технологии и трекинг</span></a>
+    <a class="t4" href="#ai"><span class="l-en">4 · AI × Affiliate</span><span class="l-ru">4 · AI × Affiliate</span></a>
+  </nav>
+
+  <div class="exec">
+    <h2><span class="l-en">The week in five points</span><span class="l-ru">Неделя в пяти пунктах</span></h2>
+    <ul>
+      <li class="l-en"><b>Meta is testing a limit of two free outbound links a month from business pages on Facebook</b>, with more links sold by subscription from $49.99 to $499.99 a month. Four kinds of link are exempt — and one of them is links placed through Facebook's own affiliate partnerships. Posting a commerce link through Meta's programme stays free; posting one through anyone else's gets metered.</li>
+      <li class="l-ru"><b>Meta тестирует лимит в две бесплатные внешние ссылки в месяц с бизнес-страниц в Facebook</b>, остальные продаются по подписке от $49,99 до $499,99 в месяц. Четыре типа ссылок исключены — и один из них это ссылки, размещённые через собственные партнёрские программы Facebook. Поставить коммерческую ссылку через программу Meta по-прежнему бесплатно, через чужую — платно.</li>
+      <li class="l-en"><b>Awin became the first large affiliate network to make its own data directly queryable by AI assistants.</b> Its new MCP server lets an advertiser, publisher or agency ask Claude or ChatGPT a plain-language question about a programme and get real numbers back instead of exporting a spreadsheet. It reads only — it cannot change anything in Awin yet, and it does not track AI-driven sales.</li>
+      <li class="l-ru"><b>Awin стал первой крупной партнёрской сетью, чьи данные можно напрямую запрашивать из AI-ассистентов.</b> Новый MCP-сервер позволяет рекламодателю, паблишеру или агентству задать Claude или ChatGPT вопрос о программе обычными словами и получить настоящие цифры вместо выгрузки таблицы. Он только читает: менять что-то в Awin пока нельзя, и продажи из AI он не отслеживает.</li>
+      <li class="l-en"><b>Apple started walking back one piece of the Safari block it imposed last month.</b> An Apple engineer asked The Trade Desk to test an iOS 27.2 build that removes its ad delivery domain from the hidden block list. The eight identity companies stay blocked — and the IAB Tech Lab warns the unshipped code lets Apple add or remove a company from that list without an operating system update, and without telling them.</li>
+      <li class="l-ru"><b>Apple начала отыгрывать назад часть блокировки в Safari, введённой в прошлом месяце.</b> Инженер Apple попросил The Trade Desk протестировать сборку iOS 27.2, в которой домен доставки рекламы убран из скрытого списка блокировки. Восемь компаний, занимающихся идентификацией, остаются заблокированными, а IAB Tech Lab предупреждает: ещё не выпущенный код позволит Apple добавлять и убирать компании из списка без обновления системы и без уведомления.</li>
+      <li class="l-en"><b>Research — Kantar and Les Binet:</b> at UK consumer-goods companies, price promotions take 36% of combined marketing and trade spend against 17% for paid media — and 75% of the people running them cannot say what share of their promotions were profitable. 76% repeat similar promotions anyway, and 68% would run fewer if retailers let them.</li>
+      <li class="l-ru"><b>Исследование — Kantar и Лес Бине:</b> в британских компаниях потребительских товаров ценовые промо забирают 36% совокупных маркетинговых и торговых расходов против 17% у платных медиа — и 75% тех, кто их ведёт, не могут сказать, какая доля промо была прибыльной. 76% всё равно повторяют похожие акции, а 68% проводили бы их меньше, если бы разрешили ритейлеры.</li>
+      <li class="l-en"><b>Research — Fintel Connect:</b> across 2,400 AI answers and 7,809 citations in financial products, more than 54% of recommendation answers cited an affiliate page. Citations appeared in 90% of decision-stage questions and only 8.8% of explainer questions — but half of all answers cited no source at all.</li>
+      <li class="l-ru"><b>Исследование — Fintel Connect:</b> на 2 400 AI-ответов и 7 809 ссылок по финансовым продуктам более 54% ответов-рекомендаций ссылались на партнёрскую страницу. Ссылки появлялись в 90% вопросов на стадии выбора и лишь в 8,8% объясняющих вопросов — при этом половина всех ответов не ссылалась ни на один источник.</li>
+    </ul>
+  </div>
+
+  <section class="sec s-comp" id="competitors">
+    <h2 class="l-en">1 · Competitors</h2>
+    <h2 class="l-ru">1 · Конкуренты</h2>
+    <p class="note l-en">Three dated items, and the first real network product launch in weeks. Nothing was bought, sold or funded: no M&amp;A, no funding round, no financial results and no named client win could be dated inside the window for any Tier 1 network. The executive sweep came back empty for the fourth week running — not one post, interview or announcement from the two dozen network chief executives and marketing heads on the list could be dated to these seven days, and the search tool silently ignores the operator that restricts results to LinkedIn posts, so treat that as a tooling failure rather than proof they were quiet. Smaller things recorded without cards: NYORDA, the renamed Tradedoubler group, filed its weekly share buy-back report on 5 October covering 28 September to 2 October — 12,206 shares for about SEK 79,265, roughly 30% of the mandate used, with third-quarter results due 3 November; and Everflow, together with the consultancy PartnerGap and the payments firm PlatformPay.io, announced on 5 October an invite-only roundtable event called ERA, held in Vilnius on 6 October, on the argument that the Baltic performance-marketing community has no industry event of its own. One item deliberately left out: YouTube's chief executive Neal Mohan said YouTube's shopping affiliate programme will reach 35 countries by the end of 2026 — relevant, because YouTube runs that programme through Google Merchant Center with no affiliate network in the chain, but he said it in an interview recorded 23 September and published 30 September, so it falls outside the window. The in-window reality check is worth the line: the programme covered 15 markets in early August, so 35 by December would mean about 20 country launches in five months. Finally, a warning rather than a story: a cluster of pages on one site is pushing mutually contradictory claims that CJ, impact.com or Rakuten has acquired Partnerize, with three different prices attached and no publication dates. None of it is corroborated by either company, by any wire service or by any trade outlet, and it is not reported here.</p>
+    <p class="note l-ru">Три датированных материала и первый за несколько недель настоящий продуктовый запуск у сети. Никого не купили, не продали и не проинвестировали: ни сделок M&amp;A, ни раундов, ни финансовых результатов, ни названных клиентских побед датировать окном ни для одной сети первого эшелона не удалось. Обход руководителей четвёртую неделю подряд даёт пустой результат — ни одного поста, интервью или анонса от двух десятков гендиректоров и руководителей маркетинга сетей из списка датировать этими семью днями нельзя, а поисковый инструмент молча игнорирует оператор, ограничивающий выдачу постами LinkedIn, так что это скорее отказ инструмента, чем доказательство тишины. Мелочи без карточек: NYORDA, переименованная группа Tradedoubler, 5 октября подала недельный отчёт о выкупе своих акций за 28 сентября – 2 октября — 12 206 акций примерно на 79 265 SEK, использовано около 30% мандата, отчёт за третий квартал ожидается 3 ноября; Everflow вместе с консалтингом PartnerGap и платёжной компанией PlatformPay.io 5 октября анонсировал закрытое мероприятие-круглый стол ERA, прошедшее в Вильнюсе 6 октября, с аргументом, что у балтийского сообщества перформанс-маркетинга нет своего отраслевого события. Один материал сознательно не включён: гендиректор YouTube Нил Мохан заявил, что партнёрская шопинг-программа YouTube дойдёт до 35 стран к концу 2026 года — это важно, потому что YouTube ведёт эту программу через Google Merchant Center без партнёрской сети в цепочке, — но сказано это в интервью, записанном 23 сентября и опубликованном 30 сентября, то есть вне окна. Проверка реальности внутри окна стоит строки: в начале августа программа работала в 15 странах, значит 35 к декабрю означают около 20 запусков за пять месяцев. И наконец предупреждение, а не новость: группа страниц на одном сайте продвигает взаимно противоречивые утверждения, будто CJ, impact.com или Rakuten купили Partnerize, с тремя разными ценами и без дат публикации. Ничего из этого не подтверждают ни сами компании, ни агентства новостей, ни отраслевые издания, и здесь это не приводится.</p>
+  </section>
+
+  <details class="story s-comp" id="awin-mcp">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Product</span><span class="l-ru">Продукт</span></span><span class="when">Oct 8 · Awin</span></div>
+      <h3 class="l-en">Awin opens its programme data to AI assistants, so you can ask a chatbot about your affiliate account instead of downloading a report</h3>
+      <h3 class="l-ru">Awin открыл данные своих программ для AI-ассистентов: про партнёрский аккаунт теперь можно спросить чат-бота, а не выгружать отчёт</h3>
+      <p class="teaser l-en">Awin released its first MCP server — a standard connector that lets an AI assistant such as Claude or ChatGPT read live data out of another company's system. An advertiser can ask for last month's programme performance, a publisher can ask which programmes pay best per click, an agency can compare accounts. It reads only: it cannot yet change anything inside Awin.</p>
+      <p class="teaser l-ru">Awin выпустил свой первый MCP-сервер — стандартный коннектор, который позволяет AI-ассистенту вроде Claude или ChatGPT читать живые данные из системы другой компании. Рекламодатель может спросить про результаты программы за прошлый месяц, паблишер — какие программы лучше платят за клик, агентство — сравнить аккаунты. Он только читает: менять что-то внутри Awin пока нельзя.</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">Awin is one of the largest affiliate networks in the world, owned mainly by the German publisher Axel Springer, and it absorbed the US network ShareASale into its own platform last year. MCP stands for Model Context Protocol: an open standard, published by Anthropic and now adopted widely, that describes how an AI assistant can be handed a set of tools for reading or doing things in an outside system. Without it, getting numbers out of a platform means logging in, choosing a report, exporting a file and then asking questions of the file. With it, the assistant queries the platform directly and answers in a sentence.</p>
+      <p class="l-ru">Awin — одна из крупнейших партнёрских сетей в мире, основной владелец — немецкий издательский дом Axel Springer; в прошлом году она перевела американскую сеть ShareASale на свою платформу. MCP — это Model Context Protocol: открытый стандарт, опубликованный Anthropic и уже широко принятый, который описывает, как AI-ассистенту передать набор инструментов для чтения данных или действий во внешней системе. Без него получить цифры из платформы значит залогиниться, выбрать отчёт, выгрузить файл и дальше задавать вопросы файлу. С ним ассистент обращается к платформе напрямую и отвечает одной фразой.</p>
+      <p class="l-en">Awin's version is built on its existing public API plus some newly released endpoints and the knowledge base behind Ava, the chatbot already inside the Awin interface. The examples it gives are mundane in a useful way: an advertiser asking for a month's account performance, programme KPIs or a ranked list of its best partners; a publisher asking which programmes earn the most per click, or generating fifteen tracking links in one request instead of fifteen clicks; an agency reviewing KPIs across many accounts at once, filtered to, say, UK advertisers only. Access is gated by plan — advertisers on Awin's Accelerate and Advanced tiers, and Awin Access publishers who are on more than one programme — and switching it on needs administrator rights and a conversation with an account manager. The MCP server itself is free and open source, though connecting an assistant to it may require a paid Anthropic or OpenAI subscription. It is available globally. Awin says more endpoints will follow through 2026, and that the ability to make changes in Awin from an AI application — not just read from it — is future work. No executives are quoted and no adoption figures are given.</p>
+      <p class="l-ru">Реализация Awin построена на уже существующем публичном API плюс несколько новых эндпоинтов и база знаний, на которой работает Ava — чат-бот, уже встроенный в интерфейс Awin. Приведённые примеры приятно приземлённые: рекламодатель спрашивает результаты аккаунта за месяц, KPI программы или рейтинг своих лучших партнёров; паблишер спрашивает, какие программы больше платят за клик, или генерирует пятнадцать трекинговых ссылок одним запросом вместо пятнадцати кликов; агентство разом смотрит KPI по многим аккаунтам с фильтром, например, только по британским рекламодателям. Доступ зависит от тарифа — рекламодатели на планах Accelerate и Advanced и паблишеры Awin Access, подключённые более чем к одной программе, — а для включения нужны права администратора и разговор с аккаунт-менеджером. Сам MCP-сервер бесплатный и с открытым кодом, но подключение ассистента может потребовать платной подписки Anthropic или OpenAI. Доступен во всём мире. Awin обещает новые эндпоинты в течение 2026 года и говорит, что возможность не только читать, но и вносить изменения в Awin из AI-приложения — задача на будущее. Цитат руководителей и цифр по использованию нет.</p>
+      <p class="l-en">Two limits are worth naming clearly, because the announcement invites a bigger reading than it earns. First, this is reporting access, not buying access: nothing here lets an AI agent shop, click a link or complete a purchase. Second, it does not solve attribution — making affiliate data legible to an AI assistant is the opposite problem from tracking a sale an AI assistant caused.</p>
+      <p class="l-ru">Два ограничения стоит назвать прямо, потому что анонс провоцирует более широкое прочтение, чем заслуживает. Во-первых, это доступ к отчётности, а не к покупкам: ничто здесь не даёт AI-агенту возможности выбирать товар, переходить по ссылке или оформлять заказ. Во-вторых, это не решает атрибуцию — сделать партнёрские данные читаемыми для AI-ассистента и отследить продажу, которую AI-ассистент вызвал, это противоположные задачи.</p>
+      <p class="why l-en"><b>Why it matters:</b> The first large network to make its reporting layer agent-readable moves the comparison between platforms from how good the dashboard is to whether a machine can query it.</p>
+      <p class="why l-ru"><b>Почему важно:</b> Первая крупная сеть, сделавшая свой слой отчётности читаемым для агентов, переводит сравнение платформ с вопроса «какой у вас дашборд» на вопрос «может ли машина к вам обратиться».</p>
+      <p class="src">→ <a href="https://www.awin.com/us/news-and-events/post/awin-mcp-ai-assistants">Awin</a></p>
+    </div>
+  </details>
+
+  <details class="story s-comp" id="impact-payment-window">
+    <summary>
+      <div class="meta"><span class="cat"><span class="l-en">Policy</span><span class="l-ru">Политика</span></span><span class="when">Oct 7 · Affiverse, impact.com</span></div>
+      <h3 class="l-en">impact.com now suspends a brand's account after 40 days of unpaid invoices instead of 60</h3>
+      <h3 class="l-ru">impact.com теперь блокирует аккаунт бренда через 40 дней неоплаченных счетов вместо 60</h3>
+      <p class="teaser l-en">The partnership platform cut by a third the time an advertiser can run behind on payments before its account is suspended, effective 1 October. Suspended brands keep limited access and can still deposit money, and tracking keeps running — but the programme stops functioning normally. The platform's UK and DACH country manager framed it as protecting publishers: "Delayed payments hurt creator and publisher trust."</p>
+      <p class="teaser l-ru">Платформа партнёрского маркетинга на треть сократила срок, на который рекламодатель может задержать платежи до блокировки аккаунта, — с 1 октября. У заблокированных брендов остаётся ограниченный доступ, они могут вносить деньги, трекинг продолжает работать, но программа перестаёт функционировать нормально. Кантри-менеджер по Великобритании и DACH объяснил это защитой паблишеров: «Задержки платежей подрывают доверие авторов и паблишеров».</p>
+      <span class="more"><span class="mo-c l-en">Read more ↓</span><span class="mo-c l-ru">Читать дальше ↓</span><span class="mo-o l-en">Collapse ↑</span><span class="mo-o l-ru">Свернуть ↑</span></span>
+    </summary>
+    <div class="body">
+      <p class="l-en">impact.com is the largest enterprise partnership-management platform, used by brands to run affiliate, creator and referral programmes, and it sits in the middle of the money: the brand funds the platform, and the platform pays the partners out of those funds. That structure means an advertiser who stops paying leaves the platform holding obligations to thousands of small publishers and creators. Until now a brand could be 60 days overdue on impact.com's fees or on partner payments before suspension. From 1 October the threshold is 40 days.</p>
+      <p class="l-ru">impact.com — крупнейшая корпоративная платформа управления партнёрствами: бренды ведут через неё партнёрские, креаторские и реферальные программы, и она стоит посередине денежного потока: бренд заводит деньги на платформу, платформа платит партнёрам из этих средств. Из этой схемы следует, что рекламодатель, перестающий платить, оставляет платформу с обязательствами перед тысячами небольших паблишеров и авторов. До сих пор бренд мог просрочить оплату комиссий impact.com или выплат партнёрам на 60 дней до блокировки. С 1 октября порог — 40 дней.</p>
+      <p class="l-en">What a suspension actually does is narrower than it sounds. The brand keeps limited access to its account, can still deposit funds and contact support, and the mechanics underneath keep working: tracking continues, reversals still process, subscription charges and scheduled file transfers still run. What stops is the normal operation of the programme — recruiting, paying and managing partners — which in practice means a programme going dark. The timing is the part worth noticing: the change took effect on the first day of the quarter that carries Black Friday and Christmas, so a finance approval that slips in November now costs an advertiser three weeks of grace it used to have. Anthony Clements, impact.com's country manager for the UK and the German-speaking market, put the reasoning on publisher trust. The obvious limit, flagged in the coverage, is that a shorter suspension trigger does not oblige anyone to pay partners faster — it only shortens how long an unfunded programme can keep running.</p>
+      <p class="l-ru">Что именно делает блокировка — уже уже, чем звучит. У бренда остаётся ограниченный доступ к аккаунту, он может вносить средства и обращаться в поддержку, а механика снизу продолжает работать: трекинг идёт, отмены обрабатываются, подписочные списания и запланированные передачи файлов выполняются. Прекращается обычная работа программы — набор, оплата и управление партнёрами, — что на практике означает остановку программы. Стоит заметить тайминг: изменение вступило в силу в первый день квартала с Чёрной пятницей и Рождеством, так что сорванное согласование платежа в ноябре теперь стоит рекламодателю трёх недель запаса, которые были раньше. Энтони Клементс, кантри-менеджер impact.com по Великобритании и немецкоязычному рынку, объяснил логику доверием паблишеров. Очевидное ограничение, отмеченное в публикации: сокращение срока до блокировки никого не обязывает платить партнёрам быстрее — оно лишь укорачивает время, в течение которого непрофинансированная программа может работать.</p>
+      <p class="why l-en"><b>Why it matters:</b> The platform is tightening the credit it extends to advertisers going into peak trading, which pushes working-capital risk back onto brands and away from publishers.</p>
+      <p class="why l-ru"><b>Почему важно:</b> Платформа ужесточает кредит, который даёт рекламодателям перед пиковым сезоном, перекладывая риск оборотного капитала с паблишеров на бренды.</p>
+      <p class="src">→ <a href="https://www.affiversemedia.com/impact-com-overdue-payment-window-40-days/">Affiverse</a></p>
+    </div>
+  </details>
